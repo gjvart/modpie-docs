@@ -18,12 +18,14 @@ To maximize your viewport workspace and eliminate visual distraction during prec
 
 When you trigger an interactive modifier from the Modpie panel (via Quick Add, Add Modifier, Search, or clicking the drag edit icon):
 
-1. **Instant Panel Closing**:  
+1. **Panel Closes**:
    The panel immediately hides itself the instant interactive modal mode begins. This guarantees an unobstructed 3D viewport so you can see your mesh clearly from any angle.
 
-2. **Clean Modal Exit**:  
-   Once you confirm (<kbd>Enter</kbd> / <kbd>Space</kbd> / <kbd>LMB</kbd>) or cancel (<kbd>Esc</kbd> / <kbd>RMB</kbd>) the modal, the panel remains closed. Your modeling flow continues naturally without annoying duplicate or stacked popups re-opening over your viewport.
+<div className="media-card">
+  <div className="media-container">
+    <img src="/modpie-docs/img/media/modpie_panel_behave1.gif" alt="Panel Auto-Hide" />
+  </div>
+  <p className="media-caption">Figure: The panel closes instantly when you start a modifier.</p>
+</div>
 
-:::tip Re-opening the Panel
-Whenever you need the stack panel again, just press <kbd>Ctrl + Alt + M</kbd> or open the <kbd>N</kbd> sidebar **Modifiers** tab.
-:::
+

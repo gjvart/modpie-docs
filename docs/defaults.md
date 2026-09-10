@@ -26,7 +26,7 @@ Every modifier card in the Modpie panel includes a dedicated **Remember as Defau
 
 ## How It Works
 
-- **One-Click Persistence**: Saves the current property configuration of the modifier directly into `defaults.json` in Blender's user configuration folder.
+- **One-Click Persistence**: Saves the current property configuration of the modifier directly into Blender's user configuration folder.
 - **Global Application Across Projects**: Every time you add that modifier in any current or future Blender project, it automatically initializes with your saved parameters instead of Blender's generic defaults.
 - **Clear Default**: <kbd>Shift</kbd> + Click the default button at any time to restore factory smart defaults.
 
