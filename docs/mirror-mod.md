@@ -105,6 +105,13 @@ Modpie allows you to set or change the modifier's **Mirror Object** interactivel
 
 Modpie features an advanced multi-axis mirror workflow built directly into the interactive Mirror modal mode, allowing you to establish compound symmetry across two or three axes without accidental overrides:
 
+<media-card>
+  <div className="media-container">
+    <img src="/modpie-docs/img/media/modpie_mirror5.gif" alt="Mirror Multi-Axis Mode" />
+  </div>
+  <p className="media-caption">Figure: Establishing an XY mirror across an object in Modpie.</p>
+</media-card>
+
 #### Existing Modifier Axis Protection
 When opening an existing Mirror modifier in interactive mode, Modpie automatically locks previously confirmed axes (`axis_locked = True`). Normal mouse navigation in the viewport will never unintentionally alter or overwrite your existing symmetry axes.
 
