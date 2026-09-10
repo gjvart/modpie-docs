@@ -34,7 +34,7 @@ Modpie gives you direct access to customize its hotkeys without searching throug
 
 - **Open Modifier Pie**: Default <kbd>Alt + M</kbd>. Click the field and press your new key combination to rebind.
 - **Open Modifier Panel**: Default <kbd>Ctrl + Alt + M</kbd>. Directly summons the viewport modifier stack panel.
-- **Favorites Preset Pie <span className="badge badge--primary">Plus</span>**: Default <kbd>Shift + Alt + M</kbd> *(In 9.8.0+, presets & stack templates are also integrated directly into the radial menu's SE slot)*.
+- **Favorites Preset Pie <span className="badge badge--primary">Plus</span>**: Default <kbd>Shift + Alt + M</kbd> *(In 0.9.80+, presets & stack templates are also integrated directly into the radial menu's SE slot)*.
 
 :::tip Extra Tip: Extra Mouse Buttons
 If you use a mouse with extra side/thumb buttons (such as **Mouse Button 4** or **Mouse Button 5**), I strongly recommend binding Modpie to these mouse side buttons!

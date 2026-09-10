@@ -10,8 +10,8 @@ description: Secondary dedicated radial pie menu (Shift + Alt + M) for your favo
   <span className="badge badge--primary">Modpie Plus Exclusive</span>
 </div>
 
-:::info 9.8.0+ Streamlined Access
-Starting in **Modpie Plus 9.8.0**, saved presets and stack templates are integrated directly into the main **Alt + M** radial menu via the **Presets & Stacks** slot (SE) and panel header buttons. This eliminates hotkey collisions while keeping your favorites accessible in a single flick. For earlier builds or custom keymaps, a dedicated preset pie shortcut (<kbd>Shift + Alt + M</kbd>) is also supported.
+:::info 0.9.80+ Streamlined Access
+Starting in **Modpie Plus 0.9.80**, saved presets and stack templates are integrated directly into the main **Alt + M** radial menu via the **Presets & Stacks** slot (SE) and panel header buttons. This eliminates hotkey collisions while keeping your favorites accessible in a single flick. For earlier builds or custom keymaps, a dedicated preset pie shortcut (<kbd>Shift + Alt + M</kbd>) is also supported.
 :::
 
 Modpie Plus gives you lightning-fast radial access to your favorite modifier presets directly under your cursor.

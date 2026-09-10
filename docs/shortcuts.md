@@ -16,7 +16,7 @@ Modpie is built for speed and muscle memory. Below is the complete hotkey refere
 | :--- | :--- | :---: | :--- |
 | <kbd>Alt</kbd> + <kbd>M</kbd> | 3D Viewport | <span className="badge badge--secondary">Core</span> | Open **Modpie Radial Pie Menu** |
 | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>M</kbd> | 3D Viewport | <span className="badge badge--secondary">Core</span> | Open **Modpie Viewport Stack Panel** popup |
-| <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>M</kbd> | 3D Viewport | <span className="badge badge--primary">Plus (&le;0.9.59)</span> | Open **Favorites Preset Pie** *(In 9.8.0+, presets & stack templates are unified directly into the main radial menu SE slot and panel button)* |
+| <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>M</kbd> | 3D Viewport | <span className="badge badge--primary">Plus (&le;0.9.59)</span> | Open **Favorites Preset Pie** *(In 0.9.80+, presets & stack templates are unified directly into the main radial menu SE slot and panel button)* |
 | <kbd>N</kbd> ▸ **Modifiers** | 3D Viewport Sidebar | <span className="badge badge--secondary">Core</span> | Open Modpie sidebar tab |
 
 ### How to Customize Hotkeys
@@ -43,8 +43,8 @@ For example:
 To configure this: In **Edit ▸ Preferences ▸ Add-ons ▸ Modpie ▸ Keymap**, click the shortcut box and simply click your mouse side button, then tick the **Shift** or **Ctrl** checkbox.
 :::
 
-:::note 9.8.0+ Presets Integration
-Starting in **Modpie Plus 9.8.0**, saved presets and stack templates are conveniently integrated directly into the radial menu's **Presets & Stacks** slot and panel buttons, removing global keymap conflicts.
+:::note 0.9.80+ Presets Integration
+Starting in **Modpie Plus 0.9.80**, saved presets and stack templates are conveniently integrated directly into the radial menu's **Presets & Stacks** slot and panel buttons, removing global keymap conflicts.
 :::
 
 ---
