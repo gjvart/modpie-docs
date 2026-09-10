@@ -8,8 +8,8 @@ description: High-speed radial menu, live interactive viewport dragging with rea
 # Modpie & Modpie Plus
 
 <div className="hero-badge-container">
-  <span className="badge badge--primary">Modpie Plus 9.8.1</span>
-  <span className="badge badge--secondary">Modpie Free 0.9.81</span>
+  <span className="badge badge--primary">Modpie Plus 0.9.91</span>
+  <span className="badge badge--secondary">Modpie 0.9.91 (LTS / Release)</span>
   <span className="badge badge--info">Tested on Blender 4.3, 4.5 LTS, 5.1 & 5.2+</span>
   <span className="badge badge--success">Single Addon Architecture</span>
   <span className="badge badge--secondary">Zero Lost Settings on Upgrade</span>

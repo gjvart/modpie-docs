@@ -13,6 +13,7 @@ const sidebars = {
         'installation',
         'shortcuts',
         'changelog',
+        'changelog-archive',
       ],
     },
     {
