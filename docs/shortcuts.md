@@ -72,7 +72,10 @@ When adjusting any modifier in interactive modal mode:
 
 ### Mirror Modifier
 - <kbd>Mouse Drag</kbd>: Drag toward any side of the mesh to point to and pick that axis
-- <kbd>X</kbd> / <kbd>Y</kbd> / <kbd>Z</kbd>: Jump directly to axis (<kbd>Shift</kbd> + key adds axis)
+- <kbd>Shift</kbd> + <kbd>Drag</kbd>: Additively latch and add one axis at a time (emerald green guideline)
+- <kbd>Spacebar</kbd>: Toggle axis lock (`Locked` / `Unlocked`)
+- <kbd>X</kbd> / <kbd>Y</kbd> / <kbd>Z</kbd>: Jump directly to single axis
+- <kbd>Shift</kbd> + <kbd>X</kbd> / <kbd>Y</kbd> / <kbd>Z</kbd>: Additively toggle axis on/off
 - <kbd>A</kbd>: Cycle through axes ($X \rightarrow Y \rightarrow Z \rightarrow X$), <kbd>Shift</kbd> + <kbd>A</kbd> reverses
 - <kbd>B</kbd>: Toggle **Bisect** on active axis
 - <kbd>F</kbd>: Toggle **Flip** on active axis

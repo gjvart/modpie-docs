@@ -50,7 +50,7 @@ You can customize its anchor position via **Preferences ▸ Interactive ▸ Axis
 
 | Position Preset | Viewport Anchor | Best For |
 | :--- | :--- | :--- |
-| **Top Center** *(Default)* | Centered at top edge (`y = height - total_h - 38px`) | Clean symmetry and unobstructed view of model center |
+| **Top Center** *(Default)* | Centered at top edge (`y = height - total_h - 95px`) | Clean symmetry and 95px top margin to comfortably clear Blendkit search bars and top-center viewport widgets |
 | **Top Left** | Pinned upper left (`x = 42px, y = height - total_h - 55px`) | Keeps viewport center and top clear |
 | **Top Right** | Pinned upper right corner | Keeps 3D cursor and transform gizmo clear |
 | **Bottom Left** | Pinned lower left (`x = 42px, y = 95px`) | Elevated above Blender's status bar |
@@ -63,7 +63,8 @@ All coordinates are automatically clamped to ensure the HUD card never clips out
 ### 3. Clickable HUD Overlay & Hotkey Toggles
 The HUD displays interactive, clickable toggle buttons with real-time state feedback:
 
-- **Axes**: `[X]` / `[Y]` / `[Z]` (or press <kbd>X</kbd>, <kbd>Y</kbd>, <kbd>Z</kbd>, or press <kbd>A</kbd> to cycle axes)
+- **Axes**: `[X]` / `[Y]` / `[Z]` (press <kbd>X</kbd>, <kbd>Y</kbd>, <kbd>Z</kbd> to isolate; <kbd>Shift</kbd> + key to additively toggle; or <kbd>A</kbd> to cycle axes)
+- **Axis Lock**: <kbd>Spacebar</kbd> (or click the HUD header `Axis [Locked]` to toggle lock state)
 - **Bisect**: `[B]` (or press <kbd>B</kbd> to toggle bisect on/off)
 - **Flip**: `[F]` (or press <kbd>F</kbd> to flip bisect orientation)
 - **Clipping**: `[C]` (or press <kbd>C</kbd> to prevent vertices from passing through the mirror plane)
@@ -97,3 +98,27 @@ Modpie allows you to set or change the modifier's **Mirror Object** interactivel
    - Press <kbd>T</kbd> again at any time to pick a different mirror object.
    - Click the red **`[X]`** button next to the assigned target name on the bottom HUD card to immediately clear the mirror object back to `None`.
    - Press <kbd>Right Mouse Button</kbd> (RMB) or <kbd>Esc</kbd> while the eyedropper is active to exit target picking without making changes.
+
+---
+
+### 5. Interactive Multi-Axis Mirror Mode & Axis Locking
+
+Modpie features an advanced multi-axis mirror workflow built directly into the interactive Mirror modal mode, allowing you to establish compound symmetry across two or three axes without accidental overrides:
+
+#### Existing Modifier Axis Protection
+When opening an existing Mirror modifier in interactive mode, Modpie automatically locks previously confirmed axes (`axis_locked = True`). Normal mouse navigation in the viewport will never unintentionally alter or overwrite your existing symmetry axes.
+
+#### One-at-a-Time Axis Addition (<kbd>Shift</kbd> + Drag / Hover)
+- **Controlled Axis Latching**: Holding <kbd>Shift</kbd> while moving your cursor latches onto **at most one new axis** per Shift gesture. Even if you sweep across multiple 3D projection planes, Modpie prevents accidental activation of unintended third axes.
+- **Dynamic Flip Tuning on Latched Axis**: While <kbd>Shift</kbd> remains held, moving your cursor between positive and negative half-spaces dynamically updates the bisect flip sign for the currently latched axis.
+- **Shift Release Confirmation**: Releasing <kbd>Shift</kbd> automatically confirms the newly added axis into the locked set. Pressing <kbd>Shift</kbd> again lets you latch and add the next axis one at a time.
+- **Emerald Green Visual Feedback**: Viewport axis guidelines glow emerald green `(0.35, 0.95, 0.55)` while <kbd>Shift</kbd> is held to provide immediate visual feedback that additive multi-axis mode is active.
+
+#### Spacebar & HUD Axis Lock Toggle
+- **Toggle Lock with Spacebar**: Press <kbd>Spacebar</kbd> at any point to toggle between locked and unlocked axis picking, flashing clear state feedback in the viewport.
+- **Clickable HUD Header**: The HUD card header dynamically displays `Axis [Locked]` when locked and is directly clickable to toggle the lock state.
+- **Dedicated Bottom Status Pill**: The bottom viewport readout displays a dedicated `[Space Axis: Locked/Unlocked]` status pill alongside clear workflow hints (`Space → unlock axis | Shift+Drag → add axis`).
+
+#### Additive HUD Toggle (<kbd>Shift</kbd> + Click / Key)
+- **Keyboard Shortcuts**: Pressing <kbd>Shift + X</kbd>, <kbd>Shift + Y</kbd>, or <kbd>Shift + Z</kbd> toggles axes additively without resetting other active axes. Pressing <kbd>X</kbd>, <kbd>Y</kbd>, or <kbd>Z</kbd> without Shift isolates that single axis.
+- **Overlay Clicks**: <kbd>Shift</kbd> + Clicking the `[X]`, `[Y]`, or `[Z]` buttons on the HUD overlay toggles axes additively; clicking without Shift isolates the selected axis.
