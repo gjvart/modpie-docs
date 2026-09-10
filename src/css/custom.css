@@ -1,0 +1,261 @@
+/**
+ * Custom styles for Modpie Documentation
+ * Light Blue / Sky Blue theme palette
+ */
+
+:root {
+  --ifm-color-primary: #0284c7;
+  --ifm-color-primary-dark: #0369a1;
+  --ifm-color-primary-darker: #075985;
+  --ifm-color-primary-darkest: #0c4a6e;
+  --ifm-color-primary-light: #38bdf8;
+  --ifm-color-primary-lighter: #7dd3fc;
+  --ifm-color-primary-lightest: #bae6fd;
+  --ifm-code-font-size: 90%;
+  --docusaurus-highlighted-code-line-bg: rgba(2, 132, 199, 0.1);
+  --ifm-font-family-base: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --ifm-heading-font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+[data-theme='dark'] {
+  --ifm-background-color: #0e1117;
+  --ifm-background-surface-color: #161b22;
+  --ifm-color-primary: #38bdf8;
+  --ifm-color-primary-dark: #0ea5e9;
+  --ifm-color-primary-darker: #0284c7;
+  --ifm-color-primary-darkest: #0369a1;
+  --ifm-color-primary-light: #7dd3fc;
+  --ifm-color-primary-lighter: #bae6fd;
+  --ifm-color-primary-lightest: #e0f2fe;
+  --docusaurus-highlighted-code-line-bg: rgba(56, 189, 248, 0.15);
+  --ifm-toc-border-color: #30363d;
+  --ifm-table-border-color: #30363d;
+}
+
+/* Navbar Logo & Brand */
+.navbar__logo {
+  height: 32px;
+  width: auto;
+  margin-right: 8px;
+  border-radius: 6px;
+}
+
+.navbar__title {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-size: 1.15rem;
+}
+
+/* Hero Badge Container */
+.hero-badge-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.badge {
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+}
+
+/* Plus Badge - Deeper Royal / Sapphire Blue (replaces pale sky blue) */
+.badge--primary,
+.badge--plus {
+  --ifm-badge-background-color: #2563eb;
+  --ifm-badge-border-color: rgba(96, 165, 250, 0.4);
+  --ifm-badge-color: #ffffff;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  background-color: #2563eb;
+  color: #ffffff !important;
+  border: 1px solid rgba(147, 197, 253, 0.35);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme='dark'] .badge--primary,
+[data-theme='dark'] .badge--plus {
+  --ifm-badge-background-color: #1d4ed8;
+  --ifm-badge-border-color: rgba(147, 197, 253, 0.3);
+  --ifm-badge-color: #ffffff;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  background-color: #1d4ed8;
+  color: #ffffff !important;
+  border: 1px solid rgba(147, 197, 253, 0.35);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+/* KBD Hotkeys */
+kbd {
+  background-color: var(--ifm-background-surface-color);
+  color: var(--ifm-color-primary);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  padding: 2px 6px;
+  font-family: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.85em;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  display: table;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+table thead tr {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+table th {
+  font-weight: 700;
+  padding: 12px 16px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Feature Grid Cards */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.feature-card {
+  background: var(--ifm-background-surface-color);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 1.25rem;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--ifm-color-primary);
+}
+
+.feature-card.plus {
+  border-color: rgba(37, 99, 235, 0.35);
+  background: linear-gradient(180deg, rgba(37, 99, 235, 0.08) 0%, var(--ifm-background-surface-color) 100%);
+}
+
+.feature-card.plus:hover {
+  border-color: #2563eb;
+}
+
+.feature-card-icon {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+  color: var(--ifm-heading-color);
+}
+
+.feature-card-desc {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 0;
+  line-height: 1.45;
+}
+
+/* Media Showcase & GIF Cards */
+.media-card {
+  margin: 1.75rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.media-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #090c10;
+  min-height: 200px;
+  position: relative;
+}
+
+.media-container img,
+.media-container video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.media-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  border: 2px dashed rgba(56, 189, 248, 0.35);
+  border-radius: 8px;
+  margin: 1.25rem;
+  width: calc(100% - 2.5rem);
+  background: rgba(56, 189, 248, 0.03);
+  transition: all 0.2s ease;
+}
+
+.media-placeholder:hover {
+  border-color: var(--ifm-color-primary);
+  background: rgba(56, 189, 248, 0.06);
+}
+
+.media-placeholder-icon {
+  font-size: 2.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.media-placeholder-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ifm-heading-color);
+  margin-bottom: 0.35rem;
+}
+
+.media-placeholder-hint {
+  font-size: 0.82rem;
+  color: var(--ifm-color-primary-light);
+  font-family: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  opacity: 0.85;
+}
+
+.media-caption {
+  padding: 10px 16px;
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-600);
+  background: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  margin-bottom: 0;
+  font-style: italic;
+}
