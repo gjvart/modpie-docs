@@ -75,6 +75,13 @@ When you confirm a modal drag, a sleek banner appears over the viewport saying w
 
 In any interactive modifier modal mode (such as Solidify thickness, Bevel width/segments, Array count/offset, Screw angle/steps, etc.), you have exact numeric keyboard input with built-in accidental drag protection:
 
+<div className="media-card">
+  <div className="media-container">
+    <img src="/modpie-docs/img/media/modpie_SetValue.gif" alt="Use the number keys or numpad to set exact values while in Interactive Mode" />
+  </div>
+  <p className="media-caption">Figure: Using number keys or the numpad to set exact values in Interactive Mode.</p>
+</div>
+
 - **Real-Time Keyboard Input**: Typing digits (`0`–`9`), minus (`-`), or decimal period (`.`) on your keyboard or numpad immediately calculates and applies the value in real-time (<kbd>Backspace</kbd> to edit).
 - **Lock Value on <kbd>Enter</kbd>**: Pressing <kbd>Enter</kbd> or <kbd>Numpad Enter</kbd> while actively entering a numeric value sets and **locks** that value immediately without closing the interactive session.
 - **Mouse Drag Protection**: Once locked, moving the mouse across the 3D viewport does not alter or drag the locked value, completely preventing accidental adjustments while inspecting your mesh from different angles.

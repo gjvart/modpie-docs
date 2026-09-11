@@ -1,22 +1,18 @@
 ---
 sidebar_position: 5
 title: Changelog
-description: Release notes and changelog for Modpie and Modpie Plus Version 0.9.91 (LTS / Release Version).
+description: Release notes and changelog for Modpie and Modpie Plus Version 0.9.92 (LTS / Release Version).
 ---
 
 # What's New & Changelog
 
 <div className="hero-badge-container">
-  <span className="badge badge--primary">Modpie Plus 0.9.91</span>
-  <span className="badge badge--secondary">Modpie 0.9.91</span>
+  <span className="badge badge--primary">Modpie Plus 0.9.92</span>
+  <span className="badge badge--secondary">Modpie 0.9.92</span>
   <span className="badge badge--success">LTS / Release Version</span>
 </div>
 
-Welcome to the current release changelog for **Modpie** and **Modpie Plus** (**Version 0.9.91**). This release serves as the official **LTS (Long-Term Support) / Release Version**, bringing maximum stability, seamless viewport interaction, and unified compatibility across Blender 4.3, 4.5 LTS, 5.1, and 5.2+.
-
-:::info Looking for older release notes?
-All previous changelogs and version history (from version 0.9.81 down to 0.9.1) have been moved to the [**Past Releases & Archive**](/changelog-archive) page.
-:::
+Welcome to the release notes and changelog for Modpie and Modpie Plus. This page highlights all recent features, architectural improvements, and bug fixes across both tiers.
 
 ---
 
@@ -24,17 +20,17 @@ All previous changelogs and version history (from version 0.9.81 down to 0.9.1) 
 
 <div className="feature-grid">
   <div className="feature-card">
-    <div className="feature-card-icon">🪞</div>
-    <div className="feature-card-title">Interactive Target Mirror Object</div>
-    <p className="feature-card-desc">
-      Press <kbd>T</kbd> in interactive Mirror mode to pick any Empty or mesh via an interactive eyedropper crosshair. Mirror symmetry and dashed guides dynamically orient around the target object.
-    </p>
-  </div>
-  <div className="feature-card">
     <div className="feature-card-icon">⚡</div>
     <div className="feature-card-title">Modal Stability & Viewport Context</div>
     <p className="feature-card-desc">
       Eliminated temporary context override wrappers that caused modal operators to terminate prematurely. Radial menu addition and interactive dragging now run rock-solid across all viewport contexts.
+    </p>
+  </div>
+  <div className="feature-card plus">
+    <div className="feature-card-icon">🏷️</div>
+    <div className="feature-card-title">Distinct Tier Versioning</div>
+    <p className="feature-card-desc">
+      Modpie Plus and Modpie Free now feature independent version tracks: <strong>Modpie Plus 9.8.x</strong> (power features) and <strong>Modpie 0.9.8x</strong> (core features).
     </p>
   </div>
   <div className="feature-card">
@@ -60,58 +56,103 @@ All previous changelogs and version history (from version 0.9.81 down to 0.9.1) 
   </div>
   <div className="feature-card plus">
     <div className="feature-card-icon">⭐</div>
-    <div className="feature-card-title">Streamlined Presets & Live Linking</div>
+    <div className="feature-card-title">Streamlined Presets Access</div>
     <p className="feature-card-desc">
-      Presets and stack templates are accessed cleanly via the radial menu's Presets & Stacks slot and panel buttons, alongside continuous real-time multi-object live linking.
+      Presets and stack templates are now cleanly accessed directly via the radial menu's Presets & Stacks slot and panel buttons, removing keymap conflicts.
     </p>
   </div>
 </div>
 
 ---
 
-## Detailed Notes for Version 0.9.91 (LTS / Release)
+## Detailed Release History
 
-### Core Workflow & Modal Enhancements
-- **Interactive Mirror Target Picking (<kbd>T</kbd>)**:
-  Added full interactive eyedropper target picking for the **Mirror modifier**. While in modal mode, pressing <kbd>T</kbd> (or clicking `[Target]` on the Axis HUD card) triggers a viewport eyedropper crosshair with the tooltip `Hover over mirror plane object...`. Clicking any object (such as an Empty or reference mesh) sets it as the `mirror_object`, reorienting the symmetry plane and drawing dashed guide lines relative to the target's transform origin. Click the red `[X]` on the HUD card at any time to clear the target back to `None`.
-- **Modal Context Lifecycle & Drag Stability**:
-  Fixed modal operator invocations from pie menu slots. Previously, launching modals inside a temporary context override caused the override to exit while the modal was still running in background, causing drag operations to terminate prematurely. Modal execution now resolves its own 3D viewport region cleanly and executes uninterrupted.
-- **Fluid Cursor Tracking on Blender 4.5 LTS**:
-  Removed timer-based cursor warp workarounds that caused HUD cards to stutter or freeze on Blender 4.5. The interactive HUD now locks 1:1 with mouse events across all supported Blender versions.
-- **Clean Viewport Panel & Sidebar Dismissal**:
-  Entering interactive mode from any modifier card or quick-add button now automatically and cleanly closes open popup panels and collapses the sidebar, giving the artist an unobstructed view of their mesh.
-- **Real-Time Numeric Typing, Enter Lock & Spacebar Resume**:
-  In any interactive modifier modal mode (e.g. Solidify thickness, Bevel width/segments, Array count/offset, Screw angle/steps, etc.), typing numbers, minus, or period applies values in real-time. Pressing <kbd>Enter</kbd> / <kbd>Numpad Enter</kbd> while actively entering a value sets and **locks** that value immediately without closing the interactive session, protecting it from accidental mouse movement. Pressing <kbd>Spacebar</kbd> seamlessly unlocks the value so mouse dragging can resume smoothly from the locked value if desired.
-- **Multi-Object Batch Apply All (`modpie.apply_all`) & Delete All (`modpie.remove_all`)**:
-  - When multiple objects are selected in the viewport, clicking **Apply All** now iteratively applies visible modifiers across all eligible selected objects while preserving the original active object and user selection.
-  - Decouples linked duplicate mesh datablocks (<kbd>Alt + D</kbd>) per object to prevent Blender single-user application errors.
-  - Automatically unsolos any active soloed modifiers before applying.
-  - When multiple objects are selected, clicking **Delete All** (trash icon) removes all modifiers across all selected objects.
-  - Dynamic tooltip descriptions adapt in real time to selection context (e.g. `Apply every visible modifier across X selected objects`, `Remove all modifiers from X selected objects`).
-  - Viewport overlay notifications and info reports summarize total affected objects and applied or removed modifiers (e.g. `Applied 4 modifiers across 3 objects`).
-  - When only a single object is active/selected, behavior remains smooth and instantaneous on the active object.
+### Modpie Plus 9.8.1 / Modpie 0.9.81
 
-### Modifier Improvements
-- **Smart Bisect & Flip on Mirror Modifier**:
-  Dragging toward positive axes (+X, +Y, +Z) enables **Bisect**, while dragging toward negative axes (-X, -Y, -Z) enables both **Bisect** and **Flip** automatically.
-- **Smart Cutter Selection for Boolean Modifier**:
-  Starting an interactive Boolean operation with no secondary object selected presents a clean viewport search popup to pick the cutter object, with instant operation cycling via <kbd>A</kbd> ($Difference \rightarrow Intersect \rightarrow Union \rightarrow Difference$).
-- **Fitted Lattice Modifier**:
-  One-click Lattice creation fits a $3 \times 3 \times 3$ deformation cage perfectly aligned with the evaluated bounding box of the active mesh.
-- **Geometry Nodes RNA Exposure**:
-  Full introspection and rendering of all dynamic custom inputs on Geometry Nodes modifier assets across Blender 4.3 through 5.2+.
-
-### Modpie Plus Features in 0.9.91
-- **Continuous Live Modifier Linking**:
-  Link individual modifiers or full modifier stacks across multiple objects with real-time bidirectional syncing via depsgraph evaluation handlers.
-- **In-Viewport Compass Slot Customizer**:
-  Easily remap radial menu directions using the visual 3×3 compass grid directly inside the 3D viewport.
-- **Stack Templates & Preset Library**:
-  Save, load, duplicate, and search complete modifier stacks and individual modifier configurations with permanent custom startup defaults.
-- **Modifier Profiler & Solo Mode**:
-  Inspect per-modifier computation execution times in milliseconds and solo individual modifiers to isolate their performance and geometric effects.
+- **Fixed: Modal premature termination on interactive pie slots**:
+  The modal was being launched inside a `bpy.context.temp_override(...)` block. Because a Python `with` block exits as soon as the calling function returns, and Blender modal operators return `RUNNING_MODAL` while still actively running, the context override was torn down underneath the running modal handler, causing the drag operation to die immediately.
+  Every pie modifier slot is interactive by default, so this made it appear as though the pie was not adding anything. The modal now invokes directly and resolves its own `VIEW_3D` area and region cleanly without temporary override blocks.
 
 ---
 
-### Archive & Earlier Versions
-For complete historical changelogs of versions **0.9.1 through 0.9.81**, refer to the [**Past Releases & Archive**](/changelog-archive).
+### Modpie Plus 9.8.0 / Modpie 0.9.8
+
+- **Distinct Tier Versioning**:
+  Modpie Plus and Modpie (Free) now carry completely separate versions:
+  - **Modpie Plus**: `9.8.0` (delivering presets, stack templates, multi-object live syncing, modifier default overrides, evaluation profiler, and extended 8-direction slot customization).
+  - **Modpie (Free)**: `0.9.8` (delivering the core 5-slot radial menu, interactive modal drag, and viewport stack panel).
+  - The build pipeline (`tools/build.py`) automatically rewrites manifests and `bl_info` with tier-specific versions and outputs `modpie-0.9.8.zip` and `modpie-plus-9.8.0.zip`.
+- **Fixed Presets Button in Viewport Panel**:
+  Resolved a missing layout assignment in `MODPIE_MT_presets.draw` so clicking **Presets** in the panel cleanly opens saved presets, clipboard actions, and search.
+- **Removed Separate Preset Pie Keymap**:
+  Presets and stack templates are now accessed through the existing **Presets & Stacks** slot on the radial menu and panel buttons, eliminating the conflicting `Shift + Alt + M` global keymap.
+- **Physics Modifiers Work in Progress Notice**:
+  Simulation modifiers (`CLOTH`, `COLLISION`, `DYNAMIC_PAINT`, `FLUID`, `SOFT_BODY`, `PARTICLE_SYSTEM`) now display a clear, styled *Work in Progress* card inside the viewport panel directing users to Blender's native Physics/Particles tabs while detailed integration is in development.
+- **Full Geometry Nodes Input Exposure**:
+  Automatically detects and draws all input sockets on Geometry Nodes modifiers across Blender 4.x, 5.0, 5.1, and 5.2+ (RNA input sockets).
+- **Fixed Interactive Mode HUD Tracking on Blender 4.5 & Automatic Panel Dismissal**:
+  Removed asynchronous timer and cursor warp invocations that caused the interactive HUD overlay to freeze on Blender 4.5. Modal interaction is now invoked directly with the user's active event context, keeping the draw panel locked smoothly to the mouse cursor. Entering interactive mode from any modifier card or quick-add button now immediately and cleanly dismisses both the viewport panel and the sidebar.
+- **Mask Modifier Reorganization**:
+  Starts locked in interactive mode (`start_locked: True`, unlock with <kbd>Spacebar</kbd>) with single-key toggles and a native Blender layout with segmented mode buttons and vertex group invert toggle.
+
+---
+
+### Version 0.9.60
+
+- **Registration Error Recovery**:
+  A failed registration no longer strands the add-on until Blender restarts. If `register()` raises midway, stale class registrations are automatically purged and retried, allowing re-enabling in the same Blender session.
+
+---
+
+### Version 0.9.59
+
+- **Plus Registration Isolation**:
+  Registration now wraps the Plus package in an isolated try-catch block. If an error occurs within Plus code, the error is printed to the console and the add-on gracefully falls back to the Free build for the session rather than crashing Blender's addon system.
+
+---
+
+### Version 0.9.58
+
+- **Zero-Overlap Panel Closing**:
+  When launching interactive mode from within the Modpie panel (via the drag button on a card or an interactive Quick Add button), any open popup panel is cleanly dismissed and the sidebar is collapsed before modal execution starts, eliminating visual overlap with the HUD.
+- **Array (Legacy) vs Array (5.0+) Clean-Up**:
+  On Blender versions below 5.0 (e.g. 4.5 LTS), the modern Geometry Nodes Array asset (`ARRAY_MODERN`) is completely hidden from categories, menus, and search, and the classic modifier is displayed simply as `Array` without any `(Legacy)` tag. On Blender 5.0+, both modifiers remain clearly available and separated as `Array (Legacy)` and `Array (5.0+)`.
+- **Consistent Store Default Icon**:
+  The "Remember as Default" button on the modifier tool row now consistently displays the `FILE_TICK` icon for both saved and unsaved states.
+
+---
+
+### Version 0.9.57
+
+- **Displace, Warp & Wave "New Texture" Button**:
+  Blender's built-in `texture.new` works out which slot to fill by querying the UI templateID under the cursor, which fails inside popup panels. Modpie now features its own New Texture operator with **Open Image...** to load an image file straight into a new texture, and dynamically populates procedural texture types supported by the running Blender version.
+- **Bind Buttons on Deform Modifiers**:
+  Added native **Bind / Unbind** buttons directly on the panel headers for **Mesh Deform**, **Surface Deform**, and **Corrective Smooth**.
+- **Simple Deform Axis Cycling**:
+  Pressing <kbd>C</kbd> cycles Simple Deform's axis ($X \rightarrow Y \rightarrow Z \rightarrow X$), while <kbd>A</kbd> controls Angle.
+- **Dynamic Object-Type Modifier Filtering**:
+  Modpie queries Blender's native Add Modifier menus at runtime to only display modifiers applicable to the active object type (mesh, curve, volume, or grease pencil), preventing invalid modifiers (like Mesh to Volume on standard meshes) from appearing.
+
+---
+
+### Version 0.9.56
+
+- **Continuous Live Modifier Linking (Plus)**:
+  Introduced **Link Modifier to Selected** and **Link All Modifiers to Selected**. Changes made to any one linked object propagate to all other linked copies in real time via a depsgraph handler. Links are stored in `.blend` custom properties (`modpie_link`) and survive saving and reloading.
+- **One-Shot Copy vs. Live Link Clarification**:
+  Renamed one-shot sync operations to **Copy Modifier to Selected** and **Copy All Settings to Selected** to clearly differentiate them from continuous live links.
+- **Boolean Cutter Object Prompt**:
+  Starting an interactive Boolean modifier with no other object selected opens a clean search popup of scene meshes to pick the cutter object.
+- **Boolean Operation Cycling**:
+  Pressing <kbd>A</kbd> during interactive Boolean modal mode cycles operations: Difference ➔ Intersect ➔ Union ➔ Difference.
+
+---
+
+
+---
+
+- **0.9.5**: Added automatic panel hiding and reopening during interactive drag operations.
+- **0.9.4**: Added one-click **Apply** (<kbd>✓</kbd>) button on collapsed modifier headers.
+- **0.9.3**: Fixed duplicate panel opening issues when focusing existing modifiers.
+- **0.9.2**: Added panel origin awareness to prevent duplicate stacked panels in sidebars.
+- **0.9.1**: Initial release of the unified radial pie and viewport modifier panel.
