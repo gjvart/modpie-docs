@@ -75,12 +75,29 @@ Modpie adds native buttons that Blender normally hides in other editors:
 
 ## 4. Stack-Wide Management Tools
 
-Perform batch operations across the entire active object stack with one click:
-- **Expand All / Collapse All**: Clean up visual clutter.
+Perform batch operations across the entire active object stack or across multiple selected objects with one click:
+- **Expand All / Collapse All**: Clean up visual clutter across the stack.
 - **Toggle Viewport Visibility**: Hide or show all modifiers on the mesh simultaneously.
 - **Toggle Render Visibility**: Disable or enable evaluation in final renders.
-- **Apply All**: Convert the entire non-destructive stack to permanent geometry.
-- **Delete All**: Clear the entire stack in one click.
+- **Apply All**: Convert non-destructive stacks to permanent geometry.
+- **Delete All**: Clear modifiers in one click using the trash icon.
+
+### Multi-Object Batch Apply & Delete
+
+When multiple objects are selected in the 3D viewport, **Apply All** and **Delete All** operate intelligently across all selected meshes:
+
+- **Apply All Modifiers**:
+  - When multiple objects are selected in the viewport, clicking **Apply All** now iteratively applies visible modifiers across all eligible selected objects while preserving the original active object and user selection.
+  - Decouples linked duplicate mesh datablocks (<kbd>Alt + D</kbd>) per object to prevent Blender single-user application errors.
+  - Automatically unsolos any active soloed modifiers before applying.
+  - Dynamic tooltip description adapts to selection state (e.g. `Apply every visible modifier across X selected objects`).
+  - Reports total applied modifier count and affected object count with viewport overlay notification (e.g. `Applied 4 modifiers across 3 objects`).
+- **Delete All Modifiers (`modpie.remove_all`)**:
+  - When multiple objects are selected, clicking **Delete All** (trash icon) removes all modifiers across all selected objects.
+  - Dynamic tooltip description updates to reflect selection context (e.g. `Remove all modifiers from X selected objects`).
+  - Clear viewport notification and info report summarizing removed modifiers and affected objects.
+- **Single-Object Responsiveness**:
+  - When only a single object is active/selected, behavior remains smooth and instantaneous on the active object.
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 8
 title: Multi-Object Editing
-description: How Affect All Selected Objects applies and drags modifiers simultaneously across multiple meshes.
+description: How Affect All Selected Objects adds, drags, applies, and deletes modifiers simultaneously across multiple meshes.
 ---
 
 # Multi-Object Editing
@@ -37,7 +37,26 @@ You can toggle this behavior on or off in **Edit ▸ Preferences ▸ Add-ons ▸
 
 ---
 
-## 2. Modpie Plus Extensions <span className="badge badge--primary">Plus</span>
+## 2. Batch Apply All & Delete All Modifiers
+
+Multi-object workflow in Modpie extends beyond adding and dragging modifiers—it also handles stack-wide lifecycle operations across all selected objects directly from the modifier panel:
+
+- **Apply All Modifiers**:
+  - When multiple objects are selected in the viewport, clicking **Apply All** now iteratively applies visible modifiers across all eligible selected objects while preserving the original active object and user selection.
+  - Decouples linked duplicate mesh datablocks (<kbd>Alt + D</kbd>) per object to prevent Blender single-user application errors.
+  - Automatically unsolos any active soloed modifiers before applying.
+  - Dynamic tooltip description adapts to selection state (e.g. `Apply every visible modifier across X selected objects`).
+  - Reports total applied modifier count and affected object count with viewport overlay notification (e.g. `Applied 4 modifiers across 3 objects`).
+- **Delete All Modifiers (`modpie.remove_all`)**:
+  - When multiple objects are selected, clicking **Delete All** (trash icon) removes all modifiers across all selected objects.
+  - Dynamic tooltip description updates to reflect selection context (e.g. `Remove all modifiers from X selected objects`).
+  - Clear viewport notification and info report summarizing removed modifiers and affected objects.
+- **Single-Object Responsiveness**:
+  - When only a single object is active/selected, behavior remains smooth and instantaneous on the active object.
+
+---
+
+## 3. Modpie Plus Extensions <span className="badge badge--primary">Plus</span>
 
 While the core version adjusts multiple objects when they are modified together, **Modpie Plus** adds deeper synchronization:
 
