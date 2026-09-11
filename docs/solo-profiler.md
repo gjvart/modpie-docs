@@ -26,7 +26,7 @@ Heavy modifier stacks can slow down viewport playback and make fine-tuning trick
 
 ---
 
-## 1. Solo Modifier (<kbd>Alt + H</kbd> Style Isolation)
+## 1. Solo Modifier
 
 Clicking the **Solo** button on any modifier temporarily disables all other modifiers in the stack, isolating the effect of that single modifier for inspection or fine-tuning:
 
