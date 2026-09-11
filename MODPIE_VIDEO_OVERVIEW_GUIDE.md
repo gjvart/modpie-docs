@@ -53,8 +53,11 @@ Every feature in this section is available in **both** Modpie Standard (Free) an
 
 ### 3. Interactive Modal Dragging & Real-Time HUD
 - **Real-Time HUD Card**: While dragging values, a sleek HUD readout follows your cursor displaying the active parameter, exact units, and hotkey toggles.
-- **Precision Controls**: Hold <kbd>Shift</kbd> for fine adjustments; hold <kbd>Ctrl</kbd> for increment snapping; or type numbers directly on your numpad.
-- **Spacebar Locking**: Toggle between unlocked free mouse dragging and locked value inspection without dropping out of the modal.
+- **Precision Controls**: Hold <kbd>Shift</kbd> for fine adjustments; hold <kbd>Ctrl</kbd> for increment snapping.
+- **Real-Time Numeric Input**: Type digits (`0`–`9`), minus (`-`), or decimal period (`.`) on your keyboard or numpad to calculate and apply values in real-time.
+- **Enter to Lock Value**: Pressing <kbd>Enter</kbd> or <kbd>Numpad Enter</kbd> while actively entering a value sets and **locks** that value immediately without closing the modal session.
+- **Mouse Drag Protection**: Moving the mouse while locked will never accidentally alter the locked value.
+- **Spacebar to Unlock & Resume Dragging**: Pressing <kbd>Spacebar</kbd> seamlessly unlocks the value so mouse dragging can resume smoothly from the locked value if desired.
 
 ### 4. Advanced Mirror Modifier: Multi-Axis, Smart Bisect & Target Picking
 - **Smart Axis & Bisect Detection**: Pointing toward positive axes (+X, +Y, +Z) automatically turns on **Bisect**. Pointing toward negative axes (-X, -Y, -Z) turns on both **Bisect** and **Flip**.

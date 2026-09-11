@@ -80,6 +80,8 @@ All previous changelogs and version history (from version 0.9.81 down to 0.9.1) 
   Removed timer-based cursor warp workarounds that caused HUD cards to stutter or freeze on Blender 4.5. The interactive HUD now locks 1:1 with mouse events across all supported Blender versions.
 - **Clean Viewport Panel & Sidebar Dismissal**:
   Entering interactive mode from any modifier card or quick-add button now automatically and cleanly closes open popup panels and collapses the sidebar, giving the artist an unobstructed view of their mesh.
+- **Real-Time Numeric Typing, Enter Lock & Spacebar Resume**:
+  In any interactive modifier modal mode (e.g. Solidify thickness, Bevel width/segments, Array count/offset, Screw angle/steps, etc.), typing numbers, minus, or period applies values in real-time. Pressing <kbd>Enter</kbd> / <kbd>Numpad Enter</kbd> while actively entering a value sets and **locks** that value immediately without closing the interactive session, protecting it from accidental mouse movement. Pressing <kbd>Spacebar</kbd> seamlessly unlocks the value so mouse dragging can resume smoothly from the locked value if desired.
 - **Multi-Object Batch Apply All (`modpie.apply_all`) & Delete All (`modpie.remove_all`)**:
   - When multiple objects are selected in the viewport, clicking **Apply All** now iteratively applies visible modifiers across all eligible selected objects while preserving the original active object and user selection.
   - Decouples linked duplicate mesh datablocks (<kbd>Alt + D</kbd>) per object to prevent Blender single-user application errors.

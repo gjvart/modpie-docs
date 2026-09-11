@@ -58,14 +58,25 @@ When you confirm a modal drag, a sleek banner appears over the viewport saying w
 
 ---
 
-## 2. Tactile Controls
+## 2. Tactile Controls & Precision Dragging
 
 - **Standard Drag**: Smooth horizontal mouse dragging proportional to viewport distance.
 - **<kbd>Shift</kbd> + Drag (Fine Mode)**: 10× slower sensitivity for millimeter adjustments.
 - **<kbd>Ctrl</kbd> + Drag (Snapping Mode)**: Snaps to clean metric increments (e.g. 0.1m, 1.0m).
 - **<kbd>Wheel Up</kbd> / <kbd>Down</kbd>**: Adjusts discrete integer counts (Bevel Segments, Array Count, Subdivision levels).
-- **Direct Numeric Typing**: Type digits (`0`–`9`, `.`, `-`) directly while dragging (<kbd>Backspace</kbd> to correct).
 - **<kbd>Tab</kbd>**: Cycles to the next adjustable channel.
 - **<kbd>Ctrl + Wheel</kbd> or <kbd>[</kbd> / <kbd>]</kbd>**: Switches between sibling modifiers on the object.
-- **<kbd>Enter</kbd> / <kbd>Space</kbd> / <kbd>LMB</kbd>**: Confirms changes.
+- **<kbd>LMB</kbd> / <kbd>Enter</kbd>**: Confirms changes and closes the interactive session.
 - **<kbd>Esc</kbd> / <kbd>RMB</kbd>**: Reverts all changes to their pre-drag state.
+
+---
+
+## 3. Real-Time Numeric Typing & Value Locking
+
+In any interactive modifier modal mode (such as Solidify thickness, Bevel width/segments, Array count/offset, Screw angle/steps, etc.), you have exact numeric keyboard input with built-in accidental drag protection:
+
+- **Real-Time Keyboard Input**: Typing digits (`0`–`9`), minus (`-`), or decimal period (`.`) on your keyboard or numpad immediately calculates and applies the value in real-time (<kbd>Backspace</kbd> to edit).
+- **Lock Value on <kbd>Enter</kbd>**: Pressing <kbd>Enter</kbd> or <kbd>Numpad Enter</kbd> while actively entering a numeric value sets and **locks** that value immediately without closing the interactive session.
+- **Mouse Drag Protection**: Once locked, moving the mouse across the 3D viewport does not alter or drag the locked value, completely preventing accidental adjustments while inspecting your mesh from different angles.
+- **Unlock to Resume Dragging (<kbd>Spacebar</kbd>)**: Pressing <kbd>Spacebar</kbd> seamlessly unlocks the value so mouse dragging can resume smoothly from the locked value if you wish to continue tweaking interactively.
+

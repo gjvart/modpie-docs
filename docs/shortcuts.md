@@ -59,11 +59,13 @@ When adjusting any modifier in interactive modal mode:
 | <kbd>Shift</kbd> + <kbd>Drag</kbd> | **Fine Precision** | 10× slower sensitivity for millimeter-level adjustments. |
 | <kbd>Ctrl</kbd> + <kbd>Drag</kbd> | **Incremental Snapping** | Snaps to clean numeric increments (e.g. 0.1m, 1.0m). |
 | <kbd>Wheel Up</kbd> / <kbd>Down</kbd> | **Step Discrete Count** | Increments or decrements counts (Segments, Array Count, Subsurf Levels). |
-| <kbd>0</kbd>–<kbd>9</kbd> / <kbd>.</kbd> | **Direct Numeric Typing** | Type an exact number directly while dragging (<kbd>Backspace</kbd> to correct). |
+| <kbd>0</kbd>–<kbd>9</kbd> / <kbd>.</kbd> / <kbd>-</kbd> | **Direct Numeric Typing** | Type digits, minus, or period in real-time (<kbd>Backspace</kbd> to edit). |
+| <kbd>Enter</kbd> (during typing) | **Lock Typed Value** | Sets and **locks** the value immediately, protecting it from accidental mouse movement. |
+| <kbd>Spacebar</kbd> | **Unlock to Resume Drag** | Unlocks the value so mouse dragging can resume smoothly from the locked value. |
 | <kbd>Tab</kbd> | **Cycle Channel** | Advances to the next adjustable property in the modifier. |
 | <kbd>Ctrl</kbd> + <kbd>Wheel</kbd> or <kbd>[</kbd> / <kbd>]</kbd> | **Sibling Switcher** | Jump between same-type modifiers on the object without leaving the modal. |
 | Click <kbd>‹</kbd> <kbd>›</kbd> UI arrows | **Click Sibling Switcher** | Switch between sibling modifiers using the on-screen readout arrows. |
-| <kbd>Enter</kbd> / <kbd>Space</kbd> / <kbd>LMB</kbd> | **Confirm** | Commits changes and cleanly exits modal mode. |
+| <kbd>LMB</kbd> / <kbd>Enter</kbd> | **Confirm & Exit** | Commits changes and cleanly exits modal mode. |
 | <kbd>Esc</kbd> / <kbd>RMB</kbd> | **Cancel** | Cancels adjustments and reverts all properties to their original state. |
 
 ---
