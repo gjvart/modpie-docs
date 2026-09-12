@@ -4,7 +4,7 @@ title: Modifier Panel
 description: Full modifier stack popup (Ctrl + Alt + M) and sidebar panel in the 3D viewport.
 ---
 
-# The Viewport Modifier Panel (`Ctrl + Alt + M`)
+# The Viewport Modifier Panel
 
 <div className="hero-badge-container">
   <span className="badge badge--secondary">Core: Full Stack Panel</span>
