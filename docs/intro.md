@@ -53,8 +53,8 @@ Follow this documentation progressively to master the full power of Modpie:
 - **[What's New & Changelog](changelog.md)**: Full release notes, current version improvements, and complete version history.
 
 ### 2. Core Workflows
-- **[The Radial Pie Menu (`Alt + M`)](pie-menu.md)**: Radial navigation, Free 5-way vs. Plus 8-way layouts, and smart repeat handling (`Click` to edit, `Shift + Click` to stack, `×n` badges).
-- **[The Viewport Modifier Panel (`Ctrl + Alt + M`)](panel.md)**: Full stack popup & sidebar (`N ▸ Modifiers`), collapsed Apply buttons, sibling jumpers, texture creation, and mesh binding.
+- **[The Radial Pie Menu](pie-menu.md)**: Radial navigation, Free 5-way vs. Plus 8-way layouts, and smart repeat handling (`Click` to edit, `Shift + Click` to stack, `×n` badges).
+- **[The Viewport Modifier Panel](panel.md)**: Full stack popup & sidebar (`N ▸ Modifiers`), collapsed Apply buttons, sibling jumpers, texture creation, and mesh binding.
 - **[Interactive Modal Dragging & HUD](interactive-modal.md)**: Cursor-following HUD readout, on-mesh RGB axis badge, 3D evaluation guides, big bottom readout, and precision dragging.
 - **[Multi-Object Editing](multi-object.md)**: How *Affect All Selected Objects* adds and drags modifiers simultaneously across multiple meshes.
 
