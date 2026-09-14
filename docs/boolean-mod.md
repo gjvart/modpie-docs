@@ -16,8 +16,9 @@ In default Blender, adding a Boolean modifier requires manually picking the cutt
   <div className="media-container">
     <img src="/modpie-docs/img/media/modpie_boolean1.gif" alt="Boolean Cutter Target Selector & Operation Cycling" />
   </div>
-  <p className="media-caption">Figure 5: Instant cutter target selector popup and real-time operation cycling.</p>
+  <p className="media-caption">Instant cutter target selector popup and real-time operation cycling.</p>
 </div>
+
 
 ---
 
