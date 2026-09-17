@@ -179,7 +179,7 @@ When Modpie Plus is installed, the panel gains the prominent **Plus Bar** direct
 - **Presets**: Live clipboard pasting, starred favorites, full preset library, and interactive search.
 - **Stacks**: Deploy complete multi-modifier pipelines in Append or Replace mode, with live modifier count badges.
 - **Sync**: Contextual multi-object continuous **Live Linking** (`Link to Selected`), one-shot copying (`Copy to Selected`), stack diffing, and unlinking.
-- **Card Tools**: Dedicated **Remember Default** (`✓`), **Solo Modifier** (`👁`), and **Apply Up To Here** (`⬆`) buttons on every modifier card.
+- **Card Tools**: Dedicated **[Remember Default](defaults.md)**, **Solo Modifier**, and **Apply Up To Here** buttons on every modifier card.
 - **Solo & Profiler**: Isolate modifiers with one click or view real-time evaluation latency in milliseconds.
 
 :::tip Full Guide
