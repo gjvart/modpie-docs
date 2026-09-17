@@ -65,7 +65,7 @@ Comparing the two panels reveals four major structural additions in Modpie Plus:
    - **Plus**: Adds a 1-click **Save Stack Template (<kbd>🎛⁺</kbd>)** shortcut directly beside the camera visibility toggle for instant pipeline capture.
 
 4. **Modifier Card Power & Diagnostic Tools**:
-   - **Free**: Includes standard card utilities: interactive modal dragging (`◫`), collapsed apply (`✓`), duplicate (`⧉`), copy settings (`📋`), stack position arrows (<kbd>▲</kbd> / <kbd>▼</kbd>), default indicator (`●`), and pin to top (`📌`).
+   - **Free**: Includes standard card utilities: interactive modal dragging (`◫`), collapsed apply (`✓`), duplicate (`⧉`), copy settings (`📋`), stack position arrows (<kbd>▲</kbd> / <kbd>▼</kbd>), default indicator (`●`), and **Pin to Last** (`📌`).
    - **Plus**: Greatly expands the card action row with advanced workflow and diagnostic controls:
      - **Remember Default (`●`)**: Lock in the modifier's current dialed-in settings as permanent defaults.
      - **Lock / Frozen State (`🔒`)**: Protect modifier parameters from accidental modifications or bulk overwrites.
@@ -87,6 +87,7 @@ Comparing the two panels reveals four major structural additions in Modpie Plus:
 | **Continuous Live Linking** | ✕ | <span className="badge badge--primary">✔ Plus</span> | Multi-object bidirectional synchronization via depsgraph handler |
 | **One-Shot Copy & Stack Push** | ✕ | <span className="badge badge--primary">✔ Plus</span> | Broadcast active modifier or entire stack across selected objects |
 | **Live Stack Diff Visualizer** | ✕ | <span className="badge badge--primary">✔ Plus</span> | Side-by-side comparison of modifier stacks across selected objects |
+| **Card: Pin to Last (<kbd>📌</kbd>)** | ✔ | ✔ | Locks modifier to the bottom of the stack; new additions insert above it |
 | **Card: Solo Modifier** | ✕ | <span className="badge badge--primary">✔ Plus</span> | Isolate modifier effect non-destructively with 1-click restore |
 | **Card: Modifier Profiler** | ✕ | <span className="badge badge--primary">✔ Plus</span> | Real-time evaluation latency tracking in milliseconds (ms) |
 | **Card: Apply-Up-To-Here** | ✕ | <span className="badge badge--primary">✔ Plus</span> | Bake stack down to active modifier while preserving lower stack |
@@ -126,6 +127,11 @@ Clicking **Customize** at the top right unfolds the Quick Add strip into an alig
 
 Every modifier card in the panel includes standard and enhanced controls:
 
+- **Pin to Last (<kbd>📌</kbd>)**:
+  - Locks the modifier at the very bottom (end) of the modifier stack.
+  - When enabled (highlighted blue pushpin `📌`), any newly added modifiers—whether created via the radial pie menu, the Quick Add strip, or Blender's Add Modifier menu—are automatically inserted **above** the pinned modifier rather than below it.
+  - Guarantees pipeline integrity for terminal modifiers like **Subdivision Surface**, **Bevel**, **Weighted Normal**, or **Triangulate** that must always evaluate last to preserve silhouette, non-destructive shading, or topology.
+  - Clicking the pushpin icon again unpins the modifier, allowing it to be freely repositioned or having subsequent modifiers appended after it.
 - **Collapsed Apply (<kbd>✓</kbd>)**: When a modifier card is collapsed, a dedicated **Apply** (<kbd>✓</kbd>) button appears directly on its header beside the delete (<kbd>✕</kbd>) icon. Apply modifiers instantly without expanding or diving into submenus.
 - **Sibling Jumpers (<kbd>◀</kbd> `1/2` <kbd>▶</kbd>)**: When multiple modifiers of the same type exist, position badges (e.g. `2/3`) and navigation arrows let you jump between them.
 - **Interactive Drag Button**: Re-opens interactive modal dragging for that modifier. In popup mode, the panel automatically closes to give you an unobstructed 3D view and re-opens when you confirm or cancel.
