@@ -1,7 +1,7 @@
 ---
 sidebar_position: 6
 title: Modifier Panel
-description: Full modifier stack popup (Ctrl + Alt + M) and sidebar panel in the 3D viewport.
+description: Full modifier stack popup and sidebar panel in the 3D viewport.
 ---
 
 # The Viewport Modifier Panel
@@ -13,17 +13,88 @@ description: Full modifier stack popup (Ctrl + Alt + M) and sidebar panel in the
 
 Modpie frees you from having to keep Blender's Properties editor open. Pressing <kbd>Ctrl + Alt + M</kbd> opens the complete modifier stack directly under your cursor, or you can access the permanent **Modifiers** tab in the 3D Viewport sidebar (<kbd>N</kbd> key).
 
-<div className="media-card">
-  <div className="media-container">
-    {/* To add your GIF/screenshot: replace below with <img src="/modpie-docs/img/media/viewport_panel.gif" alt="Viewport Modifier Panel" /> */}
-    <div className="media-placeholder">
-      <span className="media-placeholder-icon">📋</span>
-      <span className="media-placeholder-title">Viewport Stack Panel GIF / Screenshot</span>
-      <span className="media-placeholder-hint">Drop file into static/img/media/viewport_panel.gif</span>
+## Free vs. Plus Panel Comparison
+
+Modpie is available in two tiers: **Modpie Free (Standard)** and **Modpie Plus**. While both editions share the core viewport modifier panel experience—providing full stack management, drag adjustments, and multi-object batch operations directly in the 3D viewport—**Modpie Plus** integrates an extensive power toolbar and non-destructive diagnostic suite directly into the panel layout.
+
+<div className="comparison-grid">
+  <div className="comparison-card">
+    <div className="comparison-header">
+      <span className="comparison-title">Modpie Free (Standard)</span>
+      <span className="badge badge--secondary">Core Panel</span>
+    </div>
+    <div className="media-container">
+      <img src="/modpie-docs/img/media/ModpieP_Stand.png" alt="Modpie Free Standard Panel" />
+    </div>
+    <div className="comparison-footer">
+      <strong>Core Experience:</strong> Streamlined modifier stack with Quick Add strip, interactive HUD modal dragging, collapsed apply (<kbd>✓</kbd>), and essential batch operations.
     </div>
   </div>
-  <p className="media-caption">Figure 3: Full modifier stack with collapsed apply buttons, Quick Add, and stack tools.</p>
+
+  <div className="comparison-card plus">
+    <div className="comparison-header">
+      <span className="comparison-title">Modpie Plus</span>
+      <span className="badge badge--primary">Plus Variant</span>
+    </div>
+    <div className="media-container">
+      <img src="/modpie-docs/img/media/Modpie_P_Plus.png" alt="Modpie Plus Panel" />
+    </div>
+    <div className="comparison-footer">
+      <strong>Pipeline Powerhouse:</strong> Adds the <strong>Plus Bar</strong> (Presets, Stacks, Sync), in-viewport <strong>Customize</strong> toggle, stack template saving, and modifier card diagnostic tools (Solo, Profiler, Apply Up, Live Link).
+    </div>
+  </div>
 </div>
+
+### Key Differences at a Glance
+
+Comparing the two panels reveals four major structural additions in Modpie Plus:
+
+1. **Quick Add Customizer (`▶ Customize`)**:
+   - **Free**: Displays the 5-icon Quick Add strip for fast 1-click addition of your primary pie modifiers.
+   - **Plus**: Adds the dedicated **`▶ Customize`** button beside the Quick Add header. Clicking it unfolds the 8-direction slot customizer right inside the 3D viewport, allowing you to edit custom labels, arrival values, and slot assignments without opening Blender Preferences.
+
+2. **The Plus Command Bar (`Presets`, `Stacks`, `Sync`)**:
+   - **Free**: No intermediate toolbar; transitions directly from *Add Modifier* into stack batch operations for a minimal vertical footprint.
+   - **Plus**: Inserts a full-width workflow toolbar between *Add Modifier* and the batch controls:
+     - **`🎛 Presets ▾`**: Browse starred Favourites, the full saved preset library, save active modifier configurations in one click, search presets interactively, and use dynamic clipboard pasting (`Paste Values` / `Paste to Selected`).
+     - **`📋 Stacks ▾`**: Save multi-modifier recipes as reusable templates and deploy complete stacks to meshes in *Append* or *Replace* mode.
+     - **`⇄ Sync ▾`**: Manage continuous multi-object **Live Linking**, one-shot copying, the visual **Compare Stacks** diff report, and unlinking.
+
+3. **Batch Toolbar & Stack Template Shortcut**:
+   - **Free**: Features standard stack-wide controls: Expand/Collapse All (`⛶`), Viewport Visibility (`🖥`), Render Visibility (`📷`), Apply All (`✓ Apply All`), and Delete All (`🗑`).
+   - **Plus**: Adds a 1-click **Save Stack Template (<kbd>🎛⁺</kbd>)** shortcut directly beside the camera visibility toggle for instant pipeline capture.
+
+4. **Modifier Card Power & Diagnostic Tools**:
+   - **Free**: Includes standard card utilities: interactive modal dragging (`◫`), collapsed apply (`✓`), duplicate (`⧉`), copy settings (`📋`), stack position arrows (<kbd>▲</kbd> / <kbd>▼</kbd>), default indicator (`●`), and pin to top (`📌`).
+   - **Plus**: Greatly expands the card action row with advanced workflow and diagnostic controls:
+     - **Remember Default (`●`)**: Lock in the modifier's current dialed-in settings as permanent defaults.
+     - **Lock / Frozen State (`🔒`)**: Protect modifier parameters from accidental modifications or bulk overwrites.
+     - **Solo Modifier (`🖥`)**: Temporarily isolate the modifier by disabling all other modifiers on the mesh (with automatic state restore on un-solo). Also interfaces with the **Evaluation Profiler** to measure real-time latency in milliseconds.
+     - **Apply Up To Here (`↓`)**: Non-destructively bake the modifier stack from the top down through the current modifier while keeping all subsequent modifiers active.
+     - **One-Click Sync (`↗`)**: Instantly copy this modifier's exact parameters across all other selected objects.
+     - **Live Link Group Status (`🔗`)**: Displays active linked group membership count (e.g. `🔗 3`) with 1-click linking/unlinking.
+
+### Panel Feature Matrix
+
+| Panel Feature | Modpie Free | Modpie Plus | Description |
+| :--- | :---: | :---: | :--- |
+| **Viewport Modifier Stack** | ✔ | ✔ | Complete modifier stack via <kbd>Ctrl + Alt + M</kbd> or sidebar <kbd>N</kbd> |
+| **Quick Add Icon Strip** | ✔ | ✔ | 1-click addition of primary pie modifiers |
+| **In-Viewport Slot Customizer** | ✕ | <span className="badge badge--primary">✔ Plus</span> | **`▶ Customize`** button unfolds 8-way slot editor and arrival values |
+| **Plus Toolbar (`Presets` / `Stacks` / `Sync`)** | ✕ | <span className="badge badge--primary">✔ Plus</span> | Dedicated high-speed command bar beneath Add Modifier |
+| **Preset Library & Clipboard Paste** | ✕ | <span className="badge badge--primary">✔ Plus</span> | Save, search, favorite, and clipboard-paste single modifier recipes |
+| **Multi-Modifier Stack Templates** | ✕ | <span className="badge badge--primary">✔ Plus</span> | Save and deploy entire modifier stacks in Append/Replace mode |
+| **Continuous Live Linking** | ✕ | <span className="badge badge--primary">✔ Plus</span> | Multi-object bidirectional synchronization via depsgraph handler |
+| **One-Shot Copy & Stack Push** | ✕ | <span className="badge badge--primary">✔ Plus</span> | Broadcast active modifier or entire stack across selected objects |
+| **Live Stack Diff Visualizer** | ✕ | <span className="badge badge--primary">✔ Plus</span> | Side-by-side comparison of modifier stacks across selected objects |
+| **Card: Solo Modifier** | ✕ | <span className="badge badge--primary">✔ Plus</span> | Isolate modifier effect non-destructively with 1-click restore |
+| **Card: Modifier Profiler** | ✕ | <span className="badge badge--primary">✔ Plus</span> | Real-time evaluation latency tracking in milliseconds (ms) |
+| **Card: Apply-Up-To-Here** | ✕ | <span className="badge badge--primary">✔ Plus</span> | Bake stack down to active modifier while preserving lower stack |
+| **Card: One-Click Sync to Selected** | ✕ | <span className="badge badge--primary">✔ Plus</span> | Instantly push card parameters to all other selected meshes |
+| **Card: Live Link Group Status** | ✕ | <span className="badge badge--primary">✔ Plus</span> | Displays group count and toggles live linking membership |
+| **Card: Collapsed Apply (<kbd>✓</kbd>)** | ✔ | ✔ | Apply modifiers directly from collapsed headers without expanding |
+| **Batch Apply All & Delete All** | ✔ | ✔ | Multi-object batch application and removal across selected objects |
+| **Interactive Modal HUD Dragging** | ✔ | ✔ | Real-time viewport dragging with numerical overlay |
 
 ---
 

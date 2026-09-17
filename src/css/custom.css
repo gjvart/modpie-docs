@@ -261,3 +261,94 @@ media-card,
   margin-bottom: 0;
   font-style: italic;
 }
+
+/* Comparison Grid for Side-by-Side Media Cards */
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin: 1.75rem 0;
+  align-items: stretch;
+}
+
+@media (max-width: 840px) {
+  .comparison-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.comparison-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.comparison-card:hover {
+  border-color: var(--ifm-color-primary);
+  transform: translateY(-2px);
+}
+
+.comparison-card.plus {
+  border-color: rgba(37, 99, 235, 0.45);
+  background: linear-gradient(180deg, rgba(37, 99, 235, 0.06) 0%, var(--ifm-background-surface-color) 100%);
+}
+
+.comparison-card.plus:hover {
+  border-color: #2563eb;
+  box-shadow: 0 6px 24px rgba(37, 99, 235, 0.2);
+}
+
+.comparison-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.comparison-title {
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 0;
+  color: var(--ifm-heading-color);
+}
+
+.comparison-card .media-container {
+  flex: 1;
+  background: #090c10;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comparison-card .media-container img {
+  max-height: 560px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.comparison-footer {
+  padding: 12px 16px;
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-700);
+  background: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  margin-bottom: 0;
+  line-height: 1.45;
+}
+
+.comparison-footer p {
+  margin-bottom: 0;
+}
+
+
