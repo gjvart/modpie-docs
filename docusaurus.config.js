@@ -42,6 +42,28 @@ const config = {
   ],
 
   // ==========================================
+  // THEMES & SEARCH
+  // ==========================================
+  themes: [
+    [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      ({
+        hashed: true,
+        language: ['en'],
+        docsRouteBasePath: '/',
+        indexBlog: false,
+        indexPages: false,
+        highlightSearchTermsOnTargetPage: true,
+        explicitSearchResultPath: true,
+        searchBarPosition: 'right',
+        searchBarShortcut: true,
+        searchBarShortcutHint: true,
+      }),
+    ],
+  ],
+
+  // ==========================================
   // WEBSITE THEME
   // ==========================================
   themeConfig:
