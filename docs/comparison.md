@@ -31,10 +31,14 @@ Both share the extension ID `modpie`, meaning installing Modpie Plus over Free u
 | **Automatic Fitted Lattice Generation** | ✔ | ✔ |
 | **Texture Creation (Displace/Warp) & Mesh Binding** | ✔ | ✔ |
 | **Geometry Nodes Tools (Fake User, Export/Import)** | ✔ | ✔ |
+| **Object Modifiers Pie (`Shift + Ctrl + M`)** | ✔ | ✔ |
+| **Interactive Stack Reordering (`Alt + Wheel`)** | ✔ | ✔ |
+| **Inline Modifier Renaming & Closed Card Tools** | ✔ | ✔ |
 | **Remember Modifier Defaults** | ✔ | ✔ |
 | **Modifier Presets Library** | ✕ | <span className="badge badge--primary">✔ Plus (Save, apply, search, export)</span> |
 | **Stack Templates Library** | ✕ | <span className="badge badge--primary">✔ Plus (Append / Replace modes)</span> |
 | **Live Modifier Linking (Continuous multi-object link)** | ✕ | <span className="badge badge--primary">✔ Plus</span> |
+| **Stack Sync Naming Symmetry (`sync_stack` / `link_stack`)** | ✕ | <span className="badge badge--primary">✔ Plus</span> |
 | **One-Shot Copy & Stack Replacement** | ✕ | <span className="badge badge--primary">✔ Plus</span> |
 | **Live Stack Diff Visualizer** | ✕ | <span className="badge badge--primary">✔ Plus</span> |
 | **Solo Modifier (`Alt + H` non-destructive isolation)** | ✕ | <span className="badge badge--primary">✔ Plus</span> |
@@ -59,7 +63,11 @@ Both share the extension ID `modpie`, meaning installing Modpie Plus over Free u
 
 ### 3. Multi-Object Syncing & Live Linking
 - **Continuous Live Linking**: Link modifiers across multiple objects. Adjusting a property on one object updates all linked copies across the scene in real time via an intelligent depsgraph handler. Saved in the `.blend` file, surviving project saves and reloads.
-- **One-Shot Copying**: *Copy Modifier to Selected*, *Copy All Settings to Selected*, or *Replace Stacks with This One*.
+- **Stack Sync Naming Symmetry**: Operators follow clean, predictable symmetry across multi-object tools:
+  - `Copy All Modifiers to Selected` (`modpie.sync_stack`)
+  - `Link All Modifiers to Selected` (`modpie.link_stack`)
+  - `Copy Modifier to Selected` (`modpie.sync_modifier`)
+- **One-Shot Copying**: *Copy Modifier to Selected*, *Copy All Modifiers to Selected*, or *Replace Stacks with This One*.
 - **Compare Stacks**: Visual difference report highlighting missing, extra, or disagreeing modifier parameters across selected meshes.
 - **Auto-Sync After a Drag**: Automatically pushes confirmed modal drag adjustments to all other selected meshes.
 

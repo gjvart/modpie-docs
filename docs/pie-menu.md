@@ -105,3 +105,13 @@ If your mesh has multiple modifiers of the same type (e.g. two Bevels):
 - Press <kbd>Ctrl + Wheel</kbd> or <kbd>[</kbd> / <kbd>]</kbd> during the interactive modal to switch between them live.
 - Or click the on-screen <kbd>‹</kbd> <kbd>›</kbd> arrows on the viewport HUD.
 - The readout indicates the current sibling position (e.g. `Mirror.001  2 / 3`).
+
+---
+
+## 5. Context-Aware Radial Menu: Object Modifiers Pie
+
+When you are working on an object that already has several modifiers applied and want to tweak them rapidly, Modpie includes a dedicated context-aware radial menu:
+
+- Press **<kbd>Shift</kbd> + <kbd>Ctrl</kbd> + <kbd>M</kbd>** to summon the **Object Modifiers Pie**.
+- Instead of showing all available modifiers to add, it dynamically populates with **only the modifiers currently present on your active mesh**.
+- See the dedicated [Object Modifiers Pie](object-pie.md) page for full details and customization options.

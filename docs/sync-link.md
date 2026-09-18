@@ -25,10 +25,10 @@ Managing modifiers across dozens of related objects is often tedious in Blender.
 
 ## 1. Keep in Step — Continuous Live Linking
 
-| Operation | Action | Behavior |
-| :--- | :--- | :--- |
-| **Link Modifier to Selected** | Links active modifier | Copies follow each other continuously from now on |
-| **Link All Modifiers to Selected** | Links entire stack | All matching modifiers follow each other continuously |
+| Operation | Identifier | Action | Behavior |
+| :--- | :--- | :--- | :--- |
+| **Link Modifier to Selected** | `modpie.link_modifier` | Links active modifier | Copies follow each other continuously from now on |
+| **Link All Modifiers to Selected** | `modpie.link_stack` | Links entire stack | Links matching modifiers across selected objects continuously |
 
 ### How Live Linking Works
 - **Continuous Two-Way Sync**: Change the Bevel width or Solidify thickness on any one of five linked objects, and the other four follow immediately in real time, whichever one you touch.
@@ -44,11 +44,17 @@ Managing modifiers across dozens of related objects is often tedious in Blender.
 
 When you want to clone settings once without keeping objects linked:
 
-| Operation | Action | Adds Where Missing |
-| :--- | :--- | :---: |
-| **Copy Modifier to Selected** | Copies active modifier settings to selected objects | **Yes** |
-| **Copy All Settings to Selected** | Updates matching modifiers already present on selected objects | No |
-| **Replace Stacks with This One** | Replaces target objects' entire modifier stacks with the active stack | **Yes** |
+| Operation | Identifier | Action | Adds Where Missing |
+| :--- | :--- | :--- | :---: |
+| **Copy Modifier to Selected** | `modpie.sync_modifier` | Copies active modifier settings to selected objects | **Yes** |
+| **Copy All Modifiers to Selected** | `modpie.sync_stack` | Copies the entire modifier stack from the active object to all selected objects | **Yes** |
+| **Replace Stacks with This One** | `modpie.replace_stack` | Replaces target objects' entire modifier stacks with the active stack | **Yes** |
+
+### Stack Sync Naming Symmetry
+In **Modpie Plus**, multi-object stack synchronization operators follow a clean, symmetric naming convention across all copy and link tools:
+- **`Copy All Modifiers to Selected`** (`modpie.sync_stack`): Broadcasts the full modifier stack from the active object across all selected targets.
+- **`Link All Modifiers to Selected`** (`modpie.link_stack`): Creates ongoing live linking across matching modifier stacks on selected meshes.
+- **`Copy Modifier to Selected`** (`modpie.sync_modifier`): Transfers a single active modifier's parameters across the selection.
 
 ### Direction Clarity
 The Sync menu header explicitly states which object is active and which way data will flow (e.g. `Cube → 3 other objects`), ensuring you never overwrite the wrong mesh by accident.

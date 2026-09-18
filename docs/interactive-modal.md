@@ -64,10 +64,11 @@ When you confirm a modal drag, a sleek banner appears over the viewport saying w
 - **<kbd>Shift</kbd> + Drag (Fine Mode)**: 10× slower sensitivity for millimeter adjustments.
 - **<kbd>Ctrl</kbd> + Drag (Snapping Mode)**: Snaps to clean metric increments (e.g. 0.1m, 1.0m).
 - **<kbd>Wheel Up</kbd> / <kbd>Down</kbd>**: Adjusts discrete integer counts (Bevel Segments, Array Count, Subdivision levels).
+- **<kbd>Alt</kbd> + <kbd>Wheel Up</kbd> / <kbd>Down</kbd>**: Shifts the modifier up or down the evaluation stack on the fly (see [Interactive Stack Reordering](stack-reordering.md)).
 - **<kbd>Tab</kbd>**: Cycles to the next adjustable channel.
 - **<kbd>Ctrl + Wheel</kbd> or <kbd>[</kbd> / <kbd>]</kbd>**: Switches between sibling modifiers on the object.
 - **<kbd>LMB</kbd> / <kbd>Enter</kbd>**: Confirms changes and closes the interactive session.
-- **<kbd>Esc</kbd> / <kbd>RMB</kbd>**: Reverts all changes to their pre-drag state.
+- **<kbd>Esc</kbd> / <kbd>RMB</kbd>**: Reverts all changes and stack reorders to their pre-drag state.
 
 ---
 

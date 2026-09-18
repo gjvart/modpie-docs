@@ -22,8 +22,12 @@ const sidebars = {
       collapsed: false,
       items: [
         'pie-menu',
+        'object-pie',
         'panel',
+        'modifier-management',
+        'inline-renaming',
         'interactive-modal',
+        'stack-reordering',
         'multi-object',
       ],
     },

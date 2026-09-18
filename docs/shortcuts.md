@@ -15,8 +15,9 @@ Modpie is built for speed and muscle memory. Below is the complete hotkey refere
 | Keybinding | Context | Availability | Action |
 | :--- | :--- | :---: | :--- |
 | <kbd>Alt</kbd> + <kbd>M</kbd> | 3D Viewport | <span className="badge badge--secondary">Core</span> | Open **Modpie Radial Pie Menu** |
+| <kbd>Shift</kbd> + <kbd>Ctrl</kbd> + <kbd>M</kbd> | 3D Viewport | <span className="badge badge--secondary">Core</span> | Open **Object Modifiers Pie** (active object's modifiers) |
 | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>M</kbd> | 3D Viewport | <span className="badge badge--secondary">Core</span> | Open **Modpie Viewport Stack Panel** popup |
-| <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>M</kbd> | 3D Viewport | <span className="badge badge--primary">Plus (&le;0.9.59)</span> | Open **Favorites Preset Pie** *(In 0.9.80+, presets & stack templates are unified directly into the main radial menu SE slot and panel button)* |
+| <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>M</kbd> | 3D Viewport | <span className="badge badge--primary">Plus</span> | Open **Favorites Preset Pie** *(In unified builds, presets & stack templates are also integrated directly into the main radial menu SE slot and panel button)* |
 | <kbd>N</kbd> ▸ **Modifiers** | 3D Viewport Sidebar | <span className="badge badge--secondary">Core</span> | Open Modpie sidebar tab |
 
 ### How to Customize Hotkeys
@@ -25,7 +26,7 @@ All Modpie shortcuts can be customized to match your personal modeling habits:
 
 1. Open **Edit ▸ Preferences ▸ Add-ons ▸ Modpie**.
 2. Expand the **Keymap** tab.
-3. Click the shortcut box next to **Open Modifier Pie** (default: `Alt + M`) or **Open Modifier Panel** (default: `Ctrl + Alt + M`).
+3. Click the shortcut box next to **Open Modifier Pie** (default: `Alt + M`), **Object Modifiers Pie** (default: `Shift + Ctrl + M`), or **Open Modifier Panel** (default: `Ctrl + Alt + M`).
 4. Press your desired key combination, mouse button, or modifier key.
 
 :::tip Extra Tip: Extra Mouse Buttons
@@ -43,10 +44,6 @@ For example:
 To configure this: In **Edit ▸ Preferences ▸ Add-ons ▸ Modpie ▸ Keymap**, click the shortcut box and simply click your mouse side button, then tick the **Shift** or **Ctrl** checkbox.
 :::
 
-:::note 0.9.80+ Presets Integration
-Starting in **Modpie Plus 0.9.80**, saved presets and stack templates are conveniently integrated directly into the radial menu's **Presets & Stacks** slot and panel buttons, removing global keymap conflicts.
-:::
-
 ---
 
 ## 2. Interactive Modal Controls (All Modifiers)
@@ -59,6 +56,8 @@ When adjusting any modifier in interactive modal mode:
 | <kbd>Shift</kbd> + <kbd>Drag</kbd> | **Fine Precision** | 10× slower sensitivity for millimeter-level adjustments. |
 | <kbd>Ctrl</kbd> + <kbd>Drag</kbd> | **Incremental Snapping** | Snaps to clean numeric increments (e.g. 0.1m, 1.0m). |
 | <kbd>Wheel Up</kbd> / <kbd>Down</kbd> | **Step Discrete Count** | Increments or decrements counts (Segments, Array Count, Subsurf Levels). |
+| <kbd>Alt</kbd> + <kbd>Wheel Up</kbd> / <kbd>Down</kbd> | **Stack Reordering** | Moves active modifier **UP** or **DOWN** the evaluation stack on the fly. |
+| <kbd>Alt</kbd> + <kbd>Up</kbd> / <kbd>Down</kbd> | **Stack Reordering** | Moves active modifier **UP** or **DOWN** the evaluation stack. |
 | <kbd>0</kbd>–<kbd>9</kbd> / <kbd>.</kbd> / <kbd>-</kbd> | **Direct Numeric Typing** | Type digits, minus, or period in real-time (<kbd>Backspace</kbd> to edit). |
 | <kbd>Enter</kbd> (during typing) | **Lock Typed Value** | Sets and **locks** the value immediately, protecting it from accidental mouse movement. |
 | <kbd>Spacebar</kbd> | **Unlock to Resume Drag** | Unlocks the value so mouse dragging can resume smoothly from the locked value. |
@@ -66,7 +65,7 @@ When adjusting any modifier in interactive modal mode:
 | <kbd>Ctrl</kbd> + <kbd>Wheel</kbd> or <kbd>[</kbd> / <kbd>]</kbd> | **Sibling Switcher** | Jump between same-type modifiers on the object without leaving the modal. |
 | Click <kbd>‹</kbd> <kbd>›</kbd> UI arrows | **Click Sibling Switcher** | Switch between sibling modifiers using the on-screen readout arrows. |
 | <kbd>LMB</kbd> / <kbd>Enter</kbd> | **Confirm & Exit** | Commits changes and cleanly exits modal mode. |
-| <kbd>Esc</kbd> / <kbd>RMB</kbd> | **Cancel** | Cancels adjustments and reverts all properties to their original state. |
+| <kbd>Esc</kbd> / <kbd>RMB</kbd> | **Cancel** | Cancels adjustments and reverts all properties and stack order to their original state. |
 
 ---
 

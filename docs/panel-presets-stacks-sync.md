@@ -124,9 +124,9 @@ When objects must remain synchronized as you continue modeling:
 
 ### B. Once, Then Leave Alone — One-Shot Copying
 When you want to transfer values immediately without establishing ongoing connections:
-- **Copy Modifier to Selected**: Copies active modifier parameters to selected objects (adds the modifier if missing).
-- **Copy All Settings to Selected**: Updates matching modifiers already present on selected objects without adding new ones.
-- **Replace Stacks with This One**: Overwrites selected objects' entire stacks with the active object's stack.
+- **Copy Modifier to Selected (`modpie.sync_modifier`)**: Copies active modifier parameters to selected objects (adds the modifier if missing).
+- **Copy All Modifiers to Selected (`modpie.sync_stack`)**: Copies the entire modifier stack from the active object across all selected targets.
+- **Replace Stacks with This One (`modpie.replace_stack`)**: Overwrites selected objects' entire stacks with the active object's stack.
 
 ### C. Compare with Selected (Stack Diff)
 - Opens a side-by-side comparison readout highlighting missing modifiers, extra modifiers, and mismatched property values across selected meshes.
