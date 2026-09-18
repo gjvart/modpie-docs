@@ -14,6 +14,13 @@ In default Blender and earlier workflows, changing a modifier's evaluation posit
 
 With Modpie's **Interactive Stack Reordering**, you can move the modifier being adjusted **up or down the stack list on the fly** without interrupting your live viewport adjustment session.
 
+<div className="media-card">
+  <div className="media-container">
+    <img src="/modpie-docs/img/media/modpie_stack-reorder.gif" alt="Interactive Stack Reordering in 3D Viewport" />
+  </div>
+  <p className="media-caption">Figure: Moving modifiers up and down the stack on the fly in Interactive Mode using Alt + Scroll Wheel.</p>
+</div>
+
 ```
                     ┌────────────────────────┐
                     │      Bevel (1/3)       │
