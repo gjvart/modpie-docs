@@ -87,7 +87,7 @@ Comparing the two panels reveals four major structural additions in Modpie Plus:
 | **Continuous Live Linking** | ✕ | <span className="badge badge--primary">✔ Plus</span> | Multi-object bidirectional synchronization via depsgraph handler |
 | **One-Shot Copy & Stack Push** | ✕ | <span className="badge badge--primary">✔ Plus</span> | Broadcast active modifier or entire stack across selected objects |
 | **Live Stack Diff Visualizer** | ✕ | <span className="badge badge--primary">✔ Plus</span> | Side-by-side comparison of modifier stacks across selected objects |
-| **Card: Pin to Last (<kbd>📌</kbd>)** | ✔ | ✔ | Locks modifier to the bottom of the stack; new additions insert above it |
+| **Card: Pin to Last** | ✔ | ✔ | Locks modifier to the bottom of the stack; new additions insert above it |
 | **Card: Solo Modifier** | ✕ | <span className="badge badge--primary">✔ Plus</span> | Isolate modifier effect non-destructively with 1-click restore |
 | **Card: Modifier Profiler** | ✕ | <span className="badge badge--primary">✔ Plus</span> | Real-time evaluation latency tracking in milliseconds (ms) |
 | **Card: Apply-Up-To-Here** | ✕ | <span className="badge badge--primary">✔ Plus</span> | Bake stack down to active modifier while preserving lower stack |

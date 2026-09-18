@@ -11,7 +11,7 @@ description: Complete guide to the Presets, Stacks, and Sync toolbar and card to
   <span className="badge badge--success">Viewport Panel Integration</span>
 </div>
 
-In **Modpie Plus**, the Viewport Modifier Panel (<kbd>Ctrl + Alt + M</kbd> or sidebar <kbd>N ▸ Modifiers</kbd>) is equipped with the **Plus Bar** directly beneath *Add Modifier*. 
+In **Modpie Plus**, the Modifier Panel is equipped with the **Plus Bar** directly beneath *Add Modifier*. 
 
 This toolbar transforms the panel into a command center for saving modifier recipes, deploying multi-modifier pipelines, and synchronizing settings across multiple objects in real time.
 
@@ -30,9 +30,9 @@ Understanding the difference between **Presets**, **Stacks**, and **Sync** makes
 
 | Pillar | Definition | Primary Use Case |
 | :--- | :--- | :--- |
-| **1. Presets (`🎛`)** | A saved configuration of a **single modifier** (properties, limits, and settings). | Storing and reusing perfected modifier setups (e.g. *Hard Surface Bevel*, *Glass Solidify*). |
-| **2. Stacks (`📋`)** | A complete **sequence of multiple modifiers** saved in their exact evaluation order. | Deploying whole procedural pipelines (e.g. *Mirror + Bevel + Subsurf*) across new meshes in one click. |
-| **3. Sync (`⇄`)** | Tools for transferring or linking modifiers **across multiple selected objects**. | Keeping multiple meshes identical continuously (*Live Link*) or broadcasting settings once (*Copy*). |
+| **1. Presets** | A saved configuration of a **single modifier** (properties, limits, and settings). | Storing and reusing perfected modifier setups (e.g. *Hard Surface Bevel*, *Glass Solidify*). |
+| **2. Stacks** | A complete **sequence of multiple modifiers** saved in their exact evaluation order. | Deploying whole procedural pipelines (e.g. *Mirror + Bevel + Subsurf*) across new meshes in one click. |
+| **3. Sync** | Tools for transferring or linking modifiers **across multiple selected objects**. | Keeping multiple meshes identical continuously (*Live Link*) or broadcasting settings once (*Copy*). |
 
 ---
 
