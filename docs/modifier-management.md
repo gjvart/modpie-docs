@@ -77,16 +77,6 @@ To minimize accidental misclicks while maintaining rapid access:
 
 ---
 
-## 5. Feature Availability
-
-| Feature | Modpie (Free) | Modpie Plus |
-| :--- | :---: | :---: |
-| **Collapsed 4-Switch Visibility Toggles** | Yes | Yes |
-| **Quick Gear Tools (Move Up / Down)** | Yes | Yes |
-| **Dynamic Pin to Last Embossing & Alerts** | Yes | Yes |
-| **Visible Pin Badge on Collapsed Cards** | Yes | Yes |
-| **Grouped Apply & Delete Buttons** | Yes | Yes |
-
 :::tip Standard Core Workflow
 Closed modifier management is part of the standard core experience across both **Modpie Free** and **Modpie Plus**.
 :::

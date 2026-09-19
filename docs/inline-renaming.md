@@ -46,15 +46,6 @@ Modifier renaming is fully integrated with Blender's native undo system:
 
 ---
 
-## 4. Feature Availability
-
-| Feature | Modpie (Free) | Modpie Plus |
-| :--- | :---: | :---: |
-| **Inline Renaming on Closed Modifiers (Gear `⚙`)** | ✔ | ✔ |
-| **Inline Renaming on Open Modifiers (Toolbar `✏`)** | ✔ | ✔ |
-| **Name Pre-filled Prompt with Overlay Notice** | ✔ | ✔ |
-| **Full Undo Integration (<kbd>Ctrl + Z</kbd>)** | ✔ | ✔ |
-
 :::tip Standard Core Workflow
 Inline modifier renaming is available in both **Modpie Free** and **Modpie Plus** as part of the core Viewport Modifier Panel.
 :::
