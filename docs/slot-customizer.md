@@ -58,7 +58,47 @@ You can also customize all 8 slots directly inside the Modpie Viewport Panel:
 
 ---
 
-## 2. What a Plus Slot Carries
+## 2. Compass Visualization: Grid vs. List View
+
+When customizing slots directly in the 3D viewport, Modpie Plus offers two distinct visualization modes to view and edit your 8 radial directions:
+
+<div className="comparison-grid">
+  <div className="comparison-card">
+    <div className="comparison-header">
+      <span className="comparison-title">Compass Grid (Default & Recommended)</span>
+      <span className="badge badge--secondary">Spatial 3×3</span>
+    </div>
+    <div className="media-container">
+      <img src="/modpie-docs/img/media/mp_compassgrid_custom.png" alt="Compass Grid View for Slot Customization" />
+    </div>
+    <div className="comparison-footer">
+      <strong>Spatial Layout:</strong> Arranges the 8 slots directly around a 3×3 compass grid matching the physical directions of your radial pie menu.
+    </div>
+  </div>
+
+  <div className="comparison-card">
+    <div className="comparison-header">
+      <span className="comparison-title">List View</span>
+      <span className="badge badge--secondary">Linear Sequence</span>
+    </div>
+    <div className="media-container">
+      <img src="/modpie-docs/img/media/mp_listview_custom.png" alt="List View for Slot Customization" />
+    </div>
+    <div className="comparison-footer">
+      <strong>Linear Layout:</strong> Displays all 8 slots vertically in clockwise order, showing each compass direction indicator on the left side.
+    </div>
+  </div>
+</div>
+
+### Compass Grid (Default)
+The **Compass Grid** is the default and recommended visualization mode. By organizing the slots in a 3×3 spatial layout matching the radial menu (North, North-East, East, South-East, South, South-West, West, and North-West), it provides immediate spatial awareness that directly corresponds to your mouse flick muscle memory in the 3D viewport.
+
+### List View
+If you prefer a linear layout, you can switch to the **List View**. This presents all 8 slots in a vertical list, clearly displaying the direction indicator on the left side of each row (N, NE, E, SE, S, SW, W, NW). This format makes it easy to review the clockwise order of your modifiers, compare slot assignments side by side, and check configured arrival values at a glance.
+
+---
+
+## 3. What a Plus Slot Carries
 
 Clicking any direction opens an editor where each slot can be configured with:
 
@@ -69,6 +109,6 @@ Clicking any direction opens an editor where each slot can be configured with:
 
 ---
 
-## 3. Graceful Compatibility
+## 4. Graceful Compatibility
 
 Your customized slot configurations are safely stored in Blender's user preferences. If you ever run Modpie Free, the core build simply ignores the extra data without throwing errors or breaking your setup. Reinstalling Plus immediately restores your pie exactly as you left it.
