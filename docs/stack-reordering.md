@@ -21,21 +21,13 @@ With Modpie's **Interactive Stack Reordering**, you can move the modifier being 
   <p className="media-caption">Figure: Moving modifiers up and down the stack on the fly in Interactive Mode using Alt + Scroll Wheel.</p>
 </div>
 
-```
-                    ┌────────────────────────┐
-                    │      Bevel (1/3)       │
-                    ├────────────────────────┤
- [Alt + Wheel Up]   │  Mirror (2/3) [Active] │  ▲ Moves UP in stack
-                    ├────────────────────────┤
- [Alt + Wheel Down] │    Subdivision (3/3)   │  ▼ Moves DOWN in stack
-                    └────────────────────────┘
-```
+
 
 ---
 
 ## 1. How It Works
 
-1. **Enter Interactive Mode** by adding a modifier from the radial pie menu (<kbd>Alt</kbd> + <kbd>M</kbd>), the Quick Add strip, or by clicking the adjust icon (`⟷`) on any existing modifier in the panel.
+1. **Enter Interactive Mode** by adding a modifier from the radial pie menu (<kbd>Alt</kbd> + <kbd>M</kbd>), the Quick Add strip, or by clicking the adjust icon (<img src="/modpie-docs/img/media/mp_interactiveIcon.png" alt="Interactive Mode Icon" style={{height: '18px', verticalAlign: 'middle', display: 'inline-block', margin: '0 2px'}} />) on any existing modifier in the panel.
 2. **Move Up the Stack**: Hold <kbd>Alt</kbd> and scroll **Wheel Up** (or press <kbd>Alt</kbd> + <kbd>Up Arrow</kbd>).
    - The modifier immediately shifts upward toward the top of the stack (earlier evaluation / closer to index 0).
 3. **Move Down the Stack**: Hold <kbd>Alt</kbd> and scroll **Wheel Down** (or press <kbd>Alt</kbd> + <kbd>Down Arrow</kbd>).
@@ -85,16 +77,6 @@ Under the **Stack Reordering (Interactive Mode)** card:
 | <kbd>Esc</kbd> / <kbd>RMB</kbd> | Interactive Mode | Cancel adjustment & revert stack reordering |
 
 ---
-
-## 5. Feature Availability
-
-| Feature | Modpie (Free) | Modpie Plus |
-| :--- | :---: | :---: |
-| **Interactive Stack Reordering** | ✔ | ✔ |
-| **Multi-Object Reordering in Lockstep** | ✔ | ✔ |
-| **Viewport HUD Position Badges & Alerts** | ✔ | ✔ |
-| **Revert Order on Cancel (<kbd>Esc</kbd>)** | ✔ | ✔ |
-| **Custom Shortcut & Invert Direction in Preferences** | ✔ | ✔ |
 
 :::tip Standard Core Workflow
 Interactive stack reordering is built into the core engine of both **Modpie Free** and **Modpie Plus**. It requires zero additional setup and works immediately across all supported modifiers.
