@@ -14,14 +14,9 @@ The Shrinkwrap modifier requires a target mesh to project, conform, or wrap geom
 
 <div className="media-card">
   <div className="media-container">
-    {/* To add your GIF/screenshot: replace below with <img src="/modpie-docs/img/media/shrinkwrap_target.gif" alt="Shrinkwrap Target Picker" /> */}
-    <div className="media-placeholder">
-      <span className="media-placeholder-icon">🎯</span>
-      <span className="media-placeholder-title">Shrinkwrap Target Picker & 3D Raycast GIF</span>
-      <span className="media-placeholder-hint">Drop file into static/img/media/shrinkwrap_target.gif</span>
-    </div>
+    <img src="/modpie-docs/img/media/mp_shrinkwrap1.gif" alt="Shrinkwrap Target Picker & 3D Raycast" />
   </div>
-  <p className="media-caption">Figure 7: Instant target object picker and 3D raycast hover selection during interactive mode.</p>
+  <p className="media-caption">Figure: Instant target object picker and 3D raycast hover selection during interactive mode.</p>
 </div>
 
 ---
