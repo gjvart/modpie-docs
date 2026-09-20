@@ -62,16 +62,6 @@ Configure the Object Modifiers Pie to fit your personal workflow in **Edit ▸ P
 
 ---
 
-## 4. Feature Availability
-
-| Feature | Modpie (Free) | Modpie Plus |
-| :--- | :---: | :---: |
-| **Object Modifiers Pie (`Shift + Ctrl + M`)** | ✔ | ✔ |
-| **Dynamic Clutter-Free Radial Layout** | ✔ | ✔ |
-| **Configurable Click Action (Adjust vs Panel)** | ✔ | ✔ |
-| **Large Stack Overflow (`More Modifiers...`)** | ✔ | ✔ |
-| **Custom Keymap Rebinding** | ✔ | ✔ |
-
 :::tip Standard Core Workflow
 The Object Modifiers Pie is a core feature included in both **Modpie Free** and **Modpie Plus**. It works seamlessly alongside the standard **Modpie Radial Menu** (<kbd>Alt</kbd> + <kbd>M</kbd>) and the **Viewport Modifier Panel** (<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>M</kbd>).
 :::
