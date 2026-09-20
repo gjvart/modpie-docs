@@ -16,7 +16,7 @@ The **Object Modifiers Pie** dynamically generates a radial pie menu containing 
 
 <div className="media-card">
   <div className="media-container">
-    <img src="/modpie-docs/img/media/mp_objectmodifierpie.png" alt="Object Modifiers Pie" />
+    <img src="/modpie-docs/img/media/mp_objectmodiferpie.png" alt="Object Modifiers Pie" />
   </div>
   <p className="media-caption">Figure: Object Modifiers Pie dynamically populates with only the modifiers currently applied to the active object.</p>
 </div>
