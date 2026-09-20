@@ -34,5 +34,3 @@ During interactive modal dragging:
 ### 3. Target Cycling in Empty Space
 Pressing <kbd>T</kbd> with your cursor over empty viewport space cycles through candidate scene objects, updating the target mesh and HUD readout in real time.
 
-### 4. Grease Pencil De-Duplication
-In Blender 4.3+ and 5.0+, Blender introduced an internal `GREASE_PENCIL_SHRINKWRAP` modifier sharing the same display name. Modpie filters out invalid Grease Pencil modifiers on standard meshes so only valid mesh Shrinkwrap modifiers appear in your menus and searches.
