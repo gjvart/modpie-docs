@@ -12,6 +12,7 @@ const sidebars = {
         'comparison',
         'installation',
         'shortcuts',
+        'latest-features',
         'changelog',
         'changelog-archive',
       ],

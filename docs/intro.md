@@ -8,8 +8,8 @@ description: High-speed radial menu, live interactive viewport dragging with rea
 # Modpie & Modpie Plus
 
 <div className="hero-badge-container">
-  <span className="badge badge--primary">Modpie Plus 0.9.91</span>
-  <span className="badge badge--secondary">Modpie 0.9.91 (LTS / Release)</span>
+  <span className="badge badge--primary">Modpie Plus 0.9.96</span>
+  <span className="badge badge--secondary">Modpie 0.9.96 (Release)</span>
   <span className="badge badge--info">Tested on Blender 4.3, 4.5 LTS, 5.1 & 5.2+</span>
   <span className="badge badge--success">Single Addon Architecture</span>
   <span className="badge badge--secondary">Zero Lost Settings on Upgrade</span>
@@ -50,6 +50,7 @@ Follow this documentation progressively to master the full power of Modpie:
 - **[Modpie vs. Modpie Plus](comparison.md)**: Complete feature-by-feature matrix comparing Free and Plus.
 - **[Installation & Upgrades](installation.md)**: Installing and seamlessly upgrading to Plus in under a minute.
 - **[Shortcuts Cheat Sheet](shortcuts.md)**: Full reference for Viewport hotkeys, interactive modal controls, and modifier-specific keys.
+- **[Latest Features (v0.9.96)](latest-features.md)**: Dedicated breakdown of all new features, enhancements, and workflow additions in v0.9.96.
 - **[What's New & Changelog](changelog.md)**: Full release notes, current version improvements, and complete version history.
 
 ### 2. Core Workflows

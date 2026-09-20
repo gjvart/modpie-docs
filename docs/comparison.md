@@ -31,7 +31,7 @@ Both share the extension ID `modpie`, meaning installing Modpie Plus over Free u
 | **Automatic Fitted Lattice Generation** | ✔ | ✔ |
 | **Texture Creation (Displace/Warp) & Mesh Binding** | ✔ | ✔ |
 | **Geometry Nodes Tools (Fake User, Export/Import)** | ✔ | ✔ |
-| **Object Modifiers Pie (`Shift + Ctrl + M`)** | ✔ | ✔ |
+| **Object Modifiers Pie (`Shift + Ctrl + M`)** | ✕ | <span className="badge badge--primary">✔ Plus</span> |
 | **Interactive Stack Reordering (`Alt + Wheel`)** | ✔ | ✔ |
 | **Inline Modifier Renaming & Closed Card Tools** | ✔ | ✔ |
 | **Remember Modifier Defaults** | ✔ | ✔ |

@@ -49,53 +49,53 @@ Modpie is available in two tiers: **Modpie Free (Standard)** and **Modpie Plus**
 
 Comparing the two panels reveals four major structural additions in Modpie Plus:
 
-1. **Quick Add Customizer (`▶ Customize`)**:
+1. **Quick Add Customizer (`Customize`)**:
    - **Free**: Displays the 5-icon Quick Add strip for fast 1-click addition of your primary pie modifiers.
-   - **Plus**: Adds the dedicated **`▶ Customize`** button beside the Quick Add header. Clicking it unfolds the 8-direction slot customizer right inside the 3D viewport, allowing you to edit custom labels, arrival values, and slot assignments without opening Blender Preferences.
+   - **Plus**: Adds the dedicated **Customize** button beside the Quick Add header. Clicking it unfolds the 8-direction slot customizer right inside the 3D viewport, allowing you to edit custom labels, arrival values, and slot assignments without opening Blender Preferences.
 
 2. **The Plus Command Bar (`Presets`, `Stacks`, `Sync`)**:
    - **Free**: No intermediate toolbar; transitions directly from *Add Modifier* into stack batch operations for a minimal vertical footprint.
    - **Plus**: Inserts a full-width workflow toolbar between *Add Modifier* and the batch controls:
-     - **`🎛 Presets ▾`**: Browse starred Favourites, the full saved preset library, save active modifier configurations in one click, search presets interactively, and use dynamic clipboard pasting (`Paste Values` / `Paste to Selected`).
-     - **`📋 Stacks ▾`**: Save multi-modifier recipes as reusable templates and deploy complete stacks to meshes in *Append* or *Replace* mode.
-     - **`⇄ Sync ▾`**: Manage continuous multi-object **Live Linking**, one-shot copying, the visual **Compare Stacks** diff report, and unlinking.
+     - **`Presets`**: Browse starred Favourites, the full saved preset library, save active modifier configurations in one click, search presets interactively, and use dynamic clipboard pasting (`Paste Values` / `Paste to Selected`).
+     - **`Stacks`**: Save multi-modifier recipes as reusable templates and deploy complete stacks to meshes in *Append* or *Replace* mode.
+     - **`Sync`**: Manage continuous multi-object **Live Linking**, one-shot copying, the visual **Compare Stacks** diff report, and unlinking.
 
 3. **Batch Toolbar & Stack Template Shortcut**:
-   - **Free**: Features standard stack-wide controls: Expand/Collapse All (`⛶`), Viewport Visibility (`🖥`), Render Visibility (`📷`), Apply All (`✓ Apply All`), and Delete All (`🗑`).
-   - **Plus**: Adds a 1-click **Save Stack Template (<kbd>🎛⁺</kbd>)** shortcut directly beside the camera visibility toggle for instant pipeline capture.
+   - **Free**: Features standard stack-wide controls: Expand/Collapse All, Viewport Visibility, Render Visibility, Apply All, and Delete All.
+   - **Plus**: Adds a 1-click **Save Stack Template** shortcut directly beside the camera visibility toggle for instant pipeline capture.
 
 4. **Modifier Card Power & Diagnostic Tools**:
-   - **Free**: Includes standard card utilities: interactive modal dragging (`◫`), collapsed apply (`✓`), duplicate (`⧉`), copy settings (`📋`), stack position arrows (<kbd>▲</kbd> / <kbd>▼</kbd>), default indicator (`●`), and **Pin to Last** (`📌`).
+   - **Free**: Includes standard card utilities: interactive modal dragging, collapsed apply, duplicate, copy settings, stack position arrows (Up / Down), default indicator, and **Pin to Last**.
    - **Plus**: Greatly expands the card action row with advanced workflow and diagnostic controls:
-     - **Remember Default (`●`)**: Lock in the modifier's current dialed-in settings as permanent defaults.
-     - **Lock / Frozen State (`🔒`)**: Protect modifier parameters from accidental modifications or bulk overwrites.
-     - **Solo Modifier (`🖥`)**: Temporarily isolate the modifier by disabling all other modifiers on the mesh (with automatic state restore on un-solo). Also interfaces with the **Evaluation Profiler** to measure real-time latency in milliseconds.
-     - **Apply Up To Here (`↓`)**: Non-destructively bake the modifier stack from the top down through the current modifier while keeping all subsequent modifiers active.
-     - **One-Click Sync (`↗`)**: Instantly copy this modifier's exact parameters across all other selected objects.
-     - **Live Link Group Status (`🔗`)**: Displays active linked group membership count (e.g. `🔗 3`) with 1-click linking/unlinking.
+     - **Remember Default**: Lock in the modifier's current dialed-in settings as permanent defaults.
+     - **Lock / Frozen State**: Protect modifier parameters from accidental modifications or bulk overwrites.
+     - **Solo Modifier**: Temporarily isolate the modifier by disabling all other modifiers on the mesh (with automatic state restore on un-solo). Also interfaces with the **Evaluation Profiler** to measure real-time latency in milliseconds.
+     - **Apply Up To Here**: Non-destructively bake the modifier stack from the top down through the current modifier while keeping all subsequent modifiers active.
+     - **One-Click Sync**: Instantly copy this modifier's exact parameters across all other selected objects.
+     - **Live Link Group Status**: Displays active linked group membership count with 1-click linking/unlinking.
 
 ### Panel Feature Matrix
 
 | Panel Feature | Modpie Free | Modpie Plus | Description |
 | :--- | :---: | :---: | :--- |
-| **Viewport Modifier Stack** | ✔ | ✔ | Complete modifier stack via <kbd>Ctrl + Alt + M</kbd> or sidebar <kbd>N</kbd> |
-| **Quick Add Icon Strip** | ✔ | ✔ | 1-click addition of primary pie modifiers |
-| **In-Viewport Slot Customizer** | ✕ | <span className="badge badge--primary">✔ Plus</span> | **`▶ Customize`** button unfolds 8-way slot editor and arrival values |
-| **Plus Toolbar (`Presets` / `Stacks` / `Sync`)** | ✕ | <span className="badge badge--primary">✔ Plus</span> | Dedicated high-speed command bar beneath Add Modifier |
-| **Preset Library & Clipboard Paste** | ✕ | <span className="badge badge--primary">✔ Plus</span> | Save, search, favorite, and clipboard-paste single modifier recipes |
-| **Multi-Modifier Stack Templates** | ✕ | <span className="badge badge--primary">✔ Plus</span> | Save and deploy entire modifier stacks in Append/Replace mode |
-| **Continuous Live Linking** | ✕ | <span className="badge badge--primary">✔ Plus</span> | Multi-object bidirectional synchronization via depsgraph handler |
-| **One-Shot Copy & Stack Push** | ✕ | <span className="badge badge--primary">✔ Plus</span> | Broadcast active modifier or entire stack across selected objects |
-| **Live Stack Diff Visualizer** | ✕ | <span className="badge badge--primary">✔ Plus</span> | Side-by-side comparison of modifier stacks across selected objects |
-| **Card: Pin to Last** | ✔ | ✔ | Locks modifier to the bottom of the stack; new additions insert above it |
-| **Card: Solo Modifier** | ✕ | <span className="badge badge--primary">✔ Plus</span> | Isolate modifier effect non-destructively with 1-click restore |
-| **Card: Modifier Profiler** | ✕ | <span className="badge badge--primary">✔ Plus</span> | Real-time evaluation latency tracking in milliseconds (ms) |
-| **Card: Apply-Up-To-Here** | ✕ | <span className="badge badge--primary">✔ Plus</span> | Bake stack down to active modifier while preserving lower stack |
-| **Card: One-Click Sync to Selected** | ✕ | <span className="badge badge--primary">✔ Plus</span> | Instantly push card parameters to all other selected meshes |
-| **Card: Live Link Group Status** | ✕ | <span className="badge badge--primary">✔ Plus</span> | Displays group count and toggles live linking membership |
-| **Card: Collapsed Apply (<kbd>✓</kbd>)** | ✔ | ✔ | Apply modifiers directly from collapsed headers without expanding |
-| **Batch Apply All & Delete All** | ✔ | ✔ | Multi-object batch application and removal across selected objects |
-| **Interactive Modal HUD Dragging** | ✔ | ✔ | Real-time viewport dragging with numerical overlay |
+| **Viewport Modifier Stack** | Yes | Yes | Complete modifier stack via <kbd>Ctrl + Alt + M</kbd> or sidebar <kbd>N</kbd> |
+| **Quick Add Icon Strip** | Yes | Yes | 1-click addition of primary pie modifiers |
+| **In-Viewport Slot Customizer** | No | <span className="badge badge--primary">Plus</span> | **Customize** button unfolds 8-way slot editor and arrival values |
+| **Plus Toolbar (`Presets` / `Stacks` / `Sync`)** | No | <span className="badge badge--primary">Plus</span> | Dedicated high-speed command bar beneath Add Modifier |
+| **Preset Library & Clipboard Paste** | No | <span className="badge badge--primary">Plus</span> | Save, search, favorite, and clipboard-paste single modifier recipes |
+| **Multi-Modifier Stack Templates** | No | <span className="badge badge--primary">Plus</span> | Save and deploy entire modifier stacks in Append/Replace mode |
+| **Continuous Live Linking** | No | <span className="badge badge--primary">Plus</span> | Multi-object bidirectional synchronization via depsgraph handler |
+| **One-Shot Copy & Stack Push** | No | <span className="badge badge--primary">Plus</span> | Broadcast active modifier or entire stack across selected objects |
+| **Live Stack Diff Visualizer** | No | <span className="badge badge--primary">Plus</span> | Side-by-side comparison of modifier stacks across selected objects |
+| **Card: Pin to Last** | Yes | Yes | Locks modifier to the bottom of the stack; new additions insert above it |
+| **Card: Solo Modifier** | No | <span className="badge badge--primary">Plus</span> | Isolate modifier effect non-destructively with 1-click restore |
+| **Card: Modifier Profiler** | No | <span className="badge badge--primary">Plus</span> | Real-time evaluation latency tracking in milliseconds (ms) |
+| **Card: Apply-Up-To-Here** | No | <span className="badge badge--primary">Plus</span> | Bake stack down to active modifier while preserving lower stack |
+| **Card: One-Click Sync to Selected** | No | <span className="badge badge--primary">Plus</span> | Instantly push card parameters to all other selected meshes |
+| **Card: Live Link Group Status** | No | <span className="badge badge--primary">Plus</span> | Displays group count and toggles live linking membership |
+| **Card: Collapsed Apply** | Yes | Yes | Apply modifiers directly from collapsed headers without expanding |
+| **Batch Apply All & Delete All** | Yes | Yes | Multi-object batch application and removal across selected objects |
+| **Interactive Modal HUD Dragging** | Yes | Yes | Real-time viewport dragging with numerical overlay |
 
 ---
 
@@ -110,9 +110,9 @@ At the top of the panel sits the **Quick Add** strip:
 Clicking **Customize** at the top right unfolds the Quick Add strip into an aligned 8-direction list showing:
 - Direction names and custom labels
 - Duplicate counts (`×n`)
-- Interactive drag symbols (`⟷`)
+- Interactive drag status
 - Configured arrival values (e.g. *Segments 3, Width 0.02m*)
-- A pencil icon (<kbd>✎</kbd>) to edit any slot directly inside the viewport.
+- An edit button to edit any slot directly inside the viewport.
 
 <div className="media-card">
   <div className="media-container">
@@ -127,15 +127,15 @@ Clicking **Customize** at the top right unfolds the Quick Add strip into an alig
 
 Every modifier card in the panel includes standard and enhanced controls:
 
-- **Pin to Last (<kbd>📌</kbd>)**:
+- **Pin to Last**:
   - Locks the modifier at the very bottom (end) of the modifier stack.
-  - When enabled (highlighted blue pushpin `📌`), any newly added modifiers—whether created via the radial pie menu, the Quick Add strip, or Blender's Add Modifier menu—are automatically inserted **above** the pinned modifier rather than below it.
+  - When enabled, any newly added modifiers—whether created via the radial pie menu, the Quick Add strip, or Blender's Add Modifier menu—are automatically inserted **above** the pinned modifier rather than below it.
   - Guarantees pipeline integrity for terminal modifiers like **Subdivision Surface**, **Bevel**, **Weighted Normal**, or **Triangulate** that must always evaluate last to preserve silhouette, non-destructive shading, or topology.
   - Clicking the pushpin icon again unpins the modifier, allowing it to be freely repositioned or having subsequent modifiers appended after it.
-- **Closed Modifier Management**: Collapsed cards retain all 4 visibility toggles (Cage, Edit Mode, Viewport, Render), quick gear tools (<kbd>▲</kbd> / <kbd>▼</kbd>), dynamic pin badge, and separated Apply/Delete buttons (see [Closed Modifier Management](modifier-management.md)).
-- **Inline Modifier Renaming (<kbd>✏</kbd>)**: Click the pencil icon in the expanded card toolbar or gear menu (<kbd>⚙</kbd>) on collapsed cards to rename modifiers instantly without leaving the viewport (see [Inline Modifier Renaming](inline-renaming.md)).
-- **Collapsed Apply (<kbd>✓</kbd>)**: When a modifier card is collapsed, a dedicated **Apply** (<kbd>✓</kbd>) button appears directly on its header beside the delete (<kbd>✕</kbd>) icon. Apply modifiers instantly without expanding or diving into submenus.
-- **Sibling Jumpers (<kbd>◀</kbd> `1/2` <kbd>▶</kbd>)**: When multiple modifiers of the same type exist, position badges (e.g. `2/3`) and navigation arrows let you jump between them.
+- **Closed Modifier Management**: Collapsed cards retain all 4 visibility toggles (Cage, Edit Mode, Viewport, Render), quick gear tools (Move Up / Move Down), dynamic pin badge, and separated Apply/Delete buttons (see [Closed Modifier Management](modifier-management.md)).
+- **Inline Modifier Renaming**: Click the rename option in the expanded card toolbar or gear menu on collapsed cards to rename modifiers instantly without leaving the viewport (see [Inline Modifier Renaming](inline-renaming.md)).
+- **Collapsed Apply**: When a modifier card is collapsed, a dedicated **Apply** button appears directly on its header beside the delete icon. Apply modifiers instantly without expanding or diving into submenus.
+- **Sibling Jumpers**: When multiple modifiers of the same type exist, position badges (e.g. `2/3`) and navigation arrows let you jump between them.
 - **Interactive Drag Button**: Re-opens interactive modal dragging for that modifier. In popup mode, the panel automatically closes to give you an unobstructed 3D view and re-opens when you confirm or cancel.
 - **Visibility Switches**: Viewport, render, edit-mode, and on-cage toggles match Blender's native RNA icons.
 

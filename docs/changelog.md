@@ -1,64 +1,58 @@
 ---
 sidebar_position: 5
 title: Changelog
-description: Release notes and changelog for Modpie and Modpie Plus Version 0.9.92 (LTS / Release Version).
+description: Release notes and changelog for Modpie and Modpie Plus Version 0.9.96 (Release Version).
 ---
 
 # What's New & Changelog
 
 <div className="hero-badge-container">
-  <span className="badge badge--primary">Modpie Plus 0.9.92</span>
-  <span className="badge badge--secondary">Modpie 0.9.92</span>
-  <span className="badge badge--success">LTS / Release Version</span>
+  <span className="badge badge--primary">Modpie Plus 0.9.96</span>
+  <span className="badge badge--secondary">Modpie 0.9.96</span>
+  <span className="badge badge--success">Release Version</span>
 </div>
 
 Welcome to the release notes and changelog for Modpie and Modpie Plus. This page highlights all recent features, architectural improvements, and bug fixes across both tiers.
 
 ---
 
-## Current Version Highlights: 0.9.91 (LTS / Release)
+## Current Version Highlights: 0.9.96 (Release)
 
 <div className="feature-grid">
   <div className="feature-card">
-    <div className="feature-card-icon">⚡</div>
-    <div className="feature-card-title">Modal Stability & Viewport Context</div>
+    <div className="feature-card-title">Interactive Stack Reordering</div>
     <p className="feature-card-desc">
-      Eliminated temporary context override wrappers that caused modal operators to terminate prematurely. Radial menu addition and interactive dragging now run rock-solid across all viewport contexts.
+      Move the active modifier up or down the evaluation stack on the fly using <kbd>Alt</kbd> + <kbd>Wheel</kbd> during interactive modal dragging, complete with viewport HUD cards and safe revert on cancel.
     </p>
   </div>
   <div className="feature-card plus">
-    <div className="feature-card-icon">🏷️</div>
-    <div className="feature-card-title">Distinct Tier Versioning</div>
+    <div className="feature-card-title">Object Modifiers Pie (Plus)</div>
     <p className="feature-card-desc">
-      Modpie Plus and Modpie Free now feature independent version tracks: <strong>Modpie Plus 9.8.x</strong> (power features) and <strong>Modpie 0.9.8x</strong> (core features).
+      Radial pie menu (<kbd>Shift</kbd> + <kbd>Ctrl</kbd> + <kbd>M</kbd>) dynamically populated with only the modifiers currently applied to the active object, with live dragging and visibility toggling.
     </p>
   </div>
   <div className="feature-card">
-    <div className="feature-card-icon">🎯</div>
-    <div className="feature-card-title">Smooth 4.5+ Cursor Tracking</div>
+    <div className="feature-card-title">Inline Modifier Renaming</div>
     <p className="feature-card-desc">
-      Removed asynchronous timers and cursor warp calls that froze HUD overlays on Blender 4.5. The HUD overlay now locks smoothly to mouse events with zero lag.
+      Rename modifiers directly inside both collapsed and expanded card views in the viewport panel without opening Blender's Properties editor.
     </p>
   </div>
   <div className="feature-card">
-    <div className="feature-card-icon">🧩</div>
-    <div className="feature-card-title">Full Geometry Nodes RNA Exposure</div>
+    <div className="feature-card-title">Closed Modifier Management & Pin to Last</div>
     <p className="feature-card-desc">
-      Automatically detects and renders all custom input sockets for Geometry Nodes modifier assets across Blender 4.x, 5.0, 5.1, and 5.2+.
+      Full 4-visibility switches, quick gear tools, persistent pin badges, and separated Apply/Delete action grouping on collapsed modifier rows.
     </p>
   </div>
   <div className="feature-card">
-    <div className="feature-card-icon">🚪</div>
-    <div className="feature-card-title">Zero-Overlap Auto Dismissal</div>
+    <div className="feature-card-title">Preferences UI & Conflict Detection</div>
     <p className="feature-card-desc">
-      Entering interactive modal mode from any panel card or Quick Add button instantly dismisses both the floating popup and the sidebar for an unobstructed view.
+      Categorized preference cards, direct keymap rebinding, and smart real-time shortcut conflict detection alerts.
     </p>
   </div>
-  <div className="feature-card plus">
-    <div className="feature-card-icon">⭐</div>
-    <div className="feature-card-title">Streamlined Presets Access</div>
+  <div className="feature-card">
+    <div className="feature-card-title">Apply Modifier Workflow</div>
     <p className="feature-card-desc">
-      Presets and stack templates are now cleanly accessed directly via the radial menu's Presets & Stacks slot and panel buttons, removing keymap conflicts.
+      Dedicated Apply header button next to Delete, plus global <kbd>Ctrl</kbd> + <kbd>A</kbd> viewport execution with intelligent fallback resolution.
     </p>
   </div>
 </div>
@@ -66,6 +60,40 @@ Welcome to the release notes and changelog for Modpie and Modpie Plus. This page
 ---
 
 ## Detailed Release History
+
+### Modpie Plus 0.9.96 / Modpie 0.9.96
+
+- **Interactive Stack Reordering**:
+  - Move active modifiers up or down the stack on the fly during interactive dragging using <kbd>Alt</kbd> + <kbd>Wheel Up</kbd> / <kbd>Down</kbd> or <kbd>Alt</kbd> + <kbd>Up</kbd> / <kbd>Down</kbd>.
+  - Live animated HUD readout indicating direction and 1-indexed position (e.g. `Stack Up: Mirror (1/3)`).
+  - Safe boundary detection with non-destructive alerts (`Top of Stack` / `Bottom of Stack`).
+  - Full cancellation protection: pressing <kbd>Esc</kbd> or <kbd>Right-Click</kbd> restores initial stack order.
+  - Configurable shortcuts and scroll direction invert in Preferences.
+- **Context / Object-Based Modifier Pie Menu (Modpie Plus)**:
+  - Invoked via <kbd>Shift</kbd> + <kbd>Ctrl</kbd> + <kbd>M</kbd> or 3D Viewport header (**Object > Modpie > Active Object Modifiers**).
+  - Dynamically populates with only the active object's modifiers, emitting separators for unused directions.
+  - Click to adjust interactively or focus in panel; <kbd>Alt</kbd> + click to toggle viewport visibility without dragging.
+  - Large stacks (>7 modifiers) include a direct **`More Modifiers (N)...`** button opening the full panel.
+  - Dedicated empty stack layout when invoked on objects without modifiers.
+- **Inline Modifier Renaming**:
+  - Available on collapsed cards via the gear menu and on expanded cards via the inner action toolbar.
+  - Pre-filled prompt with instantaneous panel updates and full undo (<kbd>Ctrl</kbd> + <kbd>Z</kbd>) support.
+- **Closed Modifier Management & Pin to Last Feedback**:
+  - Retains all 4 primary visibility toggles (Cage, Edit Mode, Viewport, Render) on collapsed rows.
+  - Gear menu provides Move Up, Move Down, Pin to Last, and Rename tools.
+  - Dynamic Pin to Last feedback: active embossed style, persistent header badge when closed, and viewport notifications.
+  - Newly added modifiers automatically insert above pinned modifiers.
+  - Separator visually isolates Apply and Delete buttons at the far right of header rows.
+- **Preferences UI Overhaul & Keymap Conflict Detection**:
+  - Restructured into categorized cards: Interactive, Panel, and Shortcuts.
+  - Real-time conflict detection alerts highlighting shared key combinations.
+- **Apply Modifier Workflow**:
+  - Dedicated Apply button on all modifier headers.
+  - Viewport <kbd>Ctrl</kbd> + <kbd>A</kbd> operator with intelligent fallback (hovered -> active/selected -> soloed -> expanded -> top).
+- **Stack Sync Naming Symmetry (Modpie Plus)**:
+  - Renamed one-shot copy operators to `Copy Modifier to Selected` (`modpie.sync_modifier`), `Copy All Settings to Selected` (`modpie.sync_stack`), and `Replace Stacks with This One` (`modpie.push_stack`).
+
+---
 
 ### Modpie Plus 9.8.1 / Modpie 0.9.81
 

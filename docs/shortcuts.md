@@ -15,8 +15,9 @@ Modpie is built for speed and muscle memory. Below is the complete hotkey refere
 | Keybinding | Context | Availability | Action |
 | :--- | :--- | :---: | :--- |
 | <kbd>Alt</kbd> + <kbd>M</kbd> | 3D Viewport | <span className="badge badge--secondary">Core</span> | Open **Modpie Radial Pie Menu** |
-| <kbd>Shift</kbd> + <kbd>Ctrl</kbd> + <kbd>M</kbd> | 3D Viewport | <span className="badge badge--secondary">Core</span> | Open **Object Modifiers Pie** (active object's modifiers) |
+| <kbd>Shift</kbd> + <kbd>Ctrl</kbd> + <kbd>M</kbd> | 3D Viewport | <span className="badge badge--primary">Plus</span> | Open **Object Modifiers Pie** (active object's modifiers) |
 | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>M</kbd> | 3D Viewport | <span className="badge badge--secondary">Core</span> | Open **Modpie Viewport Stack Panel** popup |
+| <kbd>Ctrl</kbd> + <kbd>A</kbd> | Object Mode | <span className="badge badge--secondary">Core</span> | **Apply Modifier** (active / expanded modifier with intelligent fallback) |
 | <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>M</kbd> | 3D Viewport | <span className="badge badge--primary">Plus</span> | Open **Favorites Preset Pie** *(In unified builds, presets & stack templates are also integrated directly into the main radial menu SE slot and panel button)* |
 | <kbd>N</kbd> ▸ **Modifiers** | 3D Viewport Sidebar | <span className="badge badge--secondary">Core</span> | Open Modpie sidebar tab |
 

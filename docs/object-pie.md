@@ -14,14 +14,13 @@ Blender artists often work on objects that already have a specific set of modifi
 
 The **Object Modifiers Pie** dynamically generates a radial pie menu containing **only the modifiers currently applied to the active object**. Instead of navigating through a menu of every modifier in Blender, you get immediate radial access to tweak the exact modifiers your active mesh is already using.
 
-```
-                           [North]
-                         Subdivision
-                             │
-     [West] Mirror ──────────┼────────── Bevel [East]
-                             │
-                         (Center)
-```
+<div className="media-card">
+  <div className="media-container">
+    <img src="/modpie-docs/img/media/mp_objectmodifierpie.png" alt="Object Modifiers Pie" />
+  </div>
+  <p className="media-caption">Figure: Object Modifiers Pie dynamically populates with only the modifiers currently applied to the active object.</p>
+</div>
+
 
 ---
 
