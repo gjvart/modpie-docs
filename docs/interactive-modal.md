@@ -44,14 +44,14 @@ A modifier's axes are local to its object. If you rotate the mesh, "X" no longer
 | `Direction  +X` | Array copies marching along the scene's positive X |
 | `Direction  follows Empty` | Offset comes from another object's transform |
 
-### The Big Bottom Readout
-Centered low in the viewport, Modpie displays a prominent readout showing:
-```
-  BEVEL
-  Width   0.0200
-  W Width · S Segments · P Profile · E Angle Limit · M Limit · C Clamp
-  LMB confirm · Esc cancel · Tab next value · type a number · Shift precise
-```
+### Viewport HUD Card (The Big Readout)
+In addition to the cursor-follower, Modpie displays a prominent HUD card in the viewport showing the active parameter, all adjustable channels, toggles, and navigation shortcuts at a glance:
+<div className="media-card">
+  <div className="media-container" style={{padding: '24px 16px', background: '#090c10'}}>
+    <img src="/modpie-docs/img/media/modpie_bevelcard.png" alt="Bevel Interactive HUD Card" style={{maxWidth: '360px', width: '100%', height: 'auto', borderRadius: '6px'}} />
+  </div>
+  <p className="media-caption">Figure: The interactive viewport HUD card displaying active values, quick toggles, and live stack shortcuts.</p>
+</div>
 
 ### Fade Announcement Toasts
 When you confirm a modal drag, a sleek banner appears over the viewport saying what happened (`Bevel added` with applied values) before fading away. Cancelling displays a notice in a warm accent so discarded drags are never ambiguous.
