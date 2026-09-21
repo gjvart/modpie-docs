@@ -16,9 +16,9 @@ Modpie turns adding modifiers into a live, tactile experience with dynamic 3D vi
 
 <div className="media-card">
   <div className="media-container">
-    <img src="/modpie-docs/img/media/Bevel_InteractiveMode.gif" alt="Adding Modifiers in Interactive Mode" />
+    <img src="/modpie-docs/img/media/modpie_interactiveHud2.gif" alt="Adding Modifiers in Interactive Mode" />
   </div>
-  <p className="media-caption">Figure 4: Adding modifiers via the radial menu and dragging parameters live in interactive mode.</p>
+  <p className="media-caption">Figure: Adding modifiers via the radial menu and dragging parameters live in interactive mode.</p>
 </div>
 
 ---
