@@ -72,7 +72,7 @@ Modpie provides two radial menu layouts depending on whether you are using **Mod
   - Every direction can be fully customized directly inside the 3D viewport using the [In-Viewport Slot Customizer](slot-customizer.md).
 
 :::note Why is the Panel on South?
-In Blender, the center of a radial menu is a non-clickable text label. That is why the Modpie Panel is placed on **South**—it is the quickest and most direct downward flick from your cursor.
+In Blender, the center of a radial menu is a text label that cannot be clicked. After testing, I felt that the south position was the best to access it as fast as possible. That is why the Modpie Panel is placed on **South**. It's just a downward flick from your cursor.
 :::
 
 ---

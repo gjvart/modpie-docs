@@ -88,3 +88,22 @@ In any interactive modifier modal mode (such as Solidify thickness, Bevel width/
 - **Mouse Drag Protection**: Once locked, moving the mouse across the 3D viewport does not alter or drag the locked value, completely preventing accidental adjustments while inspecting your mesh from different angles.
 - **Unlock to Resume Dragging (<kbd>Spacebar</kbd>)**: Pressing <kbd>Spacebar</kbd> seamlessly unlocks the value so mouse dragging can resume smoothly from the locked value if you wish to continue tweaking interactively.
 
+---
+
+## 4. Sibling Modifier Switching
+
+What happens if your mesh has more than one modifier of the same type? For example, you might have two **Bevel** modifiers—one large bevel for overall form and a second small bevel for edge highlights—or multiple **Mirror** or **Solidify** modifiers.
+
+Modpie lets you jump between them on the fly without having to close interactive mode and open the panel:
+
+<div className="media-card">
+  <div className="media-container">
+    <img src="/modpie-docs/img/media/mp_siblingadjust1.gif" alt="Switching and adjusting sibling modifiers live in Interactive Mode" />
+  </div>
+  <p className="media-caption">Figure: Switching between sibling modifiers and adjusting their parameters live in Interactive Mode.</p>
+</div>
+
+- **Shortcut**: Hold <kbd>Ctrl</kbd> and scroll **Wheel Up / Down** (or press **<kbd>[</kbd>** / **<kbd>]</kbd>**) to switch between sibling modifiers on the active object.
+- **On-Screen HUD Arrows**: You can also click the **<kbd>‹</kbd>** and **<kbd>›</kbd>** arrows directly on the viewport readout to cycle between siblings.
+- **Live Feedback**: The HUD readout immediately updates to show which sibling is active (such as `Bevel (1/2)` or `Bevel (2/2)`), and your mouse movements instantly apply to that modifier.
+
