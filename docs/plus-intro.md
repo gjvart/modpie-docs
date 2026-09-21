@@ -25,7 +25,6 @@ When you work on complex scenes with dozens or hundreds of objects, dialing in t
 
 Modpie Plus expands the core experience in four major areas:
 
-<div className="media-card">
   <div className="media-container">
     <ThemedImage
       alt="Modpie Plus: Four things it does"
@@ -35,8 +34,6 @@ Modpie Plus expands the core experience in four major areas:
       }}
     />
   </div>
-  <p className="media-caption">Figure: The four key pillars of Modpie Plus.</p>
-</div>
 
 1. **Presets & Stack Templates**: Snapshot your favorite modifier recipes (like *Hard-Surface Bevel*, *Curved Glass Solidify*, or a complete 5-modifier high-poly pipeline) and apply them to any mesh with one click.
 2. **Continuous Live Linking**: Link modifiers across multiple objects so when you tweak a parameter on one mesh, every linked mesh updates in real-time.
