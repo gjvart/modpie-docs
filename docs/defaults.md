@@ -1,42 +1,55 @@
 ---
 sidebar_position: 14
 title: Set Default Values
-description: Save your favorite modifier parameters permanently to defaults.json.
+description: Save your favorite modifier settings so they always start the way you like them.
 ---
 
 # Set Default Values
 
 <div className="hero-badge-container">
-  <span className="badge badge--secondary">Core: defaults.json</span>
+  <span className="badge badge--secondary">Core: Custom Defaults</span>
 </div>
 
-Tired of adjusting Bevel segments from `1` to `3` or changing Solidify thickness every time you add a modifier?
+Tired of changing Bevel segments from `1` to `3`, or turning on Even Thickness every single time you add a Solidify modifier?
 
-Every modifier card in the Modpie panel includes a dedicated **Remember as Default** button.
+In default Blender, modifiers always start with generic factory settings that rarely match what you actually need. Modpie lets you save your own preferred settings with one click, so new modifiers always start ready to go.
 
 <div className="media-card">
   <div className="media-container">
     <img src="/modpie-docs/img/media/remember_defaults3.gif" alt="Remember Modifier Defaults" />
   </div>
-  <p className="media-caption">Figure: One-click persistence of custom modifier startup properties.</p>
+  <p className="media-caption">Figure: Saving your favorite modifier settings with one click.</p>
 </div>
-
 
 ---
 
 ## How It Works
 
-- **One-Click Persistence**: Saves the current property configuration of the modifier directly into Blender's user configuration folder.
-- **Global Application Across Projects**: Every time you add that modifier in any current or future Blender project, it automatically initializes with your saved parameters instead of Blender's generic defaults.
-- **Clear Default**: <kbd>Shift</kbd> + Click the default button at any time to restore factory smart defaults.
+Setting your own defaults takes just a couple of seconds:
+
+1. **Dial in your favorite settings**: Adjust the modifier until it looks the way you usually want it (for example, give a Bevel 3 segments and your preferred width).
+2. **Click Remember as Default**: Click the small circle icon on that modifier's card in the Modpie panel.
+3. **You are all set**: From now on, whenever you add that modifier—in your current project or any future Blender file—it will automatically start with your saved settings.
+
+### Resetting Back to Factory Defaults
+If you ever change your mind and want to go back to standard Blender defaults, hold <kbd>Shift</kbd> and click the default button again.
 
 ---
 
-## Modifier Locking on Saved Defaults
+## Why Modifiers Start "Locked"
 
-When you save custom default values for a modifier, you often want those values applied immediately without mouse movement inadvertently altering them:
+When you add a modifier in Modpie, you normally enter interactive mode where moving your mouse immediately drags the values around.
 
-- **Automatic `[LOCKED]` State**: When **Lock Custom Defaults** is enabled in Preferences (default: True), invoking the interactive modal for any modifier with saved defaults automatically opens in a **`[LOCKED]`** state.
-- **Accidental Drag Protection**: The viewport HUD displays `[LOCKED]`. Moving the mouse will not alter your saved parameters.
-- **Unlock or Confirm**: Tap <kbd>Space</kbd> to unlock the modal and begin live mouse dragging, or press <kbd>Enter</kbd> / Left-Click to confirm the saved default values immediately.
-- **Visual Panel Indicator**: The modifier card in the Modpie viewport panel displays a depressed **LOCKED** icon and helpful tooltip to clearly indicate that custom defaults are stored and protected.
+However, once you have saved your own custom defaults, you probably don't want your mouse to accidentally change those dialed-in numbers the moment the modifier appears. That is why Modpie starts modifiers with saved defaults in a **LOCKED** state.
+
+Here is how it works:
+
+- **Mouse movement is ignored**: When you add the modifier, you will see `[LOCKED]` on your screen. Moving your mouse will not change your saved values.
+- **If you are happy with your saved defaults**: Simply left-click or press <kbd>Enter</kbd> to confirm. Your modifier is added with your exact settings, untouched.
+- **If you want to tweak the values anyway**: Just tap the <kbd>Spacebar</kbd>. This unlocks the modifier and lets you drag your mouse normally to adjust the values.
+
+---
+
+:::tip Good to Know
+If you prefer modifiers to always start unlocked so you can drag them right away, you can turn off **Lock Custom Defaults** in **Edit > Preferences > Add-ons > Modpie > Interactive**.
+:::
