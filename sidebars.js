@@ -22,6 +22,7 @@ const sidebars = {
       label: 'Core Workflows',
       collapsed: false,
       items: [
+        'core-workflows-intro',
         'pie-menu',
         'object-pie',
         'panel',
@@ -37,6 +38,7 @@ const sidebars = {
       label: 'Key Modifiers & Helpers',
       collapsed: false,
       items: [
+        'key-modifiers-intro',
         'mirror-mod',
         'boolean-mod',
         'array-50',
@@ -50,6 +52,7 @@ const sidebars = {
       label: 'Modpie Plus',
       collapsed: false,
       items: [
+        'plus-intro',
         'panel-presets-stacks-sync',
         'slot-customizer',
         'presets',
@@ -63,6 +66,7 @@ const sidebars = {
       label: 'Reference & Architecture',
       collapsed: false,
       items: [
+        'reference-intro',
         'geometry-nodes',
         'preferences',
         'panel-behavior',

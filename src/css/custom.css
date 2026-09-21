@@ -205,6 +205,10 @@ media-card,
   position: relative;
 }
 
+[data-theme='light'] .media-container {
+  background: #f8fafc;
+}
+
 .media-container img,
 .media-container video {
   width: 100%;
