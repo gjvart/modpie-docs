@@ -93,11 +93,11 @@ In any interactive modifier modal mode (such as Solidify thickness, Bevel width/
 
 ---
 
-## 4. Mid-Drag Modifier Switching (v0.9.99)
+## 4. Mid-Drag Modifier Switching
 
 When shaping 3D objects with a stack of modifiers (such as Solidify + Bevel + Subdivision Surface), you often want to tweak each modifier's settings interactively in one smooth session without ever opening the side panel or navigating Blender's modifier tabs.
 
-In **v0.9.99**, Modpie introduces **Mid-Drag Modifier Switching** directly inside interactive mode (`modpie.interactive`):
+Modpie introduces **Mid-Drag Modifier Switching** directly inside interactive mode:
 
 <div className="media-card">
   <div className="media-container">

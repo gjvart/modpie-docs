@@ -54,8 +54,8 @@ Clicking the gear icon on any collapsed modifier row reveals a dedicated quick-a
 
 The gear menu automatically remains open after executing actions (such as reordering or renaming), allowing you to perform multiple adjustments without repeatedly re-opening the menu.
 
-### Shift-Click to Unlock All Gears (v0.9.97)
-Previously, revealing these tools required clicking the gear icon on each modifier individually. In **v0.9.97**, you can hold <kbd>Shift</kbd> and click any modifier's gear button to **instantly unlock all other modifier gears on the active object at once**, exposing reorder arrows, pin buttons, and rename tools across your entire collapsed stack.
+### Shift-Click to Unlock All Gears
+Previously, revealing these tools required clicking the gear icon on each modifier individually. You can now hold <kbd>Shift</kbd> and click any modifier's gear button to **instantly unlock all other modifier gears on the active object at once**, exposing reorder arrows, pin buttons, and rename tools across your entire collapsed stack.
 
 ---
 
@@ -80,11 +80,11 @@ To minimize accidental misclicks while maintaining rapid access:
 
 ---
 
-## 5. Apply Last Interacted Modifier & Auto-Activation (v0.9.98)
+## 5. Apply Last Interacted Modifier & Auto-Activation
 
 When working with multiple modifiers, you often want to expand a collapsed modifier card in the Modpie Panel, inspect its settings, and apply it. Previously, applying via the keyboard shortcut (<kbd>Ctrl + A</kbd>) could target an unintended modifier because expanding or adjusting a modifier did not change Blender's active modifier.
 
-In **v0.9.98**, Modpie introduces **Apply Last Interacted Modifier**:
+Modpie introduces **Apply Last Interacted Modifier**:
 - **Auto-Activate on Expansion or Interaction**: Interacting with any modifier in the Modpie Panel—whether opening its card via the disclosure arrow (<kbd>▶</kbd>/<kbd>▼</kbd>), clicking its gear icon, moving it with reorder arrows, pinning it, renaming it, or launching an interactive viewport drag—**automatically makes that modifier the active modifier in the stack** (`obj.modifiers.active = mod` and `mod.is_active = True`).
 - **Auto-Activate on Add**: Whenever a new modifier is added (from the pie menu, quick add slots, presets, or panel), it immediately becomes the active modifier.
 - **Intelligent Apply Resolution**: Pressing the Apply Modifier shortcut (<kbd>Ctrl + A</kbd>) targets the modifier you last opened or worked on.

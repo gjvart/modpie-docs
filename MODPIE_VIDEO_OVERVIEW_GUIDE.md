@@ -1,6 +1,6 @@
 # Modpie & Modpie Plus: Video Script, Feature Guide & Tier Comparison
 
-> **Purpose**: A comprehensive point-by-point video walkthrough script, feature breakdown, and buyer's guide for **Modpie** and **Modpie Plus** (Version 0.9.91 LTS / Release).
+> **Purpose**: A comprehensive point-by-point video walkthrough script, feature breakdown, and buyer's guide for **Modpie** and **Modpie Plus** (Version 0.9.99 LTS / Release).
 
 ---
 
