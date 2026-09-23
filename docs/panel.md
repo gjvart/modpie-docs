@@ -133,6 +133,13 @@ Every modifier card in the panel includes standard and enhanced controls:
   - Guarantees pipeline integrity for terminal modifiers like **Subdivision Surface**, **Bevel**, **Weighted Normal**, or **Triangulate** that must always evaluate last to preserve silhouette, non-destructive shading, or topology.
   - Clicking the pushpin icon again unpins the modifier, allowing it to be freely repositioned or having subsequent modifiers appended after it.
 - **Closed Modifier Management**: Collapsed cards retain all 4 visibility toggles (Cage, Edit Mode, Viewport, Render), quick gear tools (Move Up / Move Down), dynamic pin badge, and separated Apply/Delete buttons (see [Closed Modifier Management](modifier-management.md)).
+- **Shift-Click to Unlock All Gears (v0.9.97)**: Hold <kbd>Shift</kbd> and click any collapsed modifier's gear icon (`⚙`) to instantly open and reveal the gear tools across every modifier card on the active object simultaneously.
+- **Apply Last Interacted Modifier & Auto-Activation (v0.9.98)**:
+  - Interacting with any modifier card in the panel—whether opening/expanding it via the disclosure arrow (<kbd>▶</kbd>/<kbd>▼</kbd>), clicking its gear icon, moving it with reorder arrows, pinning it, renaming it, or starting an interactive drag—automatically makes that modifier the active modifier in the stack (`obj.modifiers.active = mod` and `mod.is_active = True`).
+  - Adding a new modifier (from the radial pie, Quick Add strip, presets, or panel) immediately activates it.
+  - When you press the Apply shortcut (<kbd>Ctrl + A</kbd>), Modpie intelligently targets the modifier you last opened or worked on.
+  - You can also click the checkmark button (<kbd>✔</kbd>) directly on any modifier card header for instant 1-click application.
+  - Configurable in **Preferences ▸ Modpie Panel ▸ Apply Last Interacted Modifier** (Default: *Enabled*).
 - **Inline Modifier Renaming**: Click the rename option in the expanded card toolbar or gear menu on collapsed cards to rename modifiers instantly without leaving the viewport (see [Inline Modifier Renaming](inline-renaming.md)).
 - **Collapsed Apply**: When a modifier card is collapsed, a dedicated **Apply** button appears directly on its header beside the delete icon. Apply modifiers instantly without expanding or diving into submenus.
 - **Sibling Jumpers**: When multiple modifiers of the same type exist, position badges (e.g. `2/3`) and navigation arrows let you jump between them.

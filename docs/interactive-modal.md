@@ -66,9 +66,12 @@ When you confirm a modal drag, a sleek banner appears over the viewport saying w
 - **<kbd>Wheel Up</kbd> / <kbd>Down</kbd>**: Adjusts discrete integer counts (Bevel Segments, Array Count, Subdivision levels).
 - **<kbd>Alt</kbd> + <kbd>Wheel Up</kbd> / <kbd>Down</kbd>**: Shifts the modifier up or down the evaluation stack on the fly (see [Interactive Stack Reordering](stack-reordering.md)).
 - **<kbd>Tab</kbd>**: Cycles to the next adjustable channel.
-- **<kbd>Ctrl + Wheel</kbd> or <kbd>[</kbd> / <kbd>]</kbd>**: Switches between sibling modifiers on the object.
-- **<kbd>LMB</kbd> / <kbd>Enter</kbd>**: Confirms changes and closes the interactive session.
-- **<kbd>Esc</kbd> / <kbd>RMB</kbd>**: Reverts all changes and stack reorders to their pre-drag state.
+- **<kbd>Ctrl + Tab</kbd> / <kbd>Ctrl + Shift + Tab</kbd>**: Steps forward or backward through modifiers in the stack without leaving modal mode.
+- **<kbd>[</kbd> / <kbd>]</kbd> or <kbd>Page Up</kbd> / <kbd>Page Down</kbd>**: Steps to previous or next modifier in the stack.
+- **<kbd>Ctrl + Wheel Up</kbd> / <kbd>Down</kbd>**: Cycles modifiers using the mouse wheel.
+- **<kbd>Alt + 1..9</kbd>**: Jumps directly to modifier slot 1 through 9.
+- **<kbd>LMB</kbd> / <kbd>Enter</kbd>**: Confirms all adjusted modifiers and closes the interactive session.
+- **<kbd>Esc</kbd> / <kbd>RMB</kbd>**: Reverts all touched modifiers and stack order to their pre-drag state.
 
 ---
 
@@ -90,20 +93,56 @@ In any interactive modifier modal mode (such as Solidify thickness, Bevel width/
 
 ---
 
-## 4. Sibling Modifier Switching
+## 4. Mid-Drag Modifier Switching (v0.9.99)
 
-What happens if your mesh has more than one modifier of the same type? For example, you might have two **Bevel** modifiers—one large bevel for overall form and a second small bevel for edge highlights—or multiple **Mirror** or **Solidify** modifiers.
+When shaping 3D objects with a stack of modifiers (such as Solidify + Bevel + Subdivision Surface), you often want to tweak each modifier's settings interactively in one smooth session without ever opening the side panel or navigating Blender's modifier tabs.
 
-Modpie lets you jump between them on the fly without having to close interactive mode and open the panel:
+In **v0.9.99**, Modpie introduces **Mid-Drag Modifier Switching** directly inside interactive mode (`modpie.interactive`):
+
+<div className="media-card">
+  <div className="media-container">
+    <img src="/modpie-docs/img/media/mp_modswitching_interactive.gif" alt="Switching between modifiers live in Interactive Mode" />
+  </div>
+  <p className="media-caption">Figure: Switching between different modifiers in the stack during an interactive viewport session.</p>
+</div>
+
+### Switch Across Any Modifier Type
+You can seamlessly jump from adjusting Solidify thickness or offset to tweaking Bevel width or segments to adjusting Subsurf levels—all without leaving your interactive viewport session.
+
+### Dedicated Navigation Shortcuts
+- <kbd>Ctrl + Tab</kbd> / <kbd>Ctrl + Shift + Tab</kbd>: Step forward or backward through the entire modifier stack.
+- <kbd>[</kbd> / <kbd>]</kbd> and <kbd>Page Up</kbd> / <kbd>Page Down</kbd>: Step to the previous or next modifier in the stack.
+- <kbd>Ctrl + Wheel Up</kbd> / <kbd>Ctrl + Wheel Down</kbd>: Cycle modifiers quickly with the scroll wheel.
+- <kbd>Alt + 1..9</kbd>: Direct slot jump to any modifier 1 through 9 in the stack.
+- <kbd>Tab</kbd> / <kbd>Shift + Tab</kbd> on single-channel modifiers (like Subsurf or Mirror): Directly cycles to adjacent modifiers in the stack.
+- **HUD Chevrons**: Clickable **<kbd>‹</kbd>** and **<kbd>›</kbd>** arrow buttons on the HUD title bar let you step between modifiers with a single mouse click.
+
+### Sibling Modifier Switching
+When your object has multiple modifiers of the same type (for example, two Bevel modifiers—one for primary silhouette and one for highlights—or multiple Solidify modifiers), you can also jump directly between those siblings:
 
 <div className="media-card">
   <div className="media-container">
     <img src="/modpie-docs/img/media/mp_siblingadjust1.gif" alt="Switching and adjusting sibling modifiers live in Interactive Mode" />
   </div>
-  <p className="media-caption">Figure: Switching between sibling modifiers and adjusting their parameters live in Interactive Mode.</p>
+  <p className="media-caption">Figure: Switching between same-type sibling modifiers and tweaking their parameters live.</p>
 </div>
 
 - **Shortcut**: Hold <kbd>Ctrl</kbd> and scroll **Wheel Up / Down** (or press **<kbd>[</kbd>** / **<kbd>]</kbd>**) to switch between sibling modifiers on the active object.
-- **On-Screen HUD Arrows**: You can also click the **<kbd>‹</kbd>** and **<kbd>›</kbd>** arrows directly on the viewport readout to cycle between siblings.
 - **Live Feedback**: The HUD readout immediately updates to show which sibling is active (such as `Bevel (1/2)` or `Bevel (2/2)`), and your mouse movements instantly apply to that modifier.
+
+### Unified Multi-Modifier Confirmation
+When you are happy with your adjustments, press <kbd>Left-Click</kbd> or <kbd>Enter</kbd>. Modpie commits and keeps all adjustments made across every modifier you touched during the session. The status bar and viewport overlay display the total number of updated modifiers (for example, `Updated 3 modifiers`).
+
+### Unified Multi-Modifier Rollback
+If you change your mind, press <kbd>Right-Click</kbd> or <kbd>Esc</kbd>. Modpie instantly rolls back every modifier touched during the session to its exact pre-modal state. If the session was started by adding a brand new modifier, that modifier is cleanly discarded.
+
+### Multi-Object Synchronization (Modpie Plus)
+When multiple objects are selected, switching modifiers in interactive mode automatically syncs and retargets matching modifiers across all selected objects.
+
+### Preference Toggle
+You can customize modifier switching behavior in **Preferences ▸ Interactive Drag**:
+- **Mid-Drag Modifier Switching** (Default: *Enabled*):
+  - **When enabled**: Switching keys cycle through all modifiers across your object's entire stack.
+  - **When disabled**: Switching keys cycle only between same-type sibling modifiers (for instance, jumping between a first and second Bevel modifier).
+
 

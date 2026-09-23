@@ -1,14 +1,14 @@
 ---
 sidebar_position: 5
 title: Changelog
-description: Release notes and changelog for Modpie and Modpie Plus Version 0.9.96 (Release Version).
+description: Release notes and changelog for Modpie and Modpie Plus Version 0.9.99 (Release Version).
 ---
 
 # What's New & Changelog
 
 <div className="hero-badge-container">
-  <span className="badge badge--primary">Modpie Plus 0.9.96</span>
-  <span className="badge badge--secondary">Modpie 0.9.96</span>
+  <span className="badge badge--primary">Modpie Plus 0.9.99</span>
+  <span className="badge badge--secondary">Modpie 0.9.99</span>
   <span className="badge badge--success">Release Version</span>
 </div>
 
@@ -16,11 +16,29 @@ Welcome to the release notes and changelog for Modpie and Modpie Plus. This page
 
 ---
 
-## Current Version Highlights: 0.9.96 (Release)
+## Current Version Highlights: 0.9.99 (Release)
 
 <div className="feature-grid">
   <div className="feature-card">
-    <div className="feature-card-title">Interactive Stack Reordering</div>
+    <div className="feature-card-title">Mid-Drag Modifier Switching (v0.9.99)</div>
+    <p className="feature-card-desc">
+      Jump seamlessly between any modifier in the stack during interactive mode using <kbd>Ctrl + Tab</kbd>, <kbd>[</kbd> / <kbd>]</kbd>, <kbd>Ctrl + Wheel</kbd>, or HUD chevrons without leaving your session.
+    </p>
+  </div>
+  <div className="feature-card">
+    <div className="feature-card-title">Apply Last Interacted Modifier (v0.9.98)</div>
+    <p className="feature-card-desc">
+      Expanding, adjusting, or adding any modifier automatically makes it active in the stack so the <kbd>Ctrl + A</kbd> shortcut always applies the modifier you were just working on.
+    </p>
+  </div>
+  <div className="feature-card">
+    <div className="feature-card-title">Shift-Click All Gears Toggle (v0.9.97)</div>
+    <p className="feature-card-desc">
+      Hold <kbd>Shift</kbd> and click any collapsed modifier's gear icon to unlock and reveal gear tools across every modifier card on the object simultaneously.
+    </p>
+  </div>
+  <div className="feature-card">
+    <div className="feature-card-title">Interactive Stack Reordering (v0.9.96)</div>
     <p className="feature-card-desc">
       Move the active modifier up or down the evaluation stack on the fly using <kbd>Alt</kbd> + <kbd>Wheel</kbd> during interactive modal dragging, complete with viewport HUD cards and safe revert on cancel.
     </p>
@@ -32,27 +50,9 @@ Welcome to the release notes and changelog for Modpie and Modpie Plus. This page
     </p>
   </div>
   <div className="feature-card">
-    <div className="feature-card-title">Inline Modifier Renaming</div>
-    <p className="feature-card-desc">
-      Rename modifiers directly inside both collapsed and expanded card views in the viewport panel without opening Blender's Properties editor.
-    </p>
-  </div>
-  <div className="feature-card">
     <div className="feature-card-title">Closed Modifier Management & Pin to Last</div>
     <p className="feature-card-desc">
       Full 4-visibility switches, quick gear tools, persistent pin badges, and separated Apply/Delete action grouping on collapsed modifier rows.
-    </p>
-  </div>
-  <div className="feature-card">
-    <div className="feature-card-title">Preferences UI & Conflict Detection</div>
-    <p className="feature-card-desc">
-      Categorized preference cards, direct keymap rebinding, and smart real-time shortcut conflict detection alerts.
-    </p>
-  </div>
-  <div className="feature-card">
-    <div className="feature-card-title">Apply Modifier Workflow</div>
-    <p className="feature-card-desc">
-      Dedicated Apply header button next to Delete, plus global <kbd>Ctrl</kbd> + <kbd>A</kbd> viewport execution with intelligent fallback resolution.
     </p>
   </div>
 </div>
@@ -60,6 +60,43 @@ Welcome to the release notes and changelog for Modpie and Modpie Plus. This page
 ---
 
 ## Detailed Release History
+
+### Modpie Plus 0.9.99 / Modpie 0.9.99
+
+- **Mid-Drag Modifier Switching in Interactive Mode**:
+  - Jump between any modifier in the active object's stack on the fly without closing the modal session or opening side panels.
+  - Dedicated navigation hotkeys:
+    - <kbd>Ctrl + Tab</kbd> / <kbd>Ctrl + Shift + Tab</kbd>: Step forward or backward through the entire modifier stack.
+    - <kbd>[</kbd> / <kbd>]</kbd> and <kbd>Page Up</kbd> / <kbd>Page Down</kbd>: Step to previous or next modifier in the stack.
+    - <kbd>Ctrl + Wheel Up</kbd> / <kbd>Ctrl + Wheel Down</kbd>: Cycle modifiers with mouse wheel.
+    - <kbd>Alt + 1..9</kbd>: Direct slot jump to any modifier 1 through 9.
+    - <kbd>Tab</kbd> / <kbd>Shift + Tab</kbd> on single-channel modifiers (like Subsurf or Mirror): Directly cycle to adjacent modifiers in the stack.
+    - **HUD Chevrons**: Clickable `‹` and `›` arrow buttons on the HUD title bar for 1-click mouse stepping.
+  - **Unified Multi-Modifier Confirmation**: <kbd>Left-Click</kbd> or <kbd>Enter</kbd> commits and preserves all adjustments made across every modifier tweaked during the session. Shows total updated modifier count in the status bar and overlay.
+  - **Unified Multi-Modifier Rollback**: <kbd>Right-Click</kbd> or <kbd>Esc</kbd> cleanly reverts all touched modifiers back to their pre-modal state. Newly added modifiers are discarded cleanly.
+  - **Multi-Object Synchronization (Plus)**: When multiple objects are selected, switching modifiers in interactive mode automatically syncs and retargets matching modifiers across all selected meshes.
+  - **Preference Toggle**: In **Preferences ▸ Interactive Drag ▸ Mid-Drag Modifier Switching**, choose whether switching keys cycle through the entire stack (default) or restrict to same-type sibling modifiers.
+
+---
+
+### Modpie Plus 0.9.98 / Modpie 0.9.98
+
+- **Apply Last Interacted Modifier & Auto-Activation**:
+  - Interacting with any modifier card in the Modpie Panel—whether opening its card via the disclosure arrow (<kbd>▶</kbd>/<kbd>▼</kbd>), clicking its gear icon (`⚙`), moving it with reorder arrows, pinning it, renaming it, or starting an interactive drag—automatically makes that modifier the active modifier in the stack (`obj.modifiers.active = mod` and `mod.is_active = True`).
+  - Adding a new modifier (from the radial pie, quick add strip, presets, or panel) immediately activates it.
+  - Pressing the Apply shortcut (<kbd>Ctrl + A</kbd>) reliably targets the modifier you were just inspecting or adjusting.
+  - Direct 1-click Apply checkmark button (<kbd>✔</kbd>) on all modifier card headers.
+  - Configurable toggle in **Preferences ▸ Modpie Panel ▸ Apply Last Interacted Modifier** (Default: *Enabled*).
+
+---
+
+### Modpie Plus 0.9.97 / Modpie 0.9.97
+
+- **Shift-Click Gear Tools Toggle on Closed Modifier Cards**:
+  - Hold <kbd>Shift</kbd> and click any collapsed modifier's gear button (`⚙`) to instantly open and reveal gear tools (Move Up, Move Down, Pin to Last, Inline Rename) across every modifier card on the active object simultaneously.
+  - Greatly speeds up batch reordering and management in complex collapsed stacks without individual clicking.
+
+---
 
 ### Modpie Plus 0.9.96 / Modpie 0.9.96
 

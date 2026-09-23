@@ -17,7 +17,8 @@ Modpie is built for speed and muscle memory. Below is the complete hotkey refere
 | <kbd>Alt</kbd> + <kbd>M</kbd> | 3D Viewport | <span className="badge badge--secondary">Core</span> | Open **Modpie Radial Pie Menu** |
 | <kbd>Shift</kbd> + <kbd>Ctrl</kbd> + <kbd>M</kbd> | 3D Viewport | <span className="badge badge--primary">Plus</span> | Open **Object Modifiers Pie** (active object's modifiers) |
 | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>M</kbd> | 3D Viewport | <span className="badge badge--secondary">Core</span> | Open **Modpie Viewport Stack Panel** popup |
-| <kbd>Ctrl</kbd> + <kbd>A</kbd> | Object Mode | <span className="badge badge--secondary">Core</span> | **Apply Modifier** (active / expanded modifier with intelligent fallback) |
+| <kbd>Ctrl</kbd> + <kbd>A</kbd> | Object Mode | <span className="badge badge--secondary">Core</span> | **Apply Modifier** (active / last interacted modifier with intelligent fallback) |
+| <kbd>Shift</kbd> + Click Gear (`⚙`) | Modpie Panel | <span className="badge badge--secondary">Core</span> | Unlock all modifier gears across collapsed cards simultaneously |
 | <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>M</kbd> | 3D Viewport | <span className="badge badge--primary">Plus</span> | Open **Favorites Preset Pie** *(In unified builds, presets & stack templates are also integrated directly into the main radial menu SE slot and panel button)* |
 | <kbd>N</kbd> ▸ **Modifiers** | 3D Viewport Sidebar | <span className="badge badge--secondary">Core</span> | Open Modpie sidebar tab |
 
@@ -63,10 +64,13 @@ When adjusting any modifier in interactive modal mode:
 | <kbd>Enter</kbd> (during typing) | **Lock Typed Value** | Sets and **locks** the value immediately, protecting it from accidental mouse movement. |
 | <kbd>Spacebar</kbd> | **Unlock to Resume Drag** | Unlocks the value so mouse dragging can resume smoothly from the locked value. |
 | <kbd>Tab</kbd> | **Cycle Channel** | Advances to the next adjustable property in the modifier. |
-| <kbd>Ctrl</kbd> + <kbd>Wheel</kbd> or <kbd>[</kbd> / <kbd>]</kbd> | **Sibling Switcher** | Jump between same-type modifiers on the object without leaving the modal. |
-| Click <kbd>‹</kbd> <kbd>›</kbd> UI arrows | **Click Sibling Switcher** | Switch between sibling modifiers using the on-screen readout arrows. |
-| <kbd>LMB</kbd> / <kbd>Enter</kbd> | **Confirm & Exit** | Commits changes and cleanly exits modal mode. |
-| <kbd>Esc</kbd> / <kbd>RMB</kbd> | **Cancel** | Cancels adjustments and reverts all properties and stack order to their original state. |
+| <kbd>Ctrl + Tab</kbd> / <kbd>Ctrl + Shift + Tab</kbd> | **Step Stack Modifiers** | Step forward or backward through the entire modifier stack without leaving modal mode. |
+| <kbd>[</kbd> / <kbd>]</kbd> or <kbd>Page Up / Down</kbd> | **Step Stack Modifiers** | Step to previous or next modifier in the stack. |
+| <kbd>Ctrl</kbd> + <kbd>Wheel Up / Down</kbd> | **Cycle Modifiers** | Cycles modifiers across the stack (or sibling modifiers). |
+| <kbd>Alt + 1..9</kbd> | **Direct Slot Jump** | Jump directly to modifier slot 1 through 9. |
+| Click <kbd>‹</kbd> <kbd>›</kbd> UI arrows | **Chevron Switcher** | Step between modifiers using the on-screen HUD readout arrows. |
+| <kbd>LMB</kbd> / <kbd>Enter</kbd> | **Confirm & Exit** | Commits all adjustments made across every touched modifier and exits modal mode. |
+| <kbd>Esc</kbd> / <kbd>RMB</kbd> | **Cancel** | Cancels adjustments and reverts all touched modifiers and stack order to their pre-drag state. |
 
 ---
 
