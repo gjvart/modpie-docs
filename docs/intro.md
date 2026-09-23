@@ -10,7 +10,7 @@ description: Welcome to the Modpie documentation. Fast radial menus, live viewpo
 <div className="hero-badge-container">
   <span className="badge badge--primary">Modpie Plus 0.9.99</span>
   <span className="badge badge--secondary">Modpie 0.9.99 (Release)</span>
-  <span className="badge badge--info">Tested on Blender 4.3, 4.5 LTS, 5.1 & 5.2+</span>
+  <span className="badge badge--info">Tested on Blender 4.5, 5.1 & 5.2+</span>
   <span className="badge badge--success">Single Addon Architecture</span>
 </div>
 
