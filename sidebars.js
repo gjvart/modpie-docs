@@ -58,6 +58,7 @@ const sidebars = {
         'presets',
         'sync-link',
         'solo-profiler',
+        'evaluation',
         'favorite-pie',
       ],
     },

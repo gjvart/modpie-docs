@@ -45,6 +45,10 @@ The Evaluation Profiler measures the exact execution latency of each modifier in
 - **Pinpoint Bottlenecks**: Instantly discover whether an expensive Subdivision Surface, Remesh, or Geometry Nodes setup is dropping your viewport framerate.
 - **Zero Overhead When Idle**: Timing modifiers on every redraw is designed for when you are actively hunting a bottleneck. The profiler is disabled by default in **Preferences ▸ Plus ▸ Show Evaluation Times** so it never consumes background CPU cycles until requested.
 
+:::tip Dedicated Guide
+For a complete breakdown of Dependency Graph integration, microsecond formatting, and performance troubleshooting workflows, check out the dedicated [Evaluation Profiler](evaluation.md) guide.
+:::
+
 ---
 
 ## 3. Apply-Up-To-Here
