@@ -1,14 +1,14 @@
 ---
 sidebar_position: 5
 title: Changelog
-description: Release notes and changelog for Modpie and Modpie Plus Version 0.9.99 (Release Version).
+description: Release notes and changelog for Modpie and Modpie Plus Version 1.0.0 (Release Version).
 ---
 
 # What's New & Changelog
 
 <div className="hero-badge-container">
-  <span className="badge badge--primary">Modpie Plus 0.9.99</span>
-  <span className="badge badge--secondary">Modpie 0.9.99</span>
+  <span className="badge badge--primary">Modpie Plus 1.0.0</span>
+  <span className="badge badge--secondary">Modpie 1.0.0</span>
   <span className="badge badge--success">Release Version</span>
 </div>
 
@@ -16,9 +16,27 @@ Welcome to the release notes and changelog for Modpie and Modpie Plus. This page
 
 ---
 
-## Current Version Highlights: 0.9.99 (Release)
+## Current Version Highlights: 1.0.0 (Release)
 
 <div className="feature-grid">
+  <div className="feature-card">
+    <div className="feature-card-title">Enhanced Decimate Interactive Mode (v1.0.0)</div>
+    <p className="feature-card-desc">
+      Mode-aware interactive dragging across Collapse, Un-Subdivide, and Planar. Cycle modes on the fly (<kbd>M</kbd>/<kbd>T</kbd>), jump directly (<kbd>C</kbd>/<kbd>U</kbd>/<kbd>P</kbd>), drag mode-isolated values, and monitor live polygon counts.
+    </p>
+  </div>
+  <div className="feature-card">
+    <div className="feature-card-title">Curve to Tube Integration (Blender 5.0+)</div>
+    <p className="feature-card-desc">
+      Native support for the official Blender 5.0 Geometry Nodes Curve to Tube asset. Features complete subpanels (Profile, Resample, Caps, UV Map) and full interactive modal controls.
+    </p>
+  </div>
+  <div className="feature-card plus">
+    <div className="feature-card-title">Real-Time Evaluation Profiler (Plus v1.0.0)</div>
+    <p className="feature-card-desc">
+      Hardware performance diagnostics directly in your viewport stack. Measures execution latency per modifier with proportional visual load bars and frame budget indicators.
+    </p>
+  </div>
   <div className="feature-card">
     <div className="feature-card-title">Mid-Drag Modifier Switching (v0.9.99)</div>
     <p className="feature-card-desc">
@@ -32,27 +50,9 @@ Welcome to the release notes and changelog for Modpie and Modpie Plus. This page
     </p>
   </div>
   <div className="feature-card">
-    <div className="feature-card-title">Shift-Click All Gears Toggle (v0.9.97)</div>
+    <div className="feature-card-title">Interactive Stack Reordering & Pinning</div>
     <p className="feature-card-desc">
-      Hold <kbd>Shift</kbd> and click any collapsed modifier's gear icon to unlock and reveal gear tools across every modifier card on the object simultaneously.
-    </p>
-  </div>
-  <div className="feature-card">
-    <div className="feature-card-title">Interactive Stack Reordering (v0.9.96)</div>
-    <p className="feature-card-desc">
-      Move the active modifier up or down the evaluation stack on the fly using <kbd>Alt</kbd> + <kbd>Wheel</kbd> during interactive modal dragging, complete with viewport HUD cards and safe revert on cancel.
-    </p>
-  </div>
-  <div className="feature-card plus">
-    <div className="feature-card-title">Object Modifiers Pie (Plus)</div>
-    <p className="feature-card-desc">
-      Radial pie menu (<kbd>Shift</kbd> + <kbd>Ctrl</kbd> + <kbd>M</kbd>) dynamically populated with only the modifiers currently applied to the active object, with live dragging and visibility toggling.
-    </p>
-  </div>
-  <div className="feature-card">
-    <div className="feature-card-title">Closed Modifier Management & Pin to Last</div>
-    <p className="feature-card-desc">
-      Full 4-visibility switches, quick gear tools, persistent pin badges, and separated Apply/Delete action grouping on collapsed modifier rows.
+      Move modifiers up or down the evaluation stack on the fly using <kbd>Alt</kbd> + <kbd>Wheel</kbd> during interactive modal dragging, complete with HUD cards, pin to last, and gear tools.
     </p>
   </div>
 </div>
@@ -60,6 +60,33 @@ Welcome to the release notes and changelog for Modpie and Modpie Plus. This page
 ---
 
 ## Detailed Release History
+
+### Modpie Plus 1.0.0 / Modpie 1.0.0
+
+- **Enhanced Decimate Interactive Mode**:
+  - Full mode-aware interactive dragging across **Collapse**, **Un-Subdivide**, and **Planar**.
+  - Instant mode cycling via <kbd>M</kbd> or <kbd>T</kbd>.
+  - Direct mode jump keys: <kbd>C</kbd> (Collapse), <kbd>U</kbd> (Un-Subdivide), <kbd>P</kbd> (Planar).
+  - Mode-specific value dragging: mouse drag and wheel adjust **Iterations** in Un-Subdivide (auto-seeded to `1`), **Ratio** in Collapse, and **Angle Limit** in Planar.
+  - Strict parameter guarding: pressing <kbd>S</kbd> (Symmetry) or <kbd>G</kbd> (Triangulate) while in Un-Subdivide or Planar mode is safely intercepted with a helpful notification.
+  - Channel selection implications: <kbd>R</kbd> selects Ratio and switches to Collapse; <kbd>I</kbd> selects Iterations and switches to Un-Subdivide; <kbd>A</kbd> selects Angle Limit and switches to Planar.
+  - Dynamic face count readout: live `Faces: <count>` displayed in the viewport HUD and Blender status bar during decimation adjustment.
+- **Blender 5.0+ Curve to Tube Modifier Integration**:
+  - Full first-class support for the official Blender 5.0 Geometry Nodes Curve to Tube asset modifier.
+  - Cleanly hidden in Blender 4.5 and earlier to guarantee 100% backward compatibility.
+  - Exact native Blender layout in Modpie Panel: top-level scale, Profile subpanel (Round/Custom, resolution, smooth shading), Resample subpanel (Evaluated/Auto/Count/Length), Caps subpanel (Flat/Round/Custom, caps resolution, normals, merging), UV Map subpanel, and Manage subpanel.
+  - Header badging with official `MOD_CURVE` icon and `(5.0+)` indicator.
+  - Interactive modal dragging for tube radius, profile resolution (<kbd>R</kbd>/<kbd>Wheel</kbd>), resample count (<kbd>C</kbd>) and length (<kbd>L</kbd>), shade smooth (<kbd>H</kbd>), caps (<kbd>P</kbd>), resample toggle (<kbd>E</kbd>), merge toggle (<kbd>M</kbd>), and mode cycling (<kbd>F</kbd>, <kbd>T</kbd>, <kbd>O</kbd>).
+- **Real-Time Evaluation Profiler & Hardware Benchmarking (Modpie Plus)**:
+  - Viewport-embedded hardware execution profiler measuring modifier latency in microseconds (`µs`), milliseconds (`ms`), or seconds (`s`).
+  - Proportional visual load bars scaled against the slowest modifier in the stack to instantly identify performance bottlenecks.
+  - Dependency graph deep-query (`context.object.evaluated_get(depsgraph)`) reporting true hardware execution times.
+  - 1-click stopwatch toggle button (`⏱`) in modifier stack header row.
+  - Dedicated re-evaluate benchmark button (`🔄`) to force a fresh calculation pass.
+  - Frame budget guidance comparing total stack latency against 60 FPS (16.6 ms) and 30 FPS (33.3 ms) thresholds.
+
+---
+
 
 ### Modpie Plus 0.9.99 / Modpie 0.9.99
 

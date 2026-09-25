@@ -164,3 +164,40 @@ When adjusting any modifier in interactive modal mode:
 - <kbd>I</kbd>: Adjust **Iterations**
 - <kbd>X</kbd> / <kbd>Y</kbd> / <kbd>Z</kbd>: Cycle axis
 - <kbd>M</kbd>: Toggle **Merge**
+
+### Decimate Modifier
+- <kbd>Drag</kbd>: Adjust active channel value (Ratio in Collapse, Iterations in Un-Subdivide, Angle Limit in Planar)
+- <kbd>M</kbd> or <kbd>T</kbd>: Cycle Decimate mode (Collapse → Un-Subdivide → Planar)
+- <kbd>C</kbd>: Jump directly to **Collapse** mode
+- <kbd>U</kbd>: Jump directly to **Un-Subdivide** mode
+- <kbd>P</kbd>: Jump directly to **Planar** mode
+- <kbd>R</kbd>: Select **Ratio** channel (auto-switches mode to Collapse)
+- <kbd>I</kbd>: Select **Iterations** channel (auto-switches mode to Un-Subdivide, auto-seeded to 1)
+- <kbd>A</kbd>: Select **Angle Limit** channel (auto-switches mode to Planar)
+- <kbd>G</kbd>: Toggle **Triangulate** (Collapse mode only)
+- <kbd>S</kbd>: Toggle **Symmetry** (Collapse mode only)
+- <kbd>B</kbd>: Toggle **All Boundaries** (Planar mode only)
+- <kbd>Tab</kbd> / <kbd>Shift + Tab</kbd>: Step forward / backward through modes and channels together
+
+### Curve to Tube Modifier (Blender 5.0+ Geometry Nodes Asset)
+- <kbd>Drag</kbd>: Adjust **Tube Radius / Scale**
+- <kbd>R</kbd> / <kbd>Wheel</kbd>: Adjust **Profile Resolution** (Round mode)
+- <kbd>C</kbd>: Adjust **Resample Count**
+- <kbd>L</kbd>: Adjust **Resample Length**
+- <kbd>H</kbd>: Toggle **Shade Smooth**
+- <kbd>P</kbd>: Toggle **Caps**
+- <kbd>E</kbd>: Toggle **Resample**
+- <kbd>M</kbd>: Toggle **Caps Merge**
+- <kbd>F</kbd>: Cycle **Profile Mode** (Round ↔ Custom)
+- <kbd>T</kbd>: Cycle **Caps Type** (Flat ↔ Round ↔ Custom)
+- <kbd>O</kbd>: Cycle **Resample Mode** (Evaluated ↔ Auto ↔ Count ↔ Length)
+
+---
+
+## 4. Evaluation Profiler (Modpie Plus)
+
+| Input | Context | Action |
+| :--- | :--- | :--- |
+| Stopwatch Icon (`⏱`) | Viewport Stack Header | Toggle **Evaluation Profiler** open / closed |
+| Re-evaluate Icon (`🔄`) | Profiler Header | Force full geometry benchmark pass (`refresh={'DATA'}`) |
+

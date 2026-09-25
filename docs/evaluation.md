@@ -1,7 +1,7 @@
 ---
 sidebar_position: 18.5
 title: Evaluation Profiler
-description: Real-time viewport modifier latency benchmarking, bottleneck pinpointing, and visual load bars in Modpie Plus.
+description: Real-time viewport modifier latency benchmarking and visual load bars in Modpie Plus.
 ---
 
 # Modpie Evaluation Profiler
@@ -10,109 +10,92 @@ description: Real-time viewport modifier latency benchmarking, bottleneck pinpoi
   <span className="badge badge--primary">Modpie Plus Exclusive</span>
 </div>
 
-The **Evaluation Profiler** is a real-time viewport performance diagnostic tool built into **Modpie Plus**. It measures the exact computation latency of every modifier in your stack in milliseconds (ms) and microseconds (µs), rendering visual load bars directly below your modifier stack in the 3D viewport.
+When working on complex models in Blender, modifier stacks can get heavy fast. Stacking Subdivision Surfaces, Booleans, Remeshing, and Geometry Nodes can quickly cause your viewport to lag.
+
+Normally, finding out which modifier is causing the slowdown means guessing—clicking visibility eyeballs on and off one by one until your framerate improves.
+
+The **Evaluation Profiler** in **Modpie Plus** removes the guesswork. It measures the exact calculation time of every modifier in your stack and displays clean visual progress bars directly under your modifier list in the 3D viewport.
+
+<div className="media-card">
+  <div className="media-container" style={{flexDirection: 'column', gap: '16px', padding: '24px 16px', background: '#090c10'}}>
+    <div style={{width: '100%', maxWidth: '786px'}}>
+      <p style={{fontSize: '0.8rem', fontWeight: 600, color: 'var(--ifm-color-emphasis-600)', marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '0.05em'}}>Collapsed Profiler Header</p>
+      <img src="/modpie-docs/img/media/mp_evaluation1.png" alt="Evaluation Profiler Folded" style={{width: '100%', height: 'auto', borderRadius: '4px'}} />
+    </div>
+    <div style={{width: '100%', maxWidth: '786px'}}>
+      <p style={{fontSize: '0.8rem', fontWeight: 600, color: 'var(--ifm-color-emphasis-600)', marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '0.05em'}}>Unfolded Breakdown & Load Bars</p>
+      <img src="/modpie-docs/img/media/mp_evaluation2.png" alt="Evaluation Profiler Unfolded" style={{width: '100%', height: 'auto', borderRadius: '4px'}} />
+    </div>
+  </div>
+  <p className="media-caption">Figure: The Evaluation Profiler collapsed showing total computation time (top), and expanded showing per-modifier load bars (bottom).</p>
+</div>
 
 ---
 
 ## What It Is For
 
-In modern 3D workflows, procedural modifier stacks can quickly become heavy. When combining subdivision surfaces, complex booleans, voxel remeshing, bevels, arrays, and geometry nodes, your viewport framerate can suddenly drop. 
+The Evaluation Profiler answers one simple question: **"Which modifier is slowing down my viewport?"**
 
-Traditionally, figuring out which modifier is causing the slowdown required tedious trial and error—manually turning each modifier on and off one by one.
-
-The **Evaluation Profiler** eliminates all guesswork by immediately answering: **"Which modifier is costing me my framerate?"**
-
-### Key Benefits
-- **Instant Bottleneck Pinpointing**: Instantly spots which modifier consumes the highest percentage of evaluation time.
-- **Framerate Budgeting**: Displays total stack latency in milliseconds against real-time viewport framerate targets (for example, **16.6 ms = 60 FPS** and **33.3 ms = 30 FPS**).
-- **Zero Viewport Clutter**: Kept folded and unobtrusive until you need to diagnose a heavy scene.
-- **Workflow Pairing**: Works hand-in-hand with **Solo Modifier** and **Apply-Up-To-Here** to isolate or freeze heavy processing stages.
+- **Instant Bottleneck Detection**: Points right to the modifier taking up the most processing time.
+- **Framerate Budgeting**: Shows your total stack time against real-time viewport targets (such as **16.6 ms for 60 FPS** or **33.3 ms for 30 FPS**).
+- **Out of the Way**: Stays neatly collapsed at the bottom of the stack until you need to investigate lag.
+- **Works with Solo & Apply-Up**: Once you identify the culprit, you can easily solo it to check its effect or bake earlier modifiers into base geometry.
 
 ---
 
-## How It Works Under the Hood
+## How It Works
 
-### 1. Blender Dependency Graph Integration
-When Blender updates your geometry, it evaluates the modifier stack in sequential order through its **Dependency Graph (`Depsgraph`)**. During this evaluation, Blender's internal engine benchmarks each modifier step and tracks the elapsed computation time.
+Modpie reads true hardware calculation times directly from Blender's evaluated dependency graph as your geometry updates.
 
-:::note Evaluated Data Integration
-Modpie retrieves timings directly from the *evaluated* object (`obj.evaluated_get(depsgraph)`). Standard scene objects in `bpy.data.objects` hold un-evaluated datablocks that do not store runtime timing statistics. By reading from the active evaluated dependency graph, Modpie reports true hardware execution latency.
-:::
+### 1. Easy-to-Read Timing Units
+Times automatically scale to the most practical unit:
+- **Microseconds (`µs`)**: For nearly instantaneous modifiers (simple Mirror, transforms, vertex groups).
+- **Milliseconds (`ms`)**: For everyday modeling modifiers (Bevel, Decimate, light Geometry Nodes).
+- **Seconds (`s`)**: For very heavy operations (dense Voxel Remesh, multi-cut Booleans, high-level Subsurf).
 
-### 2. Adaptive Unit Formatting
-Evaluation times are automatically formatted to the clearest and most readable unit of measurement:
+### 2. Visual Load Bars
+Modpie automatically finds the slowest modifier in your stack and sets it as the baseline:
+- **100% Bar (Longest)**: The biggest performance bottleneck in your current stack.
+- **Shorter Bars**: Modifiers that calculate quickly compared to the bottleneck.
+- **Dimmed `0 µs`**: Modifiers currently hidden in the viewport or cached nodes that needed zero calculation time on the last update.
 
-| Timing Range | Display Format | Example | Typical Causes |
-| :--- | :---: | :---: | :--- |
-| **< 1.0 ms** | Microseconds (`µs`) | `120 µs` | Simple mirrors, vertex weight maps, light transforms |
-| **1.0 ms – 999 ms** | Milliseconds (`ms`) | `14.2 ms` | Bevels, decimate modifiers, moderate geometry nodes |
-| **≥ 1.0 s** | Seconds (`s`) | `2.45 s` | Heavy voxel remeshing, high-poly booleans, dense multi-level subsurf |
-
-### 3. Proportional Visual Load Bars
-Modpie automatically identifies the slowest modifier in your stack. Each modifier row draws an adaptive horizontal bar scaled relative to that bottleneck:
-
-```text
-Load Bar Ratio = (Modifier Time) / (Slowest Modifier Time)
-```
-
-- **Full Bar (Longest)**: Identifies the primary performance bottleneck in your stack.
-- **Shorter Bars**: Modifiers that evaluate quickly relative to the slowest modifier.
-- **Dimmed `0 µs`**: Modifiers disabled in the viewport or cached node networks that required zero compute time during the last frame update.
-
-### 4. Forced Re-Evaluation
-Clicking the **Re-evaluate** button flags the object's geometry data for a full refresh and triggers a view layer update. This forces Blender to bypass cached geometry and benchmark a complete, fresh modifier pipeline run.
+### 3. Forced Refresh
+Clicking the **Refresh** button forces Blender to clear cached geometry and benchmark a fresh, complete calculation pass across the entire stack.
 
 ---
 
-## User Interface & Controls
+## How to Use It
 
-### 1. Enabling the Profiler
-The Evaluation Profiler starts folded and disabled by default so it never gets in the way during everyday modeling.
+### Enabling the Profiler
+The profiler is kept hidden by default so it never clutters routine modeling.
 
-You can turn it on in two convenient ways:
-1. **Header Toolstrip**: In the Modpie panel header toolstrip, click the **Timer** icon.
-2. **Add-on Preferences**: Go to **Edit ▸ Preferences ▸ Add-ons ▸ Modpie ▸ Plus** and toggle **Show Evaluation Times**.
+You can turn it on in two ways:
+1. **Toolstrip Button**: Click the timer icon in the top header toolstrip of the Modpie panel.
+2. **Preferences**: Go to **Edit ▸ Preferences ▸ Add-ons ▸ Modpie ▸ Plus** and toggle **Show Evaluation Times**.
 
-When enabled, the button highlights and the **Evaluation** box appears docked cleanly at the bottom of the modifier stack:
+When enabled, an **Evaluation** bar docks at the bottom of your modifier stack.
 
-```text
-+--------------------------------------------------------+
-|  >  Evaluation  18.4 ms                                |
-+--------------------------------------------------------+
-```
-
-### 2. Unfolding the Detailed Breakdown
-Click the disclosure arrow on the **Evaluation** box header to reveal the detailed per-modifier breakdown:
-
-```text
-+--------------------------------------------------------+
-|  v  Evaluation  18.4 ms                        Refresh |
-|  |-- Bevel         [#                      ]   1.2 ms  |
-|  |-- Subsurf       [#######################]  14.8 ms  |
-|  \-- Decimate      [###                    ]   2.4 ms  |
-+--------------------------------------------------------+
-```
-
-- **Header Readout**: Displays the total execution time across all active modifiers (e.g. `18.4 ms`).
-- **Refresh Button**: Forces a clean recalculation across the entire modifier stack.
-- **Modifier Row**: Shows each modifier's official icon and user-assigned name.
-- **Load Bar & Value**: Displays the relative load ratio alongside the exact elapsed time formatted in `µs`, `ms`, or `s`.
+### Reading the Breakdown
+Click the disclosure arrow next to **Evaluation** to expand the list:
+- **Header**: Shows total computation time across all active modifiers (for example, `18.4 ms`).
+- **Refresh**: Re-benchmarks the entire modifier stack from scratch.
+- **Rows**: Each row shows the modifier name, its relative load bar, and exact time in `µs`, `ms`, or `s`.
 
 ---
 
-## Diagnostic Scenarios & Solutions
+## Quick Optimization Tips
 
-| Profiler Observation | Root Cause | Recommended Modpie Action |
+| What You Notice | What It Usually Means | What to Do in Modpie |
 | :--- | :--- | :--- |
-| **Total time > 33 ms** (Noticeable viewport lag) | Total modifier processing exceeds the 30 FPS real-time frame budget. | Expand the Evaluation box to inspect which modifier bar is at 100%. |
-| **One modifier at 100% with high latency** (e.g. Subsurf at 50 ms) | Modifier has high subdivision levels or very dense geometry. | Use **Solo** mode to check its visual contribution; lower viewport levels while keeping render levels high. |
-| **Boolean or Voxel Remesh is slowest** | Topology recalculation runs on every viewport update. | Use **Apply-Up-To-Here** to bake the boolean or remesh into permanent base geometry, leaving non-destructive bevels and normal modifiers active above. |
-| **Modifier displays `0 µs`** | Modifier is hidden in the viewport or had no geometric impact. | Check whether the modifier is needed, or click **Re-evaluate** to ensure the scene was not idle. |
+| **Total time > 16.6 ms or 33.3 ms** | Modifier calculations exceed the 60 FPS or 30 FPS real-time budget. | Expand the Evaluation box to see which modifier has the longest bar. |
+| **Subsurf has a huge time bar** | High viewport subdivision level. | Lower the viewport level while keeping the render level high. Use **Solo** to check how much detail you really need in the 3D view. |
+| **Boolean or Remesh is the slowest** | Recalculating complex topology on every frame update. | Use **Apply-Up-To-Here** to bake the boolean/remesh into base geometry, leaving non-destructive bevels and normal modifiers live above. |
+| **Modifier shows `0 µs`** | Modifier is hidden or had no geometric effect on the last frame. | Check if the modifier is needed, or click **Refresh** if the scene was idle. |
 
 ---
 
 ## Compatibility
 
 - **Blender 4.5, 5.0, 5.1, and 5.2+ LTS**
-- Fully supports all modifier categories: Generate, Deform, Modify, Physics, and Geometry Nodes.
+- Supports all modifier types: Generate, Deform, Modify, Physics, and Geometry Nodes.
 - Available exclusively in **Modpie Plus**.

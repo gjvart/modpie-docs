@@ -1,14 +1,14 @@
 ---
 sidebar_position: 4.5
-title: Latest Features (v0.9.99)
-description: Complete guide to the latest features and workflow enhancements added in Modpie and Modpie Plus v0.9.99.
+title: Latest Features (v1.0.0)
+description: Complete guide to the latest features and workflow enhancements added in Modpie and Modpie Plus v1.0.0.
 ---
 
-# Modpie & Modpie Plus: Latest Features Guide (v0.9.99)
+# Modpie & Modpie Plus: Latest Features Guide (v1.0.0)
 
 <div className="hero-badge-container">
-  <span className="badge badge--primary">Modpie Plus 0.9.99</span>
-  <span className="badge badge--secondary">Modpie 0.9.99</span>
+  <span className="badge badge--primary">Modpie Plus 1.0.0</span>
+  <span className="badge badge--secondary">Modpie 1.0.0</span>
   <span className="badge badge--success">Release Version</span>
 </div>
 
@@ -16,7 +16,96 @@ This guide documents the latest features and workflow enhancements added to **Mo
 
 ---
 
-## 1. Mid-Drag Modifier Switching in Interactive Mode (v0.9.99)
+## 1. Enhanced Decimate Interactive Mode: Mode Swapping & Value Isolation (v1.0.0)
+
+### Overview
+The **Decimate** modifier in Blender has three fundamentally different reduction algorithms:
+1. **Collapse**: Reduces polygon count by collapsing edges based on a **Ratio** (0.0 to 1.0).
+2. **Un-Subdivide**: Reverses Catmull-Clark / grid subdivisions by step **Iterations** (integer 1, 2, 3...).
+3. **Planar (Dissolve)**: Dissolves coplanar geometry based on an **Angle Limit** threshold.
+
+Previously, entering interactive mode on a Decimate modifier defaulted to Ratio regardless of mode, and dragging while in Un-Subdivide or Planar didn't affect their respective settings. In **v1.0.0**, Modpie delivers a fully mode-aware Decimate interactive experience:
+- **Instant Mode Swapping with a Key (<kbd>M</kbd> or <kbd>T</kbd>)**: Cycle between **Collapse**, **Un-Subdivide**, and **Planar** on the fly during a single drag session.
+- **Direct Mode Jump Keys**: Jump directly with <kbd>C</kbd> (Collapse), <kbd>U</kbd> (Un-Subdivide), or <kbd>P</kbd> (Planar).
+- **Mode-Specific Value Dragging**:
+  - In **Un-Subdivide**: Mouse drag and wheel strictly alter **Iterations** (auto-seeds to `1` on entry so reduction is immediately visible). Ratio, Triangulate, and Symmetry never interfere.
+  - In **Collapse**: Mouse drag controls **Ratio**. Supports Triangulate (<kbd>G</kbd>) and Symmetry (<kbd>S</kbd>).
+  - In **Planar**: Mouse drag controls **Angle Limit**. Supports All Boundaries (<kbd>B</kbd>).
+- **Strict Parameter Guarding**: Pressing <kbd>S</kbd> (Symmetry) or <kbd>G</kbd> (Triangulate) while in Un-Subdivide or Planar mode is safely intercepted with a helpful notification (`Collapse Mode Only`) to prevent accidental setting corruption.
+- **Channel Selection Implication (<kbd>R</kbd>, <kbd>I</kbd>, <kbd>A</kbd>, <kbd>Tab</kbd>)**:
+  - Pressing <kbd>R</kbd> (Ratio) selects Ratio and automatically sets mode to Collapse.
+  - Pressing <kbd>I</kbd> (Iterations) selects Iterations and automatically sets mode to Un-Subdivide.
+  - Pressing <kbd>A</kbd> (Angle Limit) selects Angle Limit and automatically sets mode to Planar.
+  - Pressing <kbd>Tab</kbd> / <kbd>Shift + Tab</kbd> steps forward / backward through modes and channels together.
+- **Dynamic Face Count Readout**: Live `Faces: <count>` readout in the viewport HUD and header, dynamically reporting the post-decimation polygon count as you adjust.
+
+---
+
+## 2. Blender 5.0+ Curve to Tube Modifier Integration (v1.0.0)
+
+### Overview
+In Blender 5.0+, the official Geometry Nodes essentials asset library introduces **Curve to Tube**, a powerful modern modifier that converts curve geometry into customizable tube meshes with full control over profile shapes, curve resampling, end caps, and procedural UV coordinates.
+
+**Modpie v1.0.0** introduces first-class, seamless support for **Curve to Tube**:
+- **Blender 5.0+ Exclusive Availability**: Available only when running Blender 5.0 or newer. It is cleanly hidden from all menus, category lists, and operator enums in Blender 4.5 and earlier to guarantee 100% backward compatibility.
+- **Exact Native Blender Layout in Modpie Panel**:
+  - **Top-Level Scale**: Instant control over the tube radius / scale factor.
+  - **Profile Subpanel** (default open):
+    - **Mode**: Segmented button toggle between **Round** and **Custom**.
+    - **Profile Object**: Pick custom profile curve objects when in Custom mode.
+    - **Resolution**: Controls circular cross-section vertex resolution when in Round mode.
+    - **Shade Smooth**: Smooth shading toggle on the generated tube surface.
+  - **Resample Subpanel** (default closed):
+    - Subpanel header on/off toggle checkbox for **Resample**.
+    - **Resample Mode**: Dropdown to switch between *Evaluated*, *Auto*, *Count*, and *Length*.
+    - **Count / Length**: Context-sensitive numeric inputs for count and segment length.
+    - **Scale**: Multiplier for curve resampling.
+  - **Caps Subpanel** (default closed):
+    - Subpanel header on/off toggle checkbox for **Caps**.
+    - **Caps Type**: Dropdown between *Flat*, *Round*, and *Custom*.
+    - **Caps Start / End**: Object pickers for custom end caps.
+    - **Resolution & Smooth**: Round cap subdivision levels and smooth shading.
+    - **Merge, Align Normals & Extrapolate Radius**: Full geometric cap blending controls.
+  - **UV Map Subpanel** (default closed):
+    - Subpanel header on/off toggle checkbox for **UV Map**.
+    - **UV Map Name**: Configurable destination attribute (default `"UVMap"`).
+    - **Parameter U & V**: Mode switches (*Factor*, *Length*, *Index*).
+    - **Consider Curve Radius**: Toggle attribute scaling based on curve radius.
+  - **Manage Subpanel**: Built-in data-block tools with Fake User toggle, node tree export, and import.
+- **Header Badging**: Displays the official `MOD_CURVE` icon and `(5.0+)` version indicator badge in the modifier card header.
+- **Interactive Viewport Dragging**:
+  - Mouse drag adjusts tube radius / scale with distance sensitivity and unit scaling.
+  - <kbd>R</kbd>: Adjust Profile Resolution.
+  - <kbd>C</kbd>: Adjust Resample Count.
+  - <kbd>L</kbd>: Adjust Resample Length.
+  - <kbd>Wheel</kbd>: Step Profile Resolution up/down.
+  - <kbd>H</kbd>: Toggle Shade Smooth.
+  - <kbd>P</kbd>: Toggle Caps.
+  - <kbd>E</kbd>: Toggle Resample.
+  - <kbd>M</kbd>: Toggle Caps Merge.
+  - <kbd>F</kbd>: Cycle Profile Mode (Round ↔ Custom).
+  - <kbd>T</kbd>: Cycle Caps Type (Flat ↔ Round ↔ Custom).
+  - <kbd>O</kbd>: Cycle Resample Mode (Evaluated ↔ Auto ↔ Count ↔ Length).
+
+---
+
+## 3. Real-Time Evaluation Profiler & Hardware Benchmarking (v1.0.0)
+
+### Overview
+Procedural modifier stacks often combine complex geometric calculations (such as Subdivision Surfaces, Booleans, Voxel Remeshing, Bevels, and Geometry Nodes). When viewport framerate stutters, identifying which modifier causes the slowdown previously required tedious trial and error—toggling each modifier's visibility on and off individually.
+
+The **Evaluation Profiler** in **Modpie Plus** provides real-time performance diagnostics directly beneath your modifier stack:
+- **Instant Bottleneck Pinpointing**: Measures execution latency per modifier in microseconds (`µs`), milliseconds (`ms`), or seconds (`s`).
+- **Proportional Visual Load Bars**: Scales progress bars relative to the slowest modifier in the stack, immediately showing which stage consumes the frame budget.
+- **Dependency Graph Deep-Query**: Accurately queries Blender's evaluated dependency graph (`context.object.evaluated_get(depsgraph)`), bypassing un-evaluated scene data to report true hardware execution timings.
+- **1-Click Stack Toolstrip Toggle**: Click the Stopwatch / Timer icon in the stack tool row next to the Template Save button to fold/unfold the profiler without leaving the viewport.
+- **Force Re-Evaluation**: A dedicated Re-evaluate button forces a full geometry benchmark pass (`refresh={'DATA'}`), recalculating timings after scene alterations.
+- **Framerate Budget Guidance**: Displays total stack latency directly in the collapsible header, letting you verify whether your stack satisfies the **60 FPS (16.6 ms)** or **30 FPS (33.3 ms)** viewport frame budget.
+- **Full Guide**: See the dedicated [Evaluation Profiler Guide](evaluation.md) for complete visual walkthroughs and optimization strategies.
+
+---
+
+## 4. Mid-Drag Modifier Switching in Interactive Mode
 
 ### Overview
 When shaping 3D objects with a stack of modifiers (such as Solidify + Bevel + Subdivision Surface), you often want to tweak each modifier's settings interactively in the viewport in one smooth session without ever opening the side panel or navigating Blender's modifier tabs.
@@ -53,7 +142,7 @@ Configure in **Preferences ▸ Interactive Drag**:
 
 ---
 
-## 2. Apply Last Interacted Modifier & Auto-Activation (v0.9.98)
+## 5. Apply Last Interacted Modifier & Auto-Activation (v0.9.98)
 
 ### Overview
 When working with multiple modifiers in Blender, you often want to expand a collapsed modifier card in the Modpie Panel, inspect its settings, and apply it. Previously, applying via the keyboard shortcut (<kbd>Ctrl + A</kbd>) could target an unintended modifier because expanding or adjusting a modifier did not change Blender's active modifier.
@@ -72,7 +161,7 @@ You can configure this behavior in **Preferences ▸ Modpie Panel**:
 
 ---
 
-## 3. Shift-Click Gear Tools Toggle on Closed Modifier Cards (v0.9.97)
+## 6. Shift-Click Gear Tools Toggle on Closed Modifier Cards (v0.9.97)
 
 ### Overview
 When modifier cards in the Modpie Panel are collapsed (closed), each card displays a gear icon (`⚙`) that unlocks essential collapsed controls:
@@ -85,7 +174,7 @@ Previously, opening these tools required clicking the gear icon on each modifier
 
 ---
 
-## 4. Interactive Mode: Modifier Stack Reordering
+## 7. Interactive Mode: Modifier Stack Reordering
 
 ### Overview
 When adjusting modifiers interactively in the 3D viewport, you previously had to finish the drag and open the panel to change a modifier's position in the stack. You can now move the modifier being adjusted **up or down the stack list on the fly** without interrupting your adjustment session.
@@ -127,7 +216,7 @@ In **Edit > Preferences > Add-ons > Modpie > Interactive > Stack Reordering (Int
 
 ---
 
-## 5. Context / Object-Based Modifier Pie Menu (Modpie Plus)
+## 8. Context / Object-Based Modifier Pie Menu (Modpie Plus)
 
 > [!NOTE]
 > The **Object Modifiers Pie** is a **Modpie Plus** exclusive feature.
@@ -166,7 +255,7 @@ Blender artists often work on objects that already have a specific set of modifi
 
 ---
 
-## 6. Inline Modifier Renaming
+## 9. Inline Modifier Renaming
 
 ### Overview
 Renaming modifiers previously required switching over to Blender's standard Properties panel. Modpie provides instant inline renaming directly inside both collapsed and expanded modifier views in the viewport panel.
@@ -185,7 +274,7 @@ Renaming modifiers previously required switching over to Blender's standard Prop
 
 ---
 
-## 7. Closed Modifier Management & Pin to Last Feedback
+## 10. Closed Modifier Management & Pin to Last Feedback
 
 ### Overview
 You can manage, reorder, and pin modifiers while keeping them collapsed, saving vertical screen space in complex stacks.
@@ -217,7 +306,7 @@ Collapse                                             Menu   Badge         Action
 
 ---
 
-## 8. Preferences UI Overhaul
+## 11. Preferences UI Overhaul
 
 ### Overview
 The Add-on Preferences interface (**Edit > Preferences > Add-ons > Modpie**) has been completely restructured into clean, categorized cards.
@@ -242,7 +331,7 @@ The Add-on Preferences interface (**Edit > Preferences > Add-ons > Modpie**) has
 
 ---
 
-## 9. Apply Modifier Workflow & Technical Notes
+## 12. Apply Modifier Workflow & Technical Notes
 
 Applying modifiers in Modpie can be performed in two primary ways:
 
@@ -266,7 +355,7 @@ Applying modifiers in Modpie can be performed in two primary ways:
 
 ---
 
-## 10. Stack Sync Naming Symmetry (Modpie Plus)
+## 13. Stack Sync Naming Symmetry (Modpie Plus)
 
 ### Overview
 In **Modpie Plus**, modifier synchronization and copy operators use consistent, intuitive terminology across all multi-object tools:
@@ -281,7 +370,7 @@ In **Modpie Plus**, modifier synchronization and copy operators use consistent, 
 
 ---
 
-## 11. Summary of Shortcuts
+## 14. Summary of Shortcuts
 
 | Shortcut | Context | Action | Tier |
 | :--- | :--- | :--- | :--- |
@@ -293,6 +382,18 @@ In **Modpie Plus**, modifier synchronization and copy operators use consistent, 
 | <kbd>Alt</kbd> + <kbd>Wheel Down</kbd> | Interactive Mode | Move modifier **Down** in stack (toward bottom) | Core (Free & Plus) |
 | <kbd>Alt</kbd> + <kbd>Up Arrow</kbd> | Interactive Mode | Move modifier **Up** in stack | Core (Free & Plus) |
 | <kbd>Alt</kbd> + <kbd>Down Arrow</kbd> | Interactive Mode | Move modifier **Down** in stack | Core (Free & Plus) |
+| <kbd>M</kbd> or <kbd>T</kbd> | Decimate Interactive | Cycle Decimate mode (Collapse ↔ Un-Subdivide ↔ Planar) | Core (Free & Plus) |
+| <kbd>C</kbd> / <kbd>U</kbd> / <kbd>P</kbd> | Decimate Interactive | Jump directly to Collapse / Un-Subdivide / Planar mode | Core (Free & Plus) |
+| <kbd>R</kbd> / <kbd>I</kbd> / <kbd>A</kbd> | Decimate Interactive | Select Ratio / Iterations / Angle Limit channel | Core (Free & Plus) |
+| <kbd>G</kbd> / <kbd>S</kbd> | Decimate Interactive | Toggle Triangulate / Symmetry (Collapse mode only) | Core (Free & Plus) |
+| <kbd>B</kbd> | Decimate Interactive | Toggle All Boundaries (Planar mode only) | Core (Free & Plus) |
+| <kbd>Mouse Drag</kbd> | Curve to Tube (5.0+) | Adjust tube radius / scale interactively | Core (Free & Plus) |
+| <kbd>R</kbd> / <kbd>Wheel</kbd> | Curve to Tube (5.0+) | Adjust Profile Resolution interactively | Core (Free & Plus) |
+| <kbd>C</kbd> / <kbd>L</kbd> | Curve to Tube (5.0+) | Adjust Resample Count / Resample Length | Core (Free & Plus) |
+| <kbd>H</kbd> | Curve to Tube (5.0+) | Toggle Shade Smooth | Core (Free & Plus) |
+| <kbd>P</kbd> / <kbd>E</kbd> / <kbd>M</kbd> | Curve to Tube (5.0+) | Toggle Caps / Resample / Caps Merge | Core (Free & Plus) |
+| <kbd>F</kbd> / <kbd>T</kbd> / <kbd>O</kbd> | Curve to Tube (5.0+) | Cycle Profile Mode / Caps Type / Resample Mode | Core (Free & Plus) |
+| Stopwatch Icon (`⏱`) | Modifier Stack Header | Toggle Real-Time Evaluation Profiler | Modpie Plus Exclusive |
 | <kbd>Shift</kbd> + Click Gear (`⚙`) | Modpie Panel | Unlock all collapsed modifier gears simultaneously | Core (Free & Plus) |
 | <kbd>Alt</kbd> + <kbd>M</kbd> | 3D Viewport | Open standard **Modpie Radial Menu** | Core (Free & Plus) |
 | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>M</kbd> | 3D Viewport | Open **Modpie Panel** directly | Core (Free & Plus) |
