@@ -46,11 +46,9 @@ Modpie Plus expands the core experience in four major areas:
 
 Here is a quick roadmap of the guides in this section:
 
-- **[Panel Presets, Stacks & Sync](panel-presets-stacks-sync.md)**: A complete tour of the Plus Bar that sits directly inside your viewport panel.
+- **[Presets, Stacks & Multi-Object Sync](panel-presets-stacks-sync.md)**: A complete tour of the Plus Bar inside your panel—saving modifier recipes, deploying stack pipelines, and continuous live linking across meshes.
 - **[In-Viewport Slot Customizer](slot-customizer.md)**: How to unfold the 8-way compass editor in the viewport and set custom arrival values.
-- **[Modifier Presets & Stack Templates](presets.md)**: Creating, saving, favoriting, and applying single presets and full multi-modifier stacks.
-- **[Live Linking & Stack Sync](sync-link.md)**: Continuous bidirectional linking, one-shot stack copying, and the visual stack diff report.
-- **[Solo Modifier & Apply-Up-To-Here](solo-profiler.md)**: Non-destructive modifier isolation and baking down to any point in the stack.
+- **[Solo Modifier & Apply Up To Here](solo-profiler.md)**: Non-destructive modifier isolation and baking down to any point in the stack.
 - **[Evaluation Profiler](evaluation.md)**: Real-time modifier latency benchmarking, bottleneck pinpointing, and visual load bars.
 - **[Favorites Preset Pie](favorite-pie.md)**: Accessing your favorite presets directly through a dedicated radial pie menu (<kbd>Shift + Alt + M</kbd>).
 

@@ -198,6 +198,6 @@ When Modpie Plus is installed, the panel gains the prominent **Plus Bar** direct
 - **Solo & Profiler**: Isolate modifiers with one click or view real-time evaluation latency in milliseconds.
 
 :::tip Full Guide
-For full breakdown and workflow examples of the panel toolbar and card tools, see the dedicated [Panel Presets, Stacks & Sync](panel-presets-stacks-sync.md) documentation page.
+For full breakdown and workflow examples of the panel toolbar and card tools, see the dedicated [Presets, Stacks & Multi-Object Sync](panel-presets-stacks-sync.md) documentation page.
 :::
 

@@ -1,7 +1,7 @@
 ---
-sidebar_position: 6
+sidebar_class_name: hidden
 title: Past Releases & Archive
-description: Historical release notes and changelog archive for Modpie and Modpie Plus versions 0.9.81 through 0.9.1.
+description: Historical release notes and changelog archive for Modpie and Modpie Plus.
 ---
 
 # Past Releases & Archive

@@ -1,7 +1,7 @@
 ---
-sidebar_position: 4.5
-title: Latest Features (v1.0.0)
-description: Complete guide to the latest features and workflow enhancements added in Modpie and Modpie Plus v1.0.0.
+sidebar_class_name: hidden
+title: Latest Features
+description: Complete guide to the features and workflow enhancements in Modpie and Modpie Plus.
 ---
 
 # Modpie & Modpie Plus: Latest Features Guide (v1.0.0)

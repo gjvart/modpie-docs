@@ -60,5 +60,4 @@ Multi-object workflow in Modpie extends beyond adding and dragging modifiers—i
 
 While the core version adjusts multiple objects when they are modified together, **Modpie Plus** adds deeper synchronization:
 
-- **Auto-Sync After a Drag**: If you adjust an existing modifier that *only the active object has*, confirming the drag automatically pushes the modifier onto all other selected objects.
-- **Continuous Live Linking**: Keeps modifiers on multiple objects permanently synchronized in real time via depsgraph tracking (see [Multi-Object Syncing & Live Linking](sync-link.md)).
+- **Continuous Live Linking**: Keeps modifiers on multiple objects permanently synchronized in real time via depsgraph tracking (see [Continuous Live Linking](panel-presets-stacks-sync.md#approach-a-keep-in-step--continuous-live-linking)).

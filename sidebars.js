@@ -12,9 +12,6 @@ const sidebars = {
         'comparison',
         'installation',
         'shortcuts',
-        'latest-features',
-        'changelog',
-        'changelog-archive',
       ],
     },
     {
@@ -55,8 +52,6 @@ const sidebars = {
         'plus-intro',
         'panel-presets-stacks-sync',
         'slot-customizer',
-        'presets',
-        'sync-link',
         'solo-profiler',
         'evaluation',
         'favorite-pie',
@@ -64,12 +59,12 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Reference & Architecture',
+      label: 'Settings & Reference',
       collapsed: false,
       items: [
         'reference-intro',
-        'geometry-nodes',
         'preferences',
+        'geometry-nodes',
         'panel-behavior',
       ],
     },

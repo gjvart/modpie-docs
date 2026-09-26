@@ -54,8 +54,7 @@ Start here if you are new to Modpie or deciding between versions:
 - **[Modpie vs. Modpie Plus](comparison.md)**: Side-by-side feature comparison between the free and plus tiers.
 - **[Installation & Upgrades](installation.md)**: How to install and upgrade without losing any settings.
 - **[Shortcuts Cheat Sheet](shortcuts.md)**: Complete quick-reference table for all viewport and modal keys.
-- **[Latest Features (v1.0.0)](latest-features.md)**: Detailed breakdown of the latest features and additions in v1.0.0.
-- **[What's New & Changelog](changelog.md)**: Release notes and version history.
+- **[Release Notes (v1.0.0)](changelog.md)**: Official launch highlights and feature overview.
 
 ### 2. [Core Workflows](core-workflows-intro.md)
 The everyday tools that make up your modeling loop:
@@ -79,15 +78,14 @@ Special interactive helpers built for Blender's most commonly used modifiers:
 
 ### 4. [Modpie Plus](plus-intro.md)
 Pipeline, automation, and diagnostic tools for power users:
-- **[Panel Presets, Stacks & Sync](panel-presets-stacks-sync.md)**: The Plus toolbar inside your panel.
-- **[In-Viewport Slot Customizer](slot-customizer.md)**: 8-direction customizer and arrival values.
-- **[Modifier Presets & Stack Templates](presets.md)**: Saving and deploying single presets or entire pipelines.
-- **[Live Linking & Stack Sync](sync-link.md)**: Continuous bidirectional modifier linking across objects.
-- **[Solo Modifier & Latency Profiler](solo-profiler.md)**: Non-destructive isolation and millisecond performance tracking.
+- **[Presets, Stacks & Multi-Object Sync](panel-presets-stacks-sync.md)**: Saving modifier presets, deploying full stack pipelines, and continuous live linking.
+- **[In-Viewport Slot Customizer](slot-customizer.md)**: 8-direction customizer and custom arrival values.
+- **[Solo Modifier & Apply Up To Here](solo-profiler.md)**: Non-destructive isolation and baking down to any point in the stack.
+- **[Evaluation Profiler](evaluation.md)**: Hardware execution benchmarking, bottleneck detection, and visual load bars.
 - **[Favorites Preset Pie](favorite-pie.md)**: Dedicated radial menu for your favorite presets.
 
-### 5. [Reference & Architecture](reference-intro.md)
-Technical details, preferences configuration, and API notes:
-- **[Geometry Nodes Architecture](geometry-nodes.md)**: RNA socket inspection and asset management.
-- **[Preferences Reference](preferences.md)**: Comprehensive guide to all settings and conflict alerts.
-- **[Panel Behavior & Technical Notes](panel-behavior.md)**: Modal UI loops and viewport focus handling.
+### 5. [Settings & Reference](reference-intro.md)
+Addon preferences, Geometry Nodes support, and panel behaviors:
+- **[Preferences & Configuration](preferences.md)**: Comprehensive guide to all settings, sensitivities, and conflict detection.
+- **[Geometry Nodes Modifiers](geometry-nodes.md)**: Dynamic socket inspection and asset management.
+- **[Viewport Panel Behavior](panel-behavior.md)**: How the panel manages screen focus and auto-hides during dragging.

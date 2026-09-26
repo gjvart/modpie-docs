@@ -10,7 +10,7 @@ description: Move modifiers up and down the stack list live during interactive v
   <span className="badge badge--secondary">Core: Live Stack Reordering</span>
 </div>
 
-In default Blender and earlier workflows, changing a modifier's evaluation position required stopping your work, opening the Properties panel, and dragging cards manually.
+In standard Blender, changing a modifier's evaluation position requires stopping your work, opening the Properties panel, and dragging cards manually.
 
 With Modpie's **Interactive Stack Reordering**, you can move the modifier being adjusted **up or down the stack list on the fly** without interrupting your live viewport adjustment session.
 
