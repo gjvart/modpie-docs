@@ -19,23 +19,18 @@ When building detailed 3D models in Blender, modifier stacks can grow deep very 
 
 **Modpie Plus** solves both challenges right inside the modifier panel with **Solo Modifier** and **Apply Up To Here**.
 
-<div className="media-card">
-  <div className="media-container">
-    {/* To add your GIF/screenshot: replace below with <img src="/modpie-docs/img/media/solo_modifier.gif" alt="Solo Modifier and Apply Up To Here" /> */}
-    <div className="media-placeholder">
-      <span className="media-placeholder-icon">👁</span>
-      <span className="media-placeholder-title">Solo Modifier & Apply Up To Here GIF</span>
-      <span className="media-placeholder-hint">Drop file into static/img/media/solo_modifier.gif</span>
-    </div>
-  </div>
-  <p className="media-caption">Figure: Isolating modifiers non-destructively with Solo and baking stacks selectively with Apply-Up-To-Here.</p>
-</div>
-
 ---
 
 ## 1. Solo Modifier (Viewport Isolation)
 
 Clicking the **Solo** button (`RESTRICT_VIEW_OFF` / Eye icon) on any modifier card immediately hides all other modifiers on the mesh, isolating the active modifier's effect in the 3D viewport.
+
+<div className="media-card">
+  <div className="media-container">
+    <img src="/modpie-docs/img/media/mp_soloMod.gif" alt="Solo Modifier Viewport Isolation" />
+  </div>
+  <p className="media-caption">Figure: Isolating a modifier non-destructively with 1-click Solo and automatic state restoration.</p>
+</div>
 
 ### Smart State-Preserving Restoration
 In vanilla Blender, manually toggling eyeball icons is risky because you can easily forget which modifiers were already hidden before you started. 
@@ -72,6 +67,13 @@ When optimizing complex assets or preparing models for texturing, you often want
 In standard Blender, this is cumbersome: you have to manually click Apply on each individual modifier card from top to bottom. If your boolean is 5 modifiers down, you have to apply all 5 one by one and be careful not to apply modifier 6.
 
 **Apply Up To Here** (`SORT_ASC` icon) lets you bake every modifier from the very top of your stack down through your chosen modifier with a single click, keeping all modifiers below it live and non-destructive.
+
+<div className="media-card">
+  <div className="media-container">
+    <img src="/modpie-docs/img/media/mp_apply-up-to-here.gif" alt="Apply Up To Here Selective Stack Baking" />
+  </div>
+  <p className="media-caption">Figure: Selectively baking modifiers down through the target while keeping subsequent modifiers live and procedural.</p>
+</div>
 
 ### Interactive Confirmation Dialog
 Clicking **Apply Up To Here** opens an interactive confirmation dialog directly inside your viewport:
