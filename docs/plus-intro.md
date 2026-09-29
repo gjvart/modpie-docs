@@ -38,7 +38,7 @@ Modpie Plus expands the core experience in four major areas:
 1. **Presets & Stack Templates**: Snapshot your favorite modifier recipes (like *Hard-Surface Bevel*, *Curved Glass Solidify*, or a complete 5-modifier high-poly pipeline) and apply them to any mesh with one click.
 2. **Continuous Live Linking**: Link modifiers across multiple objects so when you tweak a parameter on one mesh, every linked mesh updates in real-time.
 3. **In-Viewport 8-Direction Slot Customizer**: Unlock all 8 directions on the radial menu, and customize slot assignments, labels, and arrival values right inside the 3D viewport without opening Blender Preferences.
-4. **Non-Destructive Solo & Profiler**: Isolate any modifier's visual contribution with one click (<kbd>Alt</kbd> + <kbd>H</kbd>), and diagnose scene lag with a live millisecond evaluation profiler.
+4. **Solo, Selective Baking & Profiling**: Isolate any modifier's visual contribution with one click, bake stacks selectively with **Apply Up To Here**, and diagnose viewport bottlenecks with a real-time millisecond **Evaluation Profiler**.
 
 ---
 
@@ -56,4 +56,6 @@ Here is a quick roadmap of the guides in this section:
 
 :::tip Seamless Upgrade
 Modpie Free and Modpie Plus share the same addon identifier (`modpie`). Upgrading preserves 100% of your saved slots, preferences, and custom keymaps without losing a single setting.
+
+👉 **[Get Modpie Plus on Superhive](https://superhivemarket.com/products/modpie)**
 :::

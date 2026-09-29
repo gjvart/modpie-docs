@@ -172,8 +172,8 @@ In addition to the toolbar, Modpie Plus adds convenient workflow and diagnostic 
 | Button | Tool | What It Does |
 | :---: | :--- | :--- |
 | `FILE_TICK` | **[Remember Default](defaults.md)** | Saves current settings as your personal startup defaults for all future additions. |
-| `RESTRICT_VIEW_OFF` | **[Solo Modifier](solo-profiler.md)** | Temporarily isolates this modifier by hiding all others (with 1-click restore). Also interfaces with the **Evaluation Profiler**. |
-| `SORT_ASC` | **Apply Up To Here** | Non-destructively bakes the stack from the top down to this modifier, keeping lower modifiers live. |
+| `RESTRICT_VIEW_OFF` | **[Solo Modifier](solo-profiler.md)** | Temporarily isolates this modifier by hiding all others (with 1-click state-preserving restore). |
+| `SORT_ASC` | **[Apply Up To Here](solo-profiler.md)** | Non-destructively bakes the stack from the top down to this modifier, keeping lower modifiers live. |
 | `UV_SYNC_SELECT` | **One-Click Sync** | Instantly copies this modifier's parameters across all selected objects. |
 | `LINKED` | **Live Link Status** | Displays group count (e.g. `🔗 3`) and toggles live link membership. |
 

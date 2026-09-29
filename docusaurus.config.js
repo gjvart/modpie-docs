@@ -102,9 +102,10 @@ const config = {
             position: 'left',
           },
           {
-            href: 'https://superhivemarket.com',
+            href: 'https://superhivemarket.com/products/modpie',
             label: 'Superhive',
             position: 'right',
+            className: 'navbar-superhive-btn',
           },
         ],
       },
@@ -192,7 +193,7 @@ const config = {
             items: [
               {
                 label: 'Modpie on Superhive',
-                href: 'https://superhivemarket.com',
+                href: 'https://superhivemarket.com/products/modpie',
               },
             ],
           },

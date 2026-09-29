@@ -14,6 +14,18 @@ description: Welcome to the Modpie documentation. Fast radial menus, live viewpo
   <span className="badge badge--success">Single Addon Architecture</span>
 </div>
 
+<div className="hero-cta-container">
+  <a
+    className="button button--primary button--lg hero-superhive-button"
+    href="https://superhivemarket.com/products/modpie"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <span>Get Modpie on Superhive</span>
+    <span style={{ fontSize: '1.1em', marginLeft: '2px' }}>↗</span>
+  </a>
+</div>
+
 Hey there! Welcome to the Modpie documentation.
 
 If you spend a lot of time 3D modeling in Blender, you already know the routine: you add a modifier, your mouse travels all the way over to the Properties editor on the right side of your screen, you hunt through tabs, expand cards, and squint at numeric fields. 

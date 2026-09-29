@@ -69,8 +69,8 @@ Comparing the two panels reveals four major structural additions in Modpie Plus:
    - **Plus**: Greatly expands the card action row with advanced workflow and diagnostic controls:
      - **Remember Default**: Lock in the modifier's current dialed-in settings as permanent defaults.
      - **Lock / Frozen State**: Protect modifier parameters from accidental modifications or bulk overwrites.
-     - **Solo Modifier**: Temporarily isolate the modifier by disabling all other modifiers on the mesh (with automatic state restore on un-solo). Also interfaces with the **Evaluation Profiler** to measure real-time latency in milliseconds.
-     - **Apply Up To Here**: Non-destructively bake the modifier stack from the top down through the current modifier while keeping all subsequent modifiers active.
+     - **[Solo Modifier](solo-profiler.md)**: Temporarily isolate the modifier by disabling all other modifiers on the mesh (with automatic state restore on un-solo).
+     - **[Apply Up To Here](solo-profiler.md)**: Non-destructively bake the modifier stack from the top down through the current modifier while keeping all subsequent modifiers active.
      - **One-Click Sync**: Instantly copy this modifier's exact parameters across all other selected objects.
      - **Live Link Group Status**: Displays active linked group membership count with 1-click linking/unlinking.
 
@@ -194,8 +194,8 @@ When Modpie Plus is installed, the panel gains the prominent **Plus Bar** direct
 - **Presets**: Live clipboard pasting, starred favorites, full preset library, and interactive search.
 - **Stacks**: Deploy complete multi-modifier pipelines in Append or Replace mode, with live modifier count badges.
 - **Sync**: Contextual multi-object continuous **Live Linking** (`Link to Selected`), one-shot copying (`Copy to Selected`), stack diffing, and unlinking.
-- **Card Tools**: Dedicated **[Remember Default](defaults.md)**, **Solo Modifier**, and **Apply Up To Here** buttons on every modifier card.
-- **Solo & Profiler**: Isolate modifiers with one click or view real-time evaluation latency in milliseconds.
+- **Card Tools**: Dedicated **[Remember Default](defaults.md)**, **[Solo Modifier](solo-profiler.md)**, and **[Apply Up To Here](solo-profiler.md)** buttons on every modifier card.
+- **Diagnostics & Benchmarking**: Isolate modifiers with one click, or benchmark real-time viewport calculation latency with the **[Evaluation Profiler](evaluation.md)**.
 
 :::tip Full Guide
 For full breakdown and workflow examples of the panel toolbar and card tools, see the dedicated [Presets, Stacks & Multi-Object Sync](panel-presets-stacks-sync.md) documentation page.

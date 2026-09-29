@@ -78,4 +78,6 @@ Both editions share the exact same foundation, which means upgrading from Free t
 
 :::info Seamless In-Place Upgrade
 Upgrading from Free to Plus takes less than 10 seconds: install the Plus `.zip` directly in Blender. All your custom shortcuts, favorite settings, and preferences carry over automatically.
+
+👉 **[Get Modpie on Superhive](https://superhivemarket.com/products/modpie)**
 :::
